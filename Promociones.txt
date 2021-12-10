@@ -1,0 +1,3 @@
+22.4,PORCENTUAL,aventura,Bosque Negro,Mordor,null
+36,ABSOLUTA,degustación,Lothlórien,La Comarca,null
+22,AXB,paisaje,Minas Tirith,Abismo de Helm,Erebor
