@@ -7,11 +7,34 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.nullobjects.NullUser;
 import tierraMadre.Atraccion;
 import tierraMadre.TipoDeAtraccion;
+import tierraMadre.Usuario;
 import tierraMedia.db.ConnectionProvider;
 
 public class AtraccionesDAO {
+	
+	public Atraccion findById(Integer id) {
+		try {
+			String sql = "SELECT * FROM Atracciones WHERE Id = ?";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setInt(1, id);
+			ResultSet resultados = statement.executeQuery();
+
+			Atraccion atraccion = null;
+
+			if (resultados.next()) {
+				atraccion = toAtraccion(resultados);
+			}
+
+			return atraccion;
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new MissingDataException(e);
+		}
+	}
 
 	public static List<Atraccion> getAtracciones() throws SQLException {
 		List<Atraccion> atracciones = new ArrayList<Atraccion>();

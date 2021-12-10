@@ -43,6 +43,10 @@ public class Atraccion {
 	public void elegirAtraccion() {
 		this.cupo -= 1;
 	}
+	
+	public boolean tieneCupo(int i) {
+		return this.cupo >= i;
+	}
 
 	public boolean puedoOfrecer(Usuario turista) {
 		// el turista tiene tiempo, dinero y la atraccion tiene cupo

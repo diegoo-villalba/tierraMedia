@@ -1,41 +1,41 @@
 package services;
 
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
-import model.Attraction;
-import model.User;
-import persistence.AttractionDAO;
-import persistence.UserDAO;
-import persistence.commons.DAOFactory;
+import tierraMadre.Atraccion;
+import tierraMadre.Usuario;
+import tierraMedia.dao.AtraccionesDAO;
+import tierraMedia.dao.UsuariosDAO;
 
 public class BuyAttractionService {
+	
+	AtraccionesDAO atraccionesDAO = new AtraccionesDAO();
+	UsuariosDAO usuariosDAO = new UsuariosDAO();
 
-	AttractionDAO attractionDAO = DAOFactory.getAttractionDAO();
-	UserDAO userDAO = DAOFactory.getUserDAO();
-
-	public Map<String, String> buy(Integer userId, Integer attractionId) {
+	public Map<String, String> buy(String usuario, Integer attractionId) throws SQLException {
 		Map<String, String> errors = new HashMap<String, String>();
 
-		User user = userDAO.find(userId);
-		Attraction attraction = attractionDAO.find(attractionId);
+		Usuario turista = usuariosDAO.findByUsername(usuario);
+		Atraccion atraccion = atraccionesDAO.findById(attractionId);
 
-		if (!attraction.canHost(1)) {
-			errors.put("attraction", "No hay cupo disponible");
+		if (!atraccion.tieneCupo(1)) {
+			errors.put("attraction", "Lo sentimos! No hay cupo disponible");
 		}
-		if (!user.canAfford(attraction)) {
+		if (!turista.puedeComprar(atraccion)) {
 			errors.put("user", "No tienes dinero suficiente");
 		}
-		if (!user.canAttend(attraction)) {
+		if (!turista.puedeSubir(atraccion)) {
 			errors.put("user", "No tienes tiempo suficiente");
 		}
 
 		if (errors.isEmpty()) {
-			user.addToItinerary(attraction);
-			attraction.host(1);
+			turista.aceptarPromo(atraccion.getCosto(), atraccion.getTiempoRecorrido());
+			atraccion.elegirAtraccion();
 
-			attractionDAO.update(attraction);
-			userDAO.update(user);
+			AtraccionesDAO.update(atraccion);
+			UsuariosDAO.update(turista);
 		}
 
 		return errors;

@@ -40,6 +40,14 @@ public class Usuario {
 	public TipoDeAtraccion getAtraccion() {
 		return atraccion;
 	}
+	
+	public boolean puedeComprar(Atraccion unaAtraccion) {
+		return this.presupuesto >= unaAtraccion.getCosto();
+	}
+	
+	public boolean puedeSubir(Atraccion unaAtraccion) {
+		return this.tiempoDisponible >= unaAtraccion.getTiempoRecorrido();
+	}
 
 	public void aceptarPromo(double dineroGastado, double tiempoUsado) {
 		this.presupuesto -= dineroGastado;
