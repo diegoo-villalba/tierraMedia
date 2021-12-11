@@ -1,6 +1,5 @@
 package tierraMadre;
 
-import java.util.List;
 import java.util.*;
 
 public class Atraccion {
@@ -9,6 +8,7 @@ public class Atraccion {
 	private double tiempoRecorrido;
 	private int cupo;
 	private TipoDeAtraccion tipo;
+	private Map<String, String> errors;
 
 	public Atraccion(String nombre, int costo, double tiempoRecorrido, int cupo, TipoDeAtraccion tipo) {
 		this.nombre = nombre;
@@ -26,7 +26,26 @@ public class Atraccion {
 		return costo;
 
 	}
-	
+
+	public boolean esValida() {
+		validacion();
+		return errors.isEmpty();
+	}
+
+	public void validacion() {
+		errors = new HashMap<String, String>();
+
+		if (costo <= 0) {
+			errors.put("cost", "Error! El vlaor debe ser positivo");
+		}
+		if (tiempoRecorrido <= 0) {
+			errors.put("duration", "Error! El vlaor debe ser positivo");
+		}
+
+		if (cupo <= 0) {
+			errors.put("capacity", "Error! El vlaor debe ser positivo");
+		}
+	}
 
 	public double getTiempoRecorrido() {
 		return tiempoRecorrido;
@@ -43,7 +62,7 @@ public class Atraccion {
 	public void elegirAtraccion() {
 		this.cupo -= 1;
 	}
-	
+
 	public boolean tieneCupo(int i) {
 		return this.cupo >= i;
 	}
@@ -77,12 +96,10 @@ public class Atraccion {
 		return listaAtraccionesP;
 	}
 
-
 	@Override
 	public int hashCode() {
 		return Objects.hash(costo, cupo, nombre, tiempoRecorrido, tipo);
 	}
-	
 
 	@Override
 	public boolean equals(Object obj) {
@@ -102,4 +119,3 @@ public class Atraccion {
 		return nombre;
 	}
 }
-

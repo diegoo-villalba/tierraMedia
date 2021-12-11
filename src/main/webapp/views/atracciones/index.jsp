@@ -11,8 +11,11 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-<title>Compra</title>
+
+<title>Turismo en la Tierra Media</title>
 </head>
+
+
 <body>
 	<c:out value="${flash}" />
 	<c:if test="${flash != null}">
@@ -33,38 +36,58 @@
 	<h1>Estas son las atracciones de la Tierra Media</h1>
 
 	<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Nombre</th>
-      <th scope="col">Costo</th>
-      <th scope="col">Duracion (horas)</th>
-      <th scope="col">Cupo</th>
-      <th scope="col">Acciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Moria</th>
-      <td>10</td>
-      <td>2</td>
-      <td>9</td>
-      <td><a class="btn btn-success rounded" role="button">Comprar</a></td>
-    </tr>
-    <tr>
-      <th scope="row">Minas Tirith</th>
-      <td>5</td>
-      <td>2.5</td>
-      <td>8</td>
-      <td><a class="btn btn-success rounded" role="button">Comprar</a></td>
-    </tr>
-    <tr>
-      <th scope="row">La Comarca</th>
-      <td>3</td>
-      <td>6.5</td>
-      <td>9</td>
-      <td><a class="btn btn-success rounded" role="button">Comprar</a></td>
-    </tr>
-  </tbody>
-</table>
+
+		<tbody>
+
+			<c:forEach items="${atracciones}" var="atraccion">
+				<tr>
+					<td><strong><c:out value="${atraccion.getNombre()}"></c:out></strong>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							Cras pretium eros urna. Sed quis erat congue, bibendum tortor
+							malesuada, iaculis diam. Ut ut imperdiet sapien.</p></td>
+					<td><c:out value="${atraccion.costo}"></c:out></td>
+					<td><c:out value="${atraccion.tiempoRecorrido}"></c:out></td>
+					<td><c:out value="${atraccion.cupo}"></c:out></td>
+
+				</tr>
+
+			</c:forEach>
+		</tbody>
+	</table>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Nombre</th>
+				<th scope="col">Costo</th>
+				<th scope="col">Duracion (horas)</th>
+				<th scope="col">Cupo</th>
+				<th scope="col">Acciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">Moria</th>
+				<td>10</td>
+				<td>2</td>
+				<td>9</td>
+				<td><a class="btn btn-success rounded" role="button">Comprar</a></td>
+			</tr>
+			<tr>
+				<th scope="row">Minas Tirith</th>
+				<td>5</td>
+				<td>2.5</td>
+				<td>8</td>
+				<td><a class="btn btn-success rounded" role="button">Comprar</a></td>
+			</tr>
+			<tr>
+				<th scope="row">La Comarca</th>
+				<td>3</td>
+				<td>6.5</td>
+				<td>9</td>
+				<td><a class="btn btn-success rounded" role="button">Comprar</a></td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>

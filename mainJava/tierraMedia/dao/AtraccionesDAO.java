@@ -7,12 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.nullobjects.NullUser;
 import tierraMadre.Atraccion;
 import tierraMadre.TipoDeAtraccion;
-import tierraMadre.Usuario;
 import tierraMedia.db.ConnectionProvider;
-
 public class AtraccionesDAO {
 	
 	public Atraccion findById(Integer id) {
@@ -36,8 +33,10 @@ public class AtraccionesDAO {
 		}
 	}
 
-	public static List<Atraccion> getAtracciones() throws SQLException {
+	public static List<Atraccion> getAtracciones() {
 		List<Atraccion> atracciones = new ArrayList<Atraccion>();
+		
+		try {
 		Connection connection = ConnectionProvider.getConnection();
 
 		String query = "select * from Atracciones";
@@ -52,6 +51,10 @@ public class AtraccionesDAO {
 		}
 
 		return atracciones;
+		
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
 	}
 
 	public int elegirAtraccion(Atraccion atraccion) throws SQLException {
@@ -88,4 +91,5 @@ public class AtraccionesDAO {
 		int rows = statement.executeUpdate();
 		return rows;
 	}
+	
 }
