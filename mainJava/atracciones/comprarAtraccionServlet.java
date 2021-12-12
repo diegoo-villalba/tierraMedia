@@ -10,14 +10,14 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import services.BuyAttractionService;
+import services.comprarAtraccionService;
 import tierraMadre.Usuario;
 
-@WebServlet("/attractions/buy.do")
+@WebServlet("/atracciones/comprar.do")
 public class comprarAtraccionServlet extends HttpServlet implements Servlet {
 
 	private static final long serialVersionUID = 3966188068793716237L;
-	private BuyAttractionService buyAttractionService;
+	private comprarAtraccionService comprarAtraccionService;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -29,7 +29,7 @@ public class comprarAtraccionServlet extends HttpServlet implements Servlet {
 		
 		/*Con esa informacion, ahora delegamos al SERVICIO de comprar atraccion pasandole
 		 * el usuario que quiere comprar y el id de la atraccion*/
-		Map<String, String> errors = buyAttractionService.buy(turista.getNombre(), atracctionId);
+		Map<String, String> errors = comprarAtraccionService.comprar(turista.getNombre(), atracctionId);
 		
 		if (errors.isEmpty()) {
 			//TODO: Poner mensaje de "exito" en vez de "Flash"
@@ -40,7 +40,7 @@ public class comprarAtraccionServlet extends HttpServlet implements Servlet {
 		}
 		
 		RequestDispatcher dispatcher = getServletContext()
-				.getRequestDispatcher("/attractions/index.do");
+				.getRequestDispatcher("/atracciones/index.do");
 		dispatcher.forward(req, resp);
 	}
 }

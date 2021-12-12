@@ -15,7 +15,7 @@ import tierraMadre.TipoDeAtraccion;
 import tierraMedia.db.ConnectionProvider;
 
 public class AtraccionesDAOImpl implements AtraccionesDAO {
-	
+
 	public Atraccion findById(Integer id) {
 		try {
 			String sql = "SELECT * FROM Atracciones WHERE Id = ?";
@@ -37,25 +37,25 @@ public class AtraccionesDAOImpl implements AtraccionesDAO {
 		}
 	}
 
-	public static List<Atraccion> getAtracciones() {
+	public List<Atraccion> getAtracciones() {
 		List<Atraccion> atracciones = new ArrayList<Atraccion>();
-		
+
 		try {
-		Connection connection = ConnectionProvider.getConnection();
+			Connection connection = ConnectionProvider.getConnection();
 
-		String query = "select * from Atracciones";
+			String query = "select * from Atracciones";
 
-		PreparedStatement preparedStatement = connection.prepareStatement(query);
+			PreparedStatement preparedStatement = connection.prepareStatement(query);
 
-		ResultSet resultSet = preparedStatement.executeQuery();
+			ResultSet resultSet = preparedStatement.executeQuery();
 
-		while (resultSet.next()) {
-			Atraccion atraccion = toAtraccion(resultSet);
-			atracciones.add(atraccion);
-		}
+			while (resultSet.next()) {
+				Atraccion atraccion = toAtraccion(resultSet);
+				atracciones.add(atraccion);
+			}
 
-		return atracciones;
-		
+			return atracciones;
+
 		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}
@@ -73,35 +73,36 @@ public class AtraccionesDAOImpl implements AtraccionesDAO {
 	}
 
 	public static Atraccion toAtraccion(ResultSet resultSet) throws SQLException {
+		Integer id = resultSet.getInt("Id");
 		String nombre = resultSet.getString("Nombre");
 		int costo = resultSet.getInt("Costo");
 		double tiempo = resultSet.getDouble("Tiempo");
 		int cupo = resultSet.getInt("Cupo");
 		TipoDeAtraccion tipo = TipoDeAtraccion.valueOf(resultSet.getString("Tipo"));
 
-		Atraccion atraccion = new Atraccion(nombre, costo, tiempo, cupo, tipo);
+		Atraccion atraccion = new Atraccion(id, nombre, costo, tiempo, cupo, tipo);
 		return atraccion;
 	}
-	
+
 	@Override
 	public int update(Atraccion atraccion) {
-	
+
 		try {
-		String sql = "UPDATE Atracciones SET Cupo = ? WHERE Nombre = ?";
+			String sql = "UPDATE Atracciones SET Cupo = ? WHERE Nombre = ?";
 
-		Connection conn = ConnectionProvider.getConnection();
+			Connection conn = ConnectionProvider.getConnection();
 
-		PreparedStatement statement = conn.prepareStatement(sql);
-		statement.setInt(1, atraccion.getCupo());
-		statement.setString(2, atraccion.getNombre());
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setInt(1, atraccion.getCupo());
+			statement.setString(2, atraccion.getNombre());
 
-		int rows = statement.executeUpdate();
-		return rows;
+			int rows = statement.executeUpdate();
+			return rows;
 		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}
 	}
-	
+
 	public List<Atraccion> findAll() {
 		try {
 			String sql = "SELECT * FROM Atracciones";
@@ -128,7 +129,7 @@ public class AtraccionesDAOImpl implements AtraccionesDAO {
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, id);
-			
+
 			ResultSet resultados = statement.executeQuery();
 
 			Atraccion attraction = null;

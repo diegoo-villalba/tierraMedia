@@ -39,7 +39,7 @@
 						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">					
 						
 						<li><hr class="dropdown-divider"></li>
-						<li><a href="/turismo/logout" class="dropdown-item">Atracciones</a></li>
+						<li><a href="/TierraMedia/atracciones/index.do" class="dropdown-item">Atracciones</a></li>
 						</ul>
 				</li>
 			</ul>
@@ -50,7 +50,37 @@
 <table align="center">
 <tr>
 <td width="500">
+<<<<<<< HEAD
  
+=======
+ <div class="col-lg-5 mx-auto p-3 py-md-5">
+      
+      		<c:if test="${flash != null}">
+				<div class="alert alert-danger">
+					<p>
+						<c:out value="${flash}" />
+					</p>
+				</div>
+			</c:if>
+
+			<form action="login" method="post">
+				<h3 align="center">¡Bienvenido!</h3>
+				<div class="mb-3">
+					<label for="username" class="form-label">Usuario</label> <input
+						class="form-control" name="username">
+				</div>
+
+				<div class="mb-3">
+					<label for="password" class="form-label">Contraseña</label> <input
+						type="password" class="form-control" name="password">
+				</div>
+
+				<div class="d-grid gap-2">
+					<button type="submit" class="btn btn-lg btn-primary">Ingresar</button>
+				</div>
+			</form>
+      </div>
+>>>>>>> cd44f0e39b4fa05242ce3c35f2766d7818e6e8c7
    </td>
    <td>
    

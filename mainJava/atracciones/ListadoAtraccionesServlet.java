@@ -21,26 +21,25 @@ public class ListadoAtraccionesServlet extends HttpServlet implements Servlet {
 
 	private static final long serialVersionUID = 3663300047720714914L;
 	private AtraccionService attractionService;
-	
+
 	@Override
 	public void init() throws ServletException {
 		super.init();
 		this.attractionService = new AtraccionService();
 	}
-	
+
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
-			throws ServletException, IOException {
-		
-		
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 		List<Atraccion> attractions = attractionService.list();
 		req.setAttribute("attractions", attractions);
-		
+
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/atracciones/index.jsp");
 		dispatcher.forward(req, resp);
-		
-		
+
 	}
+	
+	//http://localhost:8080/TierraMedia/atracciones/index
 	
 }
 
