@@ -50,33 +50,7 @@
 <table align="center">
 <tr>
 <td width="500">
- <div class="col-lg-5 mx-auto p-3 py-md-5">
-      
-      		<c:if test="${flash != null}">
-				<div class="alert alert-danger">
-					<p>
-						<c:out value="${flash}" />
-					</p>
-				</div>
-			</c:if>
-
-			<form action="loging" method="post">
-				<h3 align="center">¡Bienvenido!</h3>
-				<div class="mb-3">
-					<label for="username" class="form-label">Usuario</label> <input
-						class="form-control" name="username">
-				</div>
-
-				<div class="mb-3">
-					<label for="password" class="form-label">Contraseña</label> <input
-						type="password" class="form-control" name="password">
-				</div>
-
-				<div class="d-grid gap-2">
-					<button type="submit" class="btn btn-lg btn-primary">Ingresar</button>
-				</div>
-			</form>
-      </div>
+ 
    </td>
    <td>
    
