@@ -26,13 +26,13 @@ public class UserService {
 	}
 	
 	public Usuario create(String nombre, String username, String password, Double coins, Double time, Integer attractionTypeId) {
-		User user = new User(-1, username, password, coins, time, false);
+		Usuario user = new Usuario(-1, username, password, coins, time, false);
 		user.setPassword(password);
 		AttractionType attractionType = DAOFactory.getAttractionTypeDAO().find(attractionTypeId);
 		user.setAttractionPreference(attractionType);
 
 		if (user.isValid()) {
-			DAOFactory.getUserDAO().insert(user);
+			DAOFactory.getUsuariosDAO().insert(user);
 			// XXX: si no devuelve "1", es que hubo más errores
 		}
 
