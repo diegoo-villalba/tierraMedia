@@ -8,7 +8,7 @@
 </head>
 <body background= "img/tm3.jpg">
 
-	<jsp:include page="navi.jsp"></jsp:include>
+	<jsp:include page="/barra/navi.jsp"></jsp:include>
 
 	<main class="container">
 

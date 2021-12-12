@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
 	<div class="container">
-		<a class="navbar-brand" href="/TierraMedia/index.jsp"> Turismo en la Tierra Media</a>
+		<a class="navbar-brand" href="/turismo/index.jsp">Turismo ven la Tierra Media</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 			data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
 			aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +11,11 @@
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav me-auto mb-2 mb-md-0">
 				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="/TierraMedia/atracciones/index.do">Atracciones</a></li>
+					aria-current="page" href="/turismo/attractions/index.do">Atracciones</a></li>
+					<c:if test="${user.isAdmin()}">
+						<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="/turismo/users/index.do">Usuarios</a></li>
+					</c:if>
 			</ul>
 			<ul class="navbar-nav">
 				<li class="nav-item dropdown">
@@ -19,14 +23,34 @@
 						<c:out value="${user.username}"></c:out>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-end"
-						aria-labelledby="navbarDropdown">
+						aria-labelledby="navbarDropdown">				
+						
 						<li><a class="dropdown-item disabled" style="color: black;">
-							<i title="monedas" style="color: gold;" class="bi bi-coin"></i> <c:out value="${user.coins}"></c:out>
+							<i title="monedas" style="color: gold;" class="bi bi-coin"></i> <c:out value="${user.username}"></c:out>
 						</a></li>
 						<li><a class="dropdown-item disabled" style="color: black;">
-							<i title="tiempo" style="color: blue;" class="bi bi-clock-fill"></i> <c:out value="${user.time}h"></c:out>
+							<i title="tiempo" style="color: blue;" class="bi bi-clock-fill"></i> <c:out value="${user.username}"></c:out>
 						</a></li>
+						
 						<li><hr class="dropdown-divider"></li>
+						<li>
+						<c:if test="${user.isAdmin()}">
+			
+				<a href="" class="dropdown-item"
+					role="button"> <i class="bi bi-plus-circle-fill"></i> Nueva Atraccion
+				</a>
+			
+		</c:if>
+		</li>
+		<li>
+						<c:if test="${user.isAdmin()}">
+			
+				<a href="" class="dropdown-item"
+					role="button"> <i class="bi bi-plus-circle-fill"></i> Nuevo Usuario
+				</a>
+			
+		</c:if>
+		</li>
 						<li><a href="/turismo/logout" class="dropdown-item">Salir</a></li>
 					</ul>
 				</li>
@@ -34,3 +58,11 @@
 		</div>
 	</div>
 </nav>
+
+<c:if test="${success != null}">
+	<div class="alert alert-success">
+		<p>
+			<c:out value="${success}" />
+		</p>
+	</div>
+</c:if>
