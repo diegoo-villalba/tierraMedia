@@ -175,9 +175,6 @@
 	</td>
 	</tr>
 </table>      
-     <p>
-Hoy es <%= new java.util.Date()%>
-</p>
 
 </body>
 </html>
