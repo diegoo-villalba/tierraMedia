@@ -16,7 +16,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import services.AtraccionService;
 import tierraMadre.Atraccion;
 
-@WebServlet("/atracciones/index")
+@WebServlet("/atracciones/index.do")
 public class ListadoAtraccionesServlet extends HttpServlet implements Servlet {
 
 	private static final long serialVersionUID = 3663300047720714914L;

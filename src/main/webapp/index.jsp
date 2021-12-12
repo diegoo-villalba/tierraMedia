@@ -39,7 +39,7 @@
 						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">					
 						
 						<li><hr class="dropdown-divider"></li>
-						<li><a href="/turismo/logout" class="dropdown-item">Atracciones</a></li>
+						<li><a href="/TierraMedia/atracciones/index.do" class="dropdown-item">Atracciones</a></li>
 						</ul>
 				</li>
 			</ul>
@@ -60,7 +60,7 @@
 				</div>
 			</c:if>
 
-			<form action="loging" method="post">
+			<form action="login" method="post">
 				<h3 align="center">¡Bienvenido!</h3>
 				<div class="mb-3">
 					<label for="username" class="form-label">Usuario</label> <input
