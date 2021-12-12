@@ -3,6 +3,7 @@ package tierraMadre;
 import java.util.*;
 
 public class Atraccion {
+	private Integer id;
 	private String nombre;
 	private Integer costo;
 	private Double tiempoRecorrido;
@@ -17,6 +18,11 @@ public class Atraccion {
 		this.cupo = cupo;
 		this.tipo = tipo;
 	}
+	
+	public Atraccion(Integer id, String nombre, Integer costo, Double tiempoRecorrido,  Integer cupo, TipoDeAtraccion tipo) {
+		this(nombre, costo, tiempoRecorrido, cupo, tipo);
+		this.id = id;
+	}
 
 	public String getNombre() {
 		return this.nombre;
@@ -25,6 +31,10 @@ public class Atraccion {
 	public int getCosto() {
 		return costo;
 
+	}
+	
+	public Integer getId() {
+		return id;
 	}
 
 	public boolean esValida() {

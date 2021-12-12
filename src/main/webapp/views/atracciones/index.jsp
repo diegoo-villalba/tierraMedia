@@ -18,55 +18,36 @@
 
 <body>
 
-	<h1>Estas son las atracciones de la Tierra Media</h1>
-	
-		<div>
-	<table>
-		<c:forEach items="${attractions}" var="attraction" >
-			<tr>
-				<td><c:out value="${attraction.nombre}"></c:out></td>
-				
-			</tr>
-		</c:forEach>
-	</table>
-</div>
-	
-<!--  
-	<table class="table">
+	<div class="bg-light p-4 mb-3 rounded">
+		<h1>Estas son las atracciones de la Tierra Media</h1>
+	</div>
+
+	<table class="table table-stripped table-hover">
 		<thead>
 			<tr>
-				<th scope="col">Nombre</th>
-				<th scope="col">Costo</th>
-				<th scope="col">Duracion (horas)</th>
-				<th scope="col">Cupo</th>
-				<th scope="col">Acciones</th>
+				<th>Atracci&oacute;n</th>
+				<th>Costo</th>
+				<th>Duraci&oacute;n</th>
+				<th>Cupo</th>
+				<th>Acciones</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<th scope="row">Moria</th>
-				<td>10</td>
-				<td>2</td>
-				<td>9</td>
-				<td><a class="btn btn-success rounded" role="button">Comprar</a></td>
-			</tr>
-			<tr>
-				<th scope="row">Minas Tirith</th>
-				<td>5</td>
-				<td>2.5</td>
-				<td>8</td>
-				<td><a class="btn btn-success rounded" role="button">Comprar</a></td>
-			</tr>
-			<tr>
-				<th scope="row">La Comarca</th>
-				<td>3</td>
-				<td>6.5</td>
-				<td>9</td>
-				<td><a class="btn btn-success rounded" role="button">Comprar</a></td>
-			</tr>
+
+			<c:forEach items="${attractions}" var="attraction">
+				<tr>
+					<td><c:out value="${attraction.nombre}"></c:out></td>
+					<td><c:out value="${attraction.costo}"></c:out></td>
+					<td><c:out value="${attraction.tiempoRecorrido}"></c:out></td>
+					<td><c:out value="${attraction.cupo}"></c:out></td>
+					<td><a
+						href="/turismo/atracciones/comprar.do?id=${attraction.id}"
+						class="btn btn-success rounded" role="button">Comprar</a></td>
+
+				</tr>
+			</c:forEach>
 		</tbody>
 	</table>
--->
-	
+
 </body>
 </html>
