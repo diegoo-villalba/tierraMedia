@@ -24,6 +24,17 @@ public class Usuario {
 		this.password=password;
 		this.setAdmin(admin);
 	}
+	//Integer id, String username, String password, Integer coins, Double time, Boolean admin
+	
+	public Usuario(int id, String nombre, String username, String password, double dinero, double tiempo, Boolean admin ) {
+		this.setId(id);
+		this.nombre = nombre;
+		this.presupuesto = dinero;
+		this.tiempoDisponible = tiempo;
+		this.username = username;
+		this.password=password;
+		this.setAdmin(admin);
+	}
 
 	public String getNombre() {
 		return nombre;

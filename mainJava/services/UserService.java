@@ -2,20 +2,34 @@ package services;
 
 import java.util.List;
 
-import model.Attraction;
-import model.User;
-import persistence.AttractionDAO;
 import persistence.commons.DAOFactory;
+import tierraMadre.Usuario;
 
 public class UserService {
 
-	public List<User> list() {
-		return DAOFactory.getUserDAO().findAll();
+	public List<Usuario> list() {
+		return DAOFactory.getUsuariosDAO().findAll();
 	}
+	
+//int id, String nombre, String username, String password, double dinero, double tiempo, Boolean admi
+	
+	public Usuario create(String nombre, String username, String password, Double coins, Double time) {
+		Usuario user = new Usuario(-1, nombre, username, password, coins, time, false);
+		user.setPassword(password);
 
-	public User create(String username, String password, Integer coins, Double time) {
+		if (user.isValid()) {
+			DAOFactory.getUsuariosDAO().insert(user);
+			// XXX: si no devuelve "1", es que hubo más errores
+		}
+
+		return user;
+	}
+	
+	public Usuario create(String nombre, String username, String password, Double coins, Double time, Integer attractionTypeId) {
 		User user = new User(-1, username, password, coins, time, false);
 		user.setPassword(password);
+		AttractionType attractionType = DAOFactory.getAttractionTypeDAO().find(attractionTypeId);
+		user.setAttractionPreference(attractionType);
 
 		if (user.isValid()) {
 			DAOFactory.getUserDAO().insert(user);
