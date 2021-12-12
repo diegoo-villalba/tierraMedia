@@ -131,7 +131,10 @@ public abstract class Promocion {
 
 	@Override
 	public String toString() {
-		return "Promocion [atraccionesPromo=" + atraccionesPromo + ", nombre=" + nombre + "]";
+		return "Te ofrecemos la promocion de: " + 
+				nombre + 
+				" que contiene las siguientes atracciones"+ 
+				atraccionesPromo + " por un valor de " + montoPromo +".";
 	}
 
 	public static void main(String[] args) {

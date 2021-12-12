@@ -51,7 +51,7 @@ public class PromocionesDAO {
 		List<Promocion> promociones = new ArrayList<Promocion>();
 		Connection connection = ConnectionProvider.getConnection();
 
-		String query = "select * from Promociones2";
+		String query = "select * from Promociones";
 
 		PreparedStatement preparedStatement = connection.prepareStatement(query);
 
