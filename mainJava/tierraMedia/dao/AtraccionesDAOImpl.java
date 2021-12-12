@@ -5,12 +5,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
+import persistence.AtraccionesDAO;
+import persistence.commons.MissingDataException;
 import tierraMadre.Atraccion;
 import tierraMadre.TipoDeAtraccion;
 import tierraMedia.db.ConnectionProvider;
-public class AtraccionesDAO {
+
+public class AtraccionesDAOImpl implements AtraccionesDAO {
 	
 	public Atraccion findById(Integer id) {
 		try {
@@ -78,8 +82,11 @@ public class AtraccionesDAO {
 		Atraccion atraccion = new Atraccion(nombre, costo, tiempo, cupo, tipo);
 		return atraccion;
 	}
-
-	public static int update(Atraccion atraccion) throws SQLException {
+	
+	@Override
+	public int update(Atraccion atraccion) {
+	
+		try {
 		String sql = "UPDATE Atracciones SET Cupo = ? WHERE Nombre = ?";
 
 		Connection conn = ConnectionProvider.getConnection();
@@ -90,6 +97,78 @@ public class AtraccionesDAO {
 
 		int rows = statement.executeUpdate();
 		return rows;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
 	}
 	
+	public List<Atraccion> findAll() {
+		try {
+			String sql = "SELECT * FROM Atracciones";
+			Connection conn = ConnectionProvider.getConnection();
+
+			PreparedStatement statement = conn.prepareStatement(sql);
+			ResultSet resultados = statement.executeQuery();
+
+			List<Atraccion> attractions = new LinkedList<Atraccion>();
+			while (resultados.next()) {
+				attractions.add(toAtraccion(resultados));
+			}
+
+			return attractions;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
+	@Override
+	public Atraccion find(Integer id) {
+		try {
+			String sql = "SELECT * FROM Atracciones WHERE Id = ?";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setInt(1, id);
+			
+			ResultSet resultados = statement.executeQuery();
+
+			Atraccion attraction = null;
+			if (resultados.next()) {
+				attraction = toAtraccion(resultados);
+			}
+
+			return attraction;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
+	@Override
+	public int countAll() {
+		try {
+			String sql = "SELECT COUNT(1) AS TOTAL FROM Atracciones";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			ResultSet resultados = statement.executeQuery();
+
+			resultados.next();
+			int total = resultados.getInt("TOTAL");
+
+			return total;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
+	@Override
+	public int insert(Atraccion t) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int delete(Atraccion t) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

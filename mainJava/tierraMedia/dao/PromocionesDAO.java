@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import persistence.commons.MissingDataException;
 import tierraMadre.Atraccion;
 import tierraMadre.PromoFactory;
 import tierraMadre.Promocion;
@@ -44,7 +45,9 @@ public class PromocionesDAO {
 		return p;
 	}
 
-	public static List<Promocion> getPromociones(List<Atraccion> atracciones) throws SQLException {
+	public static List<Promocion> getPromociones(List<Atraccion> atracciones) {
+		
+		try {
 		List<Promocion> promociones = new ArrayList<Promocion>();
 		Connection connection = ConnectionProvider.getConnection();
 
@@ -60,6 +63,9 @@ public class PromocionesDAO {
 		}
 
 		return promociones;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
 	}
 	public static int updateAtraccionPromo(Promocion promo) throws SQLException {
 		List<Atraccion> atracciones = promo.getAtraccionesPromo();

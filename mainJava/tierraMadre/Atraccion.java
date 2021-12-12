@@ -4,13 +4,13 @@ import java.util.*;
 
 public class Atraccion {
 	private String nombre;
-	private int costo;
-	private double tiempoRecorrido;
-	private int cupo;
+	private Integer costo;
+	private Double tiempoRecorrido;
+	private Integer cupo;
 	private TipoDeAtraccion tipo;
 	private Map<String, String> errors;
 
-	public Atraccion(String nombre, int costo, double tiempoRecorrido, int cupo, TipoDeAtraccion tipo) {
+	public Atraccion(String nombre, Integer costo, Double tiempoRecorrido, Integer cupo, TipoDeAtraccion tipo) {
 		this.nombre = nombre;
 		this.costo = costo;
 		this.tiempoRecorrido = tiempoRecorrido;

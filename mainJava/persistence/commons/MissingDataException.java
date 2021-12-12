@@ -1,4 +1,4 @@
-package tierraMedia.dao;
+package persistence.commons;
 
 public class MissingDataException extends RuntimeException {
 

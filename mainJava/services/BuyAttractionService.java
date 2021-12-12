@@ -5,19 +5,19 @@ import java.util.Map;
 
 import tierraMadre.Atraccion;
 import tierraMadre.Usuario;
-import tierraMedia.dao.AtraccionesDAO;
-import tierraMedia.dao.UsuariosDAO;
+import tierraMedia.dao.AtraccionesDAOImpl;
+import tierraMedia.dao.UsuariosDAOImpl;
 
 public class BuyAttractionService {
 	
-	AtraccionesDAO atraccionesDAO = new AtraccionesDAO();
-	UsuariosDAO usuariosDAO = new UsuariosDAO();
+	AtraccionesDAOImpl atraccionesDAO = new AtraccionesDAOImpl();
+	UsuariosDAOImpl usuariosDAO = new UsuariosDAOImpl();
 
 	public Map<String, String> buy(String usuario, Integer attractionId) {
 		//Preparo un map de errores por si falla.
 		Map<String, String> errors = new HashMap<String, String>();
 
-		Usuario turista = usuariosDAO.findByUsername(usuario);
+		Usuario turista = usuariosDAO.findByNombre(usuario);
 		Atraccion atraccion = atraccionesDAO.findById(attractionId);
 		
 		//Si la atraccion ya no tiene cupo

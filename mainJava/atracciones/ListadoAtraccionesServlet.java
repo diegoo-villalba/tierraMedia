@@ -1,7 +1,10 @@
 package atracciones;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
+
+import com.oracle.wls.shaded.org.apache.xml.utils.SystemIDResolver;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.Servlet;
@@ -12,32 +15,50 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import services.AtraccionService;
 import tierraMadre.Atraccion;
-import tierraMedia.dao.AtraccionesDAO;
 
-@WebServlet("/src/main/webapp/views/atracciones/index.jsp")
+@WebServlet("/atracciones/index.do")
 public class ListadoAtraccionesServlet extends HttpServlet implements Servlet {
 
 	private static final long serialVersionUID = 3663300047720714914L;
-	private AtraccionService atraccionService;
+	private AtraccionService attractionService;
 	
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		this.atraccionService = new AtraccionService();
+		this.attractionService = new AtraccionService();
 	}
 	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+			throws ServletException, IOException {
 		
-		List<Atraccion> atracciones = atraccionService.list();
-		req.setAttribute("atracciones", atracciones);
 		
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/src/main/webapp/views/atracciones/index.jsp");
+		List<Atraccion> attractions = attractionService.list();
+		req.setAttribute("attractions", attractions);
+		
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/atracciones/index.jsp");
 		dispatcher.forward(req, resp);
 		
 		
 	}
 	
-
-
 }
+	
+	/*@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+			throws ServletException, IOException {
+		
+		AtraccionesDAO atraccionesDAO = new AtraccionesDAO();
+		
+		List<Atraccion> atracciones;
+		
+		atracciones = atraccionesDAO.findAll();
+		req.setAttribute("atracciones", atracciones);
+		
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index_atrac.jsp");
+		dispatcher.forward(req, resp);
+	}
+	*/
+
+	
+

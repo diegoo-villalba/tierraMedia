@@ -1,11 +1,11 @@
 package tierraMadre;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import tierraMedia.dao.AtraccionesDAO;
+import persistence.AtraccionesDAO;
+import tierraMedia.dao.AtraccionesDAOImpl;
 import tierraMedia.dao.PromocionesDAO;
 
 public abstract class Promocion {
@@ -14,6 +14,7 @@ public abstract class Promocion {
 	protected String nombre;
 	protected double montoPromo;
 	protected TipoPromo tipoPromo;
+	private AtraccionesDAOImpl atraccionesDAO;
 
 	public Promocion(String nombre, List<Atraccion> atraccionesPromo, double montoPromo, TipoPromo tipo) {
 		this.nombre = nombre;
@@ -133,8 +134,8 @@ public abstract class Promocion {
 		return "Promocion [atraccionesPromo=" + atraccionesPromo + ", nombre=" + nombre + "]";
 	}
 
-	public static void main(String[] args) throws SQLException {
-		List<Atraccion> atraccionesList = AtraccionesDAO.getAtracciones();
+	public static void main(String[] args) {
+		List<Atraccion> atraccionesList = AtraccionesDAOImpl.getAtracciones();
 
 		// cargo las promociones a una promocionesList
 		List<Promocion> promociones = PromocionesDAO.getPromociones(atraccionesList);

@@ -3,19 +3,25 @@ package tierraMadre;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
-import java.util.*;
+import java.util.List;
+import java.util.Scanner;
 
-import tierraMedia.dao.AtraccionesDAO;
+import persistence.AtraccionesDAO;
+import persistence.UsuariosDAO;
+import tierraMedia.dao.AtraccionesDAOImpl;
 import tierraMedia.dao.ItinerarioDAO;
 import tierraMedia.dao.PromocionesDAO;
-import tierraMedia.dao.UsuariosDAO;
+import tierraMedia.dao.UsuariosDAOImpl;
 
 public class Sistema {
 	public static void main(String[] args) throws IOException, SQLException {
 		
+		UsuariosDAOImpl usuariosDAO = new UsuariosDAOImpl();
+		AtraccionesDAOImpl atraccionesDAO = new AtraccionesDAOImpl();
+		
 		// agrega usuario y atracciones a lista usuarioList y atraccionesList
-		List<Usuario> turistaList = UsuariosDAO.getUsuarios(); 
-		List<Atraccion> atraccionesList = AtraccionesDAO.getAtracciones();
+		List<Usuario> turistaList = usuariosDAO.getUsuarios(); 
+		List<Atraccion> atraccionesList = atraccionesDAO.getAtracciones();
 		
 		// cargo las promociones a una promocionesList
 		List<Promocion> promociones = PromocionesDAO.getPromociones(atraccionesList);
@@ -111,7 +117,7 @@ public class Sistema {
 							
 							//le descuento a la atracci�n el cupo en la base de datos
 							
-							AtraccionesDAO.update(a);
+							atraccionesDAO.update(a);
 							// le sumo al contador de plata el monto de la promo
 							costoFinal += a.getCosto();
 						}
@@ -129,7 +135,7 @@ public class Sistema {
 			//Escribo itinerarios
 			//itinerario.escribirItinerario(costoFinal, turista.getNombre() + " itinerario" + ".txt");
 			//Cambiar en base de datos 
-			UsuariosDAO.update(turista);
+			usuariosDAO.update(turista);
 			// Guardar itinerarios en la base de datos
             ItinerarioDAO itinerarioDAO = new ItinerarioDAO();
             itinerarioDAO.insert(turista.getNombre() , itinerario.getAtracciones(),costoFinal, itinerario.getTiempoTotal());
