@@ -43,22 +43,7 @@ public class ListadoAtraccionesServlet extends HttpServlet implements Servlet {
 	}
 	
 }
-	
-	/*@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
-			throws ServletException, IOException {
-		
-		AtraccionesDAO atraccionesDAO = new AtraccionesDAO();
-		
-		List<Atraccion> atracciones;
-		
-		atracciones = atraccionesDAO.findAll();
-		req.setAttribute("atracciones", atracciones);
-		
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index_atrac.jsp");
-		dispatcher.forward(req, resp);
-	}
-	*/
+
 
 	
 
