@@ -56,7 +56,7 @@
 				</div>
 			</c:if>
 
-			<form action="loging" method="post">
+			<form action="login" method="post">
 				<h3 align="center">¡Bienvenido!</h3>
 				<div class="mb-3">
 					<label for="username" class="form-label">Usuario</label> <input
@@ -92,66 +92,66 @@
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 8"></button>
           
         </div>
-        <div class="carousel-inner" align="right">
+        <div class="carousel-inner" align="center">
         
-          <div class="carousel-item active" align="right">
+          <div class="carousel-item active">
           
-            <img src="img/abismoDeHelm.jpg" width="500" height= "500" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block" align="right" >
+            <img src="img/abismoDeHelm.jpg" width="500" height= "500" alt="Responsive image">
+            <div class="carousel-caption d-none d-md-block">
               <h5>El Abismo de Helm</h5>
               <p>Paisaje</p>
             </div>
           </div>
-          <div class="carousel-item" align="right">
-            <img src="img/bosqueNegro.jpg" width="500" height= "500" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block" align="right">
+          <div class="carousel-item">
+            <img src="img/bosqueNegro.jpg" width="500" height= "500" alt="Responsive image">
+            <div class="carousel-caption d-none d-md-block">
               <h5>El Bosque Negro</h5>
               <p>Aventura</p>
             </div>
           </div>
-          <div class="carousel-item" align="right">
-            <img src="img/comarca.jpg" width="500" height= "500" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block" align="right">
+          <div class="carousel-item">
+            <img src="img/comarca.jpg" width="500" height= "500" alt="Responsive image">
+            <div class="carousel-caption d-none d-md-block">
               <h5>La Comarca</h5>
               <p>Degustacion</p>
             </div>
           </div>
           
-          <div class="carousel-item" align="right">
-            <img src="img/erebor.jpg" width="500" height= "500" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block" align="right">
+          <div class="carousel-item">
+            <img src="img/erebor.jpg" width="500" height= "500" alt="Responsive image">
+            <div class="carousel-caption d-none d-md-block">
               <h5>Erebor</h5>
               <p>Paisaje</p>
             </div>
           </div>
           
-          <div class="carousel-item" align="right">
-            <img src="img/moria.jpg" width="500" height= "500" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block" align="right">
+          <div class="carousel-item" >
+            <img src="img/moria.jpg" width="500" height= "500" alt="Responsive image">
+            <div class="carousel-caption d-none d-md-block" >
               <h5>Moria</h5>
               <p>Aventura</p>
             </div>
           </div>
           
-          <div class="carousel-item" align="right">
-            <img src="img/mordor.jpg" width="500" height= "500" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block" align="right">
+          <div class="carousel-item" >
+            <img src="img/mordor.jpg" width="500" height= "500" alt="Responsive image">
+            <div class="carousel-caption d-none d-md-block">
               <h5>Mordor</h5>
               <p>Aventura</p>
             </div>
           </div>
           
-          <div class="carousel-item" align="right">
-            <img src="img/minasTirith.jpg" width="500" height= "500" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block" align="right">
+          <div class="carousel-item">
+            <img src="img/minasTirith.jpg" width="500" height= "500" alt="Responsive image">
+            <div class="carousel-caption d-none d-md-block">
               <h5>Minas Tirith</h5>
               <p>Paisaje</p>
             </div>
           </div>
           
-          <div class="carousel-item" align="right">
-            <img src="img/lothlorien.jpg" width="500" height= "500" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block" align="right">
+          <div class="carousel-item" >
+            <img src="img/lothlorien.jpg" width="500" height= "500" alt="Responsive image">
+            <div class="carousel-caption d-none d-md-block" >
               <h5>Lothlorien</h5>
               <p>Degustacion</p>
             </div>
