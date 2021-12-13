@@ -85,7 +85,7 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 	@Override
 	public Usuario findByNombre(String nombre) {
 		try {
-			String sql = "SELECT * FROM Usuarios WHERE Nombre = ?";
+			String sql = "SELECT * FROM Usuarios WHERE username = ?";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setString(1, nombre);
@@ -142,9 +142,23 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 	}
 
 	@Override
-	public int insert(Usuario t) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int insert(Usuario turista) {
+		try {
+			String sql = "INSERT INTO USERS (USERNAME, PASSWORD, COINS, TIME) VALUES (?, ?, ?, ?)";
+			Connection conn = ConnectionProvider.getConnection();
+
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, turista.getUsername());
+			statement.setString(2, turista.getPassword());
+			statement.setDouble(3, turista.getPresupuesto());
+			statement.setDouble(4, turista.getTiempoDisponible());
+			int rows = statement.executeUpdate();
+
+			return rows;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+		
 	}
 	
 	@Override

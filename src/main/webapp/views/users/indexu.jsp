@@ -49,14 +49,14 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${users}" var="tmp_user">
+				<c:forEach items="${users}" var="user">
 					<tr>
-						<td><strong><c:out value="${tmp_user.username}"></c:out></strong></td>
-						<td><c:out value="${tmp_user.coins}"></c:out></td>
-						<td><c:out value="${tmp_user.time}"></c:out></td>
+						<td><strong><c:out value="${user.username}"></c:out></strong></td>
+						<td><c:out value="${user.presupuesto}"></c:out></td>
+						<td><c:out value="${user.tiempoDisponible}"></c:out></td>
 						<td>
 							<c:choose>
-								<c:when test="${tmp_user.admin}">
+								<c:when test="${user.admin}">
 									Admin
 								</c:when>
 								<c:otherwise>
@@ -64,14 +64,6 @@
 								</c:otherwise>
 							</c:choose>						
 						</td>
-						<td><c:if test="${user.admin && (!tmp_user.admin || tmp_user.id == user.id)}">
-								<a href="/turismo/users/edit.do?id=${tmp_user.id}"
-									class="btn btn-light rounded-0" role="button"><i
-									class="bi bi-pencil-fill"></i></a>
-								<a href="/turismo/users/delete.do?id=${tmp_user.id}"
-									class="btn btn-danger rounded" role="button"><i
-									class="bi bi-x-circle-fill"></i></a>
-							</c:if></td>
 					</tr>
 				</c:forEach>
 			</tbody>

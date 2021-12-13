@@ -43,7 +43,7 @@
 					<td><c:out value="${attraction.tiempoRecorrido}"></c:out></td>
 					<td><c:out value="${attraction.cupo}"></c:out></td>
 					<td><a
-						href="/turismo/atracciones/comprar.do?id=${attraction.id}"
+						href="/TierraMedia/atracciones/comprar.do?id=${attraction.id}"
 						class="btn btn-primary rounded" role="button">Comprar</a></td>
 
 				</tr>

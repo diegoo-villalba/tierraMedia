@@ -138,7 +138,8 @@ public abstract class Promocion {
 	}
 
 	public static void main(String[] args) {
-		List<Atraccion> atraccionesList = AtraccionesDAOImpl.getAtracciones();
+		AtraccionesDAOImpl atraccionesDAO = new AtraccionesDAOImpl();
+		List<Atraccion> atraccionesList = atraccionesDAO.getAtracciones();
 
 		// cargo las promociones a una promocionesList
 		List<Promocion> promociones = PromocionesDAO.getPromociones(atraccionesList);

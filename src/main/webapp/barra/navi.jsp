@@ -14,7 +14,7 @@
 					aria-current="page" href="/TierraMedia/atracciones/index.do">Atracciones</a></li>
 					<c:if test="${user.isAdmin()}">
 						<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/turismo/users/index.do">Usuarios</a></li>
+						aria-current="page" href="/TierraMedia/users/indexu.do">Usuarios</a></li>
 					</c:if>
 			</ul>
 			<ul class="navbar-nav">
@@ -26,10 +26,10 @@
 						aria-labelledby="navbarDropdown">				
 						
 						<li><a class="dropdown-item disabled" style="color: black;">
-							<i title="monedas" style="color: gold;" class="bi bi-coin"></i> <c:out value="${user.username}"></c:out>
+							<i title="monedas" style="color: gold;" class="bi bi-coin"></i> <c:out value="${user.presupuesto}"></c:out>
 						</a></li>
 						<li><a class="dropdown-item disabled" style="color: black;">
-							<i title="tiempo" style="color: blue;" class="bi bi-clock-fill"></i> <c:out value="${user.username}"></c:out>
+							<i title="tiempo" style="color: blue;" class="bi bi-clock-fill"></i> <c:out value="${user.tiempoDisponible}"></c:out>
 						</a></li>
 						
 						<li><hr class="dropdown-divider"></li>

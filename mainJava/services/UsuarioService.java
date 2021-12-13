@@ -5,7 +5,7 @@ import java.util.List;
 import persistence.commons.DAOFactory;
 import tierraMadre.Usuario;
 
-public class UserService {
+public class UsuarioService {
 
 	public List<Usuario> list() {
 		return DAOFactory.getUsuariosDAO().findAll();
@@ -13,7 +13,7 @@ public class UserService {
 	
 //int id, String nombre, String username, String password, double dinero, double tiempo, Boolean admi
 	
-	public Usuario create(String nombre, String username, String password, Double coins, Double time) {
+	public Usuario crear(String nombre, String username, String password, Double coins, Double time) {
 		Usuario user = new Usuario(-1, nombre, username, password, coins, time, false);
 		user.setPassword(password);
 

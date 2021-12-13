@@ -12,7 +12,8 @@ import tierraMedia.dao.PromocionesDAO;
 public class PromotionService {
 	
 	public List<Promocion> list() throws SQLException {
-		return PromocionesDAO.getPromociones(AtraccionesDAOImpl.getAtracciones());
+		AtraccionesDAOImpl atraccionesDAO = new AtraccionesDAOImpl();
+		return PromocionesDAO.getPromociones(atraccionesDAO.getAtracciones());
 	}
 
 }

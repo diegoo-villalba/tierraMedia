@@ -1,4 +1,4 @@
-package atracciones;
+package controller.atracciones;
 
 import java.io.IOException;
 import java.util.Map;
