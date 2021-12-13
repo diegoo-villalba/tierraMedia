@@ -68,6 +68,10 @@ public class Atraccion {
 	public TipoDeAtraccion getTipo() {
 		return tipo;
 	}
+	
+	public void hostear(int i) {
+		this.cupo -= i;
+	}
 
 	public void elegirAtraccion() {
 		this.cupo -= 1;

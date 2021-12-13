@@ -27,11 +27,11 @@ public class comprarAtraccionServlet extends HttpServlet implements Servlet {
 		 *y tambien levanta el usuario que inicio sesion (el que esta logueado)
 		 * */
 		Integer atracctionId = Integer.parseInt(req.getParameter("id"));
-		Usuario turista = (Usuario) req.getSession().getAttribute("user");
+		Usuario user = (Usuario) req.getSession().getAttribute("user");
 		
 		/*Con esa informacion, ahora delegamos al SERVICIO de comprar atraccion pasandole
 		 * el usuario que quiere comprar y el id de la atraccion*/
-		Map<String, String> errors = comprarAtraccionService.comprar(turista.getNombre(), atracctionId);
+		Map<String, String> errors = comprarAtraccionService.comprar(user.getId(), atracctionId);
 		
 		if (errors.isEmpty()) {
 			//TODO: Poner mensaje de "exito" en vez de "Flash"

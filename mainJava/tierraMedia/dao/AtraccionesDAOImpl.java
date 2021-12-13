@@ -88,15 +88,19 @@ public class AtraccionesDAOImpl implements AtraccionesDAO {
 	public int update(Atraccion atraccion) {
 
 		try {
-			String sql = "UPDATE Atracciones SET Cupo = ? WHERE Nombre = ?";
+			String sql = "UPDATE Atracciones SET Nombre = ?, Costo = ?, Tiempo = ?, Cupo = ? WHERE Id = ?";
 
 			Connection conn = ConnectionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setInt(1, atraccion.getCupo());
-			statement.setString(2, atraccion.getNombre());
-
+			int i = 1;
+			statement.setString(i++, atraccion.getNombre());
+			statement.setInt(i++, atraccion.getCosto());
+			statement.setDouble(i++, atraccion.getTiempoRecorrido());
+			statement.setInt(i++, atraccion.getCupo());
+			statement.setInt(i++, atraccion.getId());
 			int rows = statement.executeUpdate();
+
 			return rows;
 		} catch (Exception e) {
 			throw new MissingDataException(e);

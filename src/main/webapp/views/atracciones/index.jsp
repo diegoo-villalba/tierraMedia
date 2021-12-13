@@ -20,6 +20,21 @@
 <body background="/TierraMedia/img/tm3.jpg">
 	<jsp:include page="/barra/navi.jsp"></jsp:include>
 
+	<c:if test="${flash != null}">
+		<div class="alert alert-danger">
+			<p>
+				<c:out value="${flash}" />
+				<c:if test="${errors != null}">
+					<ul>
+						<c:forEach items="${errors}" var="entry">
+							<li><c:out value="${entry.getValue()}"></c:out></li>
+						</c:forEach>
+					</ul>
+				</c:if>
+			</p>
+		</div>
+	</c:if>
+
 	<div class="bg-light p-4 mb-3 rounded">
 		<h1>Estas son las atracciones de la Tierra Media</h1>
 	</div>
@@ -39,25 +54,25 @@
 			<c:forEach items="${attractions}" var="attraction">
 				<tr>
 					<td><h4>
+							<!-- TODO: Podriamos agregar un href=" " para que pueda entrar a la atraccion y la muestre mejor -->
 							<c:out value="${attraction.nombre}">
-						</h4>
-						</c:out></td>
+						</h4> </c:out></td>
 					<td><c:out value="${attraction.costo}"></c:out></td>
 					<td><c:out value="${attraction.tiempoRecorrido}"></c:out></td>
 					<td><c:out value="${attraction.cupo}"></c:out></td>
-					
+
 					<td><c:choose>
-						<c:when
-							test="${user.puedeComprar(attraction) && user.puedeSubir(attraction) && attraction.tieneCupo(1)}">
-							<a
-						href="/TierraMedia/atracciones/comprar.do?id=${attraction.id}"
-						class="btn btn-primary rounded" role="button">Comprar</a>
-						</c:when>
-						<c:otherwise>
-							<a href="#" class="btn btn-secondary rounded disabled"
-								role="button">No se puede comprar</a>
-						</c:otherwise>
-					</c:choose></td>
+							<c:when
+								test="${user.puedeComprar(attraction) && user.puedeSubir(attraction) && attraction.tieneCupo(1)}">
+								<a
+									href="/TierraMedia/atracciones/comprar.do?id=${attraction.id}"
+									class="btn btn-primary rounded" role="button">Comprar</a>
+							</c:when>
+							<c:otherwise>
+								<a href="#" class="btn btn-secondary rounded disabled"
+									role="button">No se puede comprar</a>
+							</c:otherwise>
+						</c:choose></td>
 
 				</tr>
 			</c:forEach>

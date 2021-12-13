@@ -47,23 +47,23 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 	@Override
 	public int update(Usuario turista) {
 		
-		try {
-		String sql = "UPDATE Usuarios SET Dinero = ?, Tiempo = ? WHERE Nombre = ? ";
-		Connection conn = ConnectionProvider.getConnection();
+		
+			try {
+				String sql = "UPDATE Usuarios SET Dinero = ?, Tiempo = ? WHERE Id = ?";
+				Connection conn = ConnectionProvider.getConnection();
 
-		PreparedStatement statement = conn.prepareStatement(sql);
+				PreparedStatement statement = conn.prepareStatement(sql);
+				statement.setDouble(1, turista.getPresupuesto());
+				statement.setDouble(2, turista.getTiempoDisponible());
+				statement.setDouble(3, turista.getId());
+				int rows = statement.executeUpdate();
 
-		statement.setDouble(1, turista.getPresupuesto());
-		statement.setDouble(2, turista.getTiempoDisponible());
-		statement.setString(3, turista.getNombre());
-
-		int rows = statement.executeUpdate();
-
-		return rows;
-		} catch (Exception e) {
-			throw new MissingDataException(e);
+				return rows;
+			} catch (Exception e) {
+				throw new MissingDataException(e);
+			}
 		}
-	}
+
 	
 	
 	@Override
@@ -163,9 +163,23 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 	
 	@Override
 	public Usuario find(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			String sql = "SELECT * FROM Usuarios WHERE Id = ?";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setInt(1, id);
+			ResultSet resultados = statement.executeQuery();
+
+			Usuario turista = NullUser.build();
+
+			if (resultados.next()) {
+				turista = toUsuario(resultados);
+			}
+
+			return turista;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
 	}
-
-
+	
 }
