@@ -49,10 +49,11 @@
 
 <table align="center">
 <tr>
-
-   <td>
-   
+<td>
+   <jsp:include page="Promociones.jsp"></jsp:include>
    </td>
+</tr>
+<tr>
    <td width="700">
       
 

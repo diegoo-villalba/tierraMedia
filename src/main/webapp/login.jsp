@@ -34,7 +34,7 @@
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
 						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">								
 						<li><hr class="dropdown-divider"></li>
-						<li><a href="/turismo/logout" class="dropdown-item">Atracciones</a></li>
+						<li><a href="/TierraMedia/atracciones/index.do" class="dropdown-item">Atracciones</a></li>
 						</ul>
 				</li>
 			</ul>
@@ -171,7 +171,7 @@
 	</td>
 	</tr>
 </table> 
- <jsp:include page="Promociones.jsp"></jsp:include>    
+   
 
 </body>
 </html>
