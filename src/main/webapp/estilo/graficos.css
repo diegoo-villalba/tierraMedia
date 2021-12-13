@@ -49,3 +49,6 @@ p {
   font-family: Arial;
   text-transform: uppercase;
 }
+a {
+	text-transform: uppercase;
+}

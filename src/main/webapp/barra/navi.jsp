@@ -20,16 +20,17 @@
 			<ul class="navbar-nav">
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<i class="bi bi-person-check-fill"></i>
 						<c:out value="${user.username}"></c:out>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-end"
 						aria-labelledby="navbarDropdown">				
 						
 						<li><a class="dropdown-item disabled" style="color: black;">
-							<i title="monedas" style="color: gold;" class="bi bi-coin"></i> <c:out value="${user.presupuesto}"></c:out>
+							<i title="monedas" style="color: green;" class="bi bi-cash-coin"></i> <c:out value="${user.presupuesto}"></c:out>
 						</a></li>
 						<li><a class="dropdown-item disabled" style="color: black;">
-							<i title="tiempo" style="color: blue;" class="bi bi-clock-fill"></i> <c:out value="${user.tiempoDisponible}"></c:out>
+							<i title="tiempo" style="color: gold;" class="bi bi-hourglass-split"></i> <c:out value="${user.tiempoDisponible}"></c:out>
 						</a></li>
 						
 						<li><hr class="dropdown-divider"></li>
@@ -37,7 +38,7 @@
 						<c:if test="${user.isAdmin()}">
 			
 				<a href="" class="dropdown-item"
-					role="button"> <i class="bi bi-plus-circle-fill"></i> Nueva Atraccion
+					role="button"> <i style="color: blue;" class="bi bi-file-arrow-up"></i> Nueva Atraccion
 				</a>
 			
 		</c:if>
@@ -46,12 +47,12 @@
 						<c:if test="${user.isAdmin()}">
 			
 				<a href="" class="dropdown-item"
-					role="button"> <i class="bi bi-plus-circle-fill"></i> Nuevo Usuario
+					role="button"> <i style="color: blue;"class="bi bi-person-plus-fill"></i> Nuevo Usuario
 				</a>
 			
 		</c:if>
 		</li>
-						<li><a href="/TierraMedia/logout" class="dropdown-item">Salir</a></li>
+						<li><a href="/TierraMedia/logout" class="dropdown-item"><i style="color: red;" class="bi bi-power"></i>.  Salir</a></li>
 					</ul>
 				</li>
 			</ul>

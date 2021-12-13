@@ -19,10 +19,10 @@
 
 <body background="/TierraMedia/img/tm3.jpg">
 	<jsp:include page="/barra/navi.jsp"></jsp:include>
-
-	<div class="bg-light p-4 mb-3 rounded">
-		<h1>Estas son las atracciones de la Tierra Media</h1>
-	</div>
+	<div class="p-3 mb-2 bg-dark text-white">Estas son las atracciones de la Tierra Media</div>
+	<p class="text-white bg-dark"></p>
+		
+	
 
 	<table class="table table-stripped table-hover">
 		<thead>
@@ -38,15 +38,16 @@
 
 			<c:forEach items="${attractions}" var="attraction">
 				<tr>
-					<td><h4>
-							<c:out value="${attraction.nombre}">
-						</h4>
-						</c:out></td>
+				
+					<td>
+					<a class="text-white bg-dark"><i class="bi bi-signpost-fill"></i><c:out value="${attraction.nombre}"></c:out></a>
+					</td>
 					<td><c:out value="${attraction.costo}"></c:out></td>
 					<td><c:out value="${attraction.tiempoRecorrido}"></c:out></td>
 					<td><c:out value="${attraction.cupo}"></c:out></td>
 					
-					<td><c:choose>
+					<td>
+					<c:choose>
 						<c:when
 							test="${user.puedeComprar(attraction) && user.puedeSubir(attraction) && attraction.tieneCupo(1)}">
 							<a
