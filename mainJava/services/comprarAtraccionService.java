@@ -39,7 +39,7 @@ public class comprarAtraccionService {
 		*/
 		if (errors.isEmpty()) {
 			turista.aceptarPromo(atraccion.getCosto(), atraccion.getTiempoRecorrido());
-			atraccion.hostear(1);
+			atraccion.elegirAtraccion();
 
 			atraccionesDAO.update(atraccion);
 			usuariosDAO.update(turista);

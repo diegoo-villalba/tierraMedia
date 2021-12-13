@@ -69,10 +69,6 @@ public class Atraccion {
 		return tipo;
 	}
 	
-	public void hostear(int i) {
-		this.cupo -= i;
-	}
-
 	public void elegirAtraccion() {
 		this.cupo -= 1;
 	}
