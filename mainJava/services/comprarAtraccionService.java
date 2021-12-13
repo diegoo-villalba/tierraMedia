@@ -40,6 +40,8 @@ public class comprarAtraccionService {
 		if (errors.isEmpty()) {
 			turista.aceptarPromo(atraccion.getCosto(), atraccion.getTiempoRecorrido());
 			atraccion.elegirAtraccion();
+			
+			//TODO: AGREGAR METODO PARA NO OFRECER DE NUEVO UNA ATRACCION YA COMPRADA
 
 			atraccionesDAO.update(atraccion);
 			usuariosDAO.update(turista);
