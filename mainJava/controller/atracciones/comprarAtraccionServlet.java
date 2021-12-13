@@ -17,10 +17,12 @@ import tierraMadre.Usuario;
 public class comprarAtraccionServlet extends HttpServlet implements Servlet {
 
 	private static final long serialVersionUID = 3966188068793716237L;
-	private comprarAtraccionService comprarAtraccionService;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		comprarAtraccionService comprarAtraccionService = new comprarAtraccionService();
+		
 		/*Primero levanta el id de la atraccion que quiero comprar
 		 *y tambien levanta el usuario que inicio sesion (el que esta logueado)
 		 * */
