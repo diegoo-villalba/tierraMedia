@@ -57,7 +57,7 @@
 	<main class="container">
 		<div class="bg-light p-4 rounded" align="center">
 			<h1>
-				¡Bienvenido,
+				¡Bienvenido, como andas?
 				<c:out value="${user.username}" />
 				!
 			</h1>

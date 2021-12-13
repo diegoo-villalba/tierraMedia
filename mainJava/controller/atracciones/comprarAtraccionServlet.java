@@ -24,7 +24,7 @@ public class comprarAtraccionServlet extends HttpServlet implements Servlet {
 		/*Primero levanta el id de la atraccion que quiero comprar
 		 *y tambien levanta el usuario que inicio sesion (el que esta logueado)
 		 * */
-		Integer atracctionId = Integer.parseInt(req.getParameter("Id"));
+		Integer atracctionId = Integer.parseInt(req.getParameter("id"));
 		Usuario turista = (Usuario) req.getSession().getAttribute("user");
 		
 		/*Con esa informacion, ahora delegamos al SERVICIO de comprar atraccion pasandole
