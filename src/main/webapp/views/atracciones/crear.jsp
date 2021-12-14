@@ -11,14 +11,14 @@
 
 	<main class="container">
 
-		<c:if test="${attraction != null && !attraction.isValid()}">
+		<c:if test="${attraction != null && !attraction.esValida()}">
 			<div class="alert alert-danger">
 				<p>Se encontraron errores al crear la atracción.</p>
 			</div>
 		</c:if>
 
-		<form action="/turismo/attractions/create.do" method="post">
-			<jsp:include page="formulario.jsp"></jsp:include>
+		<form action="/TierraMedia/atracciones/crear.do" method="post">
+			<jsp:include page="/views/atracciones/formulario.jsp"></jsp:include>
 		</form>
 	</main>
 </body>

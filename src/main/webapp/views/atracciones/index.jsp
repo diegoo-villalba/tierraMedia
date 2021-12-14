@@ -19,6 +19,14 @@
 
 <body background="/TierraMedia/img/tm3.jpg">
 	<jsp:include page="/barra/navi.jsp"></jsp:include>
+	
+	<c:if test="${user.isAdmin()}">
+			<div class="mb-3">
+				<a href="/TierraMedia/atracciones/crear.do" class="btn btn-primary"
+					role="button"> <i class="bi bi-plus-lg"></i> Nueva Atracción
+				</a>
+			</div>
+		</c:if>
 
 	<table class="table">
 		<thead class="thead-dark">

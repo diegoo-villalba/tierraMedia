@@ -11,6 +11,13 @@ public class Atraccion {
 	private TipoDeAtraccion tipo;
 	private Map<String, String> errors;
 	
+	public Atraccion( String nombre, Integer costo, Double tiempoRecorrido, Integer cupo) {
+		this.nombre = nombre;
+		this.costo = costo;
+		this.tiempoRecorrido = tiempoRecorrido;
+		this.cupo = cupo;
+		}
+	
 	public Atraccion(Integer id, String nombre, Integer costo, Double tiempoRecorrido, Integer cupo) {
 		this.id = id;
 		this.nombre = nombre;
@@ -48,6 +55,10 @@ public class Atraccion {
 	public boolean esValida() {
 		validacion();
 		return errors.isEmpty();
+	}
+	
+	public Map<String, String> getErrors() {
+		return errors;
 	}
 
 	public void validacion() {
