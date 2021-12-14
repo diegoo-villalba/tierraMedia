@@ -10,6 +10,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import persistence.commons.DAOFactory;
 import services.comprarAtraccionService;
 import tierraMadre.Usuario;
 
@@ -32,6 +33,9 @@ public class comprarAtraccionServlet extends HttpServlet implements Servlet {
 		/*Con esa informacion, ahora delegamos al SERVICIO de comprar atraccion pasandole
 		 * el usuario que quiere comprar y el id de la atraccion*/
 		Map<String, String> errors = comprarAtraccionService.comprar(user.getId(), atracctionId);
+		
+		Usuario user2 = DAOFactory.getUsuariosDAO().find(user.getId());
+		req.getSession().setAttribute("user", user2);
 		
 		if (errors.isEmpty()) {
 			//TODO: Poner mensaje de "exito" en vez de "Flash"
