@@ -6,13 +6,13 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
 
-import persistence.AtraccionesDAO;
-import persistence.UsuariosDAO;
 import tierraMedia.dao.AtraccionesDAOImpl;
 import tierraMedia.dao.ItinerarioDAO;
 import tierraMedia.dao.PromocionesDAO;
+import tierraMedia.dao.PromocionesDAOImpl;
 import tierraMedia.dao.UsuariosDAOImpl;
 
+@Deprecated
 public class Sistema {
 	public static void main(String[] args) throws IOException, SQLException {
 		
@@ -24,7 +24,7 @@ public class Sistema {
 		List<Atraccion> atraccionesList = atraccionesDAO.getAtracciones();
 		
 		// cargo las promociones a una promocionesList
-		List<Promocion> promociones = PromocionesDAO.getPromociones(atraccionesList);
+		List<Promocion> promociones = PromocionesDAOImpl.getPromociones(atraccionesList);
 		
 		/*
 		 * para cada turista, recorro la lista de promociones que estan disponibles para
@@ -78,7 +78,7 @@ public class Sistema {
 					} else
 						System.out.println(valorEntrada + " no es una opci�n valida ");
 				}
-				PromocionesDAO.updateAtraccionPromo(promocion);
+				PromocionesDAOImpl.updateAtraccionPromo(promocion);
 
 			}
 			

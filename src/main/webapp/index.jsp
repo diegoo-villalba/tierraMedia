@@ -18,48 +18,48 @@
 
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
 		<div class="container">
-			<a class="btn btn-outline-success" href="">Turismo en la Tierra Media</a>
-				<div class="btn btn-outline-success">
-	
-				¡Bienvenido,<c:out value="${user.username}"/>
-				!			
-		</div>
-<form class="form-inline my-2 my-lg-0">
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-				aria-controls="navbarCollapse" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+			<a class="btn btn-outline-success" href="">Turismo en la Tierra
+				Media</a>
+			<div class="btn btn-outline-success">
 
-			<div class="collapse navbar-collapse" id="navbarCollapse">
-				<ul class="navbar-nav me-auto mb-2 mb-md-0">
-					<li class="nav-item"><a class="btn btn-outline-success" href="#" id="navbarDropdown"
-						role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
-						<ul class="dropdown-menu dropdown-menu-end"
-							aria-labelledby="navbarDropdown">
-
-							<li><hr class="dropdown-divider"></li>
-							<li><a href="/TierraMedia/atracciones/index.do"
-								class="dropdown-item">Atracciones</a></li>
-							<li class="nav-item"><a href="/TierraMedia/users/indexu.do" 
-								class="dropdown-item">Usuarios</a></li>
-						</ul>
-						</li>
-				</ul>
+				¡Bienvenido,
+				<c:out value="${user.username}" />
+				!
 			</div>
+			<form class="form-inline my-2 my-lg-0">
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+					aria-controls="navbarCollapse" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav me-auto mb-2 mb-md-0">
+						<li class="nav-item"><a class="btn btn-outline-success"
+							href="#" id="navbarDropdown" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+							<ul class="dropdown-menu dropdown-menu-end"
+								aria-labelledby="navbarDropdown">
+
+								<li><hr class="dropdown-divider"></li>
+								<li><a href="/TierraMedia/atracciones/index.do"
+									class="dropdown-item">Atracciones</a></li>
+								<li class="nav-item"><a href="/TierraMedia/users/indexu.do"
+									class="dropdown-item">Usuarios</a></li>
+								<li class="nav-item"><a href="/TierraMedia/promociones/index.do"
+									class="dropdown-item">Promociones</a></li>
+							</ul></li>
+					</ul>
+				</div>
 			</form>
 		</div>
 	</nav>
 
-	<main class="container">
-		
-	</main>
+	<main class="container"></main>
 
 	<table align="center">
-		<tr>
-			<td><jsp:include page="Promociones.jsp"></jsp:include></td>
-		</tr>
+		
 		<tr>
 			<td width="700">
 

@@ -2,16 +2,24 @@ package tierraMadre;
 
 import java.util.List;
 
-public class PromoPorcentual extends Promocion {
+public class PromoPorcentual2 extends Promocion2 {
 	
-	public PromoPorcentual(Integer id, String nombre) {
+	public PromoPorcentual2(Integer id, String nombre) {
 		super(id, nombre);
 	}
 	
-    public PromoPorcentual(String nombre, List<Atraccion> atraccionesPromo, double montoPromo, TipoPromo tipo) {
+	
+    public PromoPorcentual2(int id, TipoPromo tipoPromo, String nombre, int idAtr1, int idAtr2) {
+		super(id, tipoPromo, nombre, idAtr1, idAtr2);
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public PromoPorcentual2(String nombre, List<Atraccion> atraccionesPromo, double montoPromo, TipoPromo tipo) {
 		super(nombre, atraccionesPromo, montoPromo, tipo);
 	}
 
+	/*
     public double calculaPorcentajeDescuento() {
 		//calculamos el porcentaje que le descontamos con la promo para mostrarlo en pantalla
 		int sumaCostos = 0;
@@ -27,5 +35,5 @@ public class PromoPorcentual extends Promocion {
     	System.out.println("Pack " + getNombre() + ": " + atraccionesPromo.get(0).getNombre() 
 				+ " y " + atraccionesPromo.get(1).getNombre() + " con un " + calculaPorcentajeDescuento()  + "% de descuento.");
 	}
-    
+    */
 }

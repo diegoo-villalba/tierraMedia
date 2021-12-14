@@ -25,7 +25,7 @@ public class UsuarioService {
 		return user;
 	}
 	
-	public Usuario create(String nombre, String username, String password, Double coins, Double time, Integer attractionTypeId) {
+	/*public Usuario create(String nombre, String username, String password, Double coins, Double time, Integer attractionTypeId) {
 		Usuario user = new Usuario(-1, username, password, coins, time, false);
 		user.setPassword(password);
 		AttractionType attractionType = DAOFactory.getAttractionTypeDAO().find(attractionTypeId);
@@ -37,5 +37,5 @@ public class UsuarioService {
 		}
 
 		return user;
-	}
+	}*/
 }

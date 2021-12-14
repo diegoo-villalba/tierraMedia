@@ -12,7 +12,9 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
+import persistence.AtraccionesDAO;
 import tierraMadre.Atraccion;
+import tierraMadre.Usuario;
 import tierraMedia.db.ConnectionProvider;
 
 public class tierraMediaDAOTest {
@@ -25,14 +27,14 @@ public class tierraMediaDAOTest {
 
 	@Test
 	public void testCargaUsuario() throws SQLException {
-		UsuariosDAO usuario = new UsuariosDAO();
+		UsuariosDAOImpl usuariosDAO = new UsuariosDAOImpl();
 
 		Connection connection = ConnectionProvider.getConnection();
 		String query = "select * from Usuarios";
 		PreparedStatement preparedStatement = connection.prepareStatement(query);
 		ResultSet resultados = preparedStatement.executeQuery();
 
-		UsuariosDAO.toUsuario(resultados);
+		Usuario usuario = usuariosDAO.toUsuario(resultados);
 
 		assertNotNull(usuario);
 
@@ -40,7 +42,8 @@ public class tierraMediaDAOTest {
 
 	@Test
 	public void TestgetAtracciones() throws SQLException {
-		List<Atraccion> atracciones = AtraccionesDAO.getAtracciones();
+		AtraccionesDAOImpl atraccionesDAO = new AtraccionesDAOImpl();
+		List<Atraccion> atracciones = atraccionesDAO.getAtracciones();
 
 		assertNotNull(atracciones);
 		assertEquals(8, atracciones.size());

@@ -4,17 +4,30 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import persistence.AtraccionesDAO;
 import tierraMedia.dao.AtraccionesDAOImpl;
-import tierraMedia.dao.PromocionesDAO;
+import tierraMedia.dao.PromocionesDAOImpl;
 
 public abstract class Promocion {
 
+	protected Integer id;
 	protected List<Atraccion> atraccionesPromo;
 	protected String nombre;
 	protected double montoPromo;
 	protected TipoPromo tipoPromo;
 	private AtraccionesDAOImpl atraccionesDAO;
+	
+	public Promocion(Integer id, String nombre) {
+		this.id = id;
+		this.nombre = nombre;
+	}
+	
+	public Promocion(Integer id, String nombre, List<Atraccion> atraccionesPromo, double montoPromo, TipoPromo tipo) {
+		this.id = id;
+		this.nombre = nombre;
+		this.atraccionesPromo = atraccionesPromo;
+		this.montoPromo = montoPromo;
+		this.tipoPromo = tipo;
+	}
 
 	public Promocion(String nombre, List<Atraccion> atraccionesPromo, double montoPromo, TipoPromo tipo) {
 		this.nombre = nombre;
@@ -142,7 +155,7 @@ public abstract class Promocion {
 		List<Atraccion> atraccionesList = atraccionesDAO.getAtracciones();
 
 		// cargo las promociones a una promocionesList
-		List<Promocion> promociones = PromocionesDAO.getPromociones(atraccionesList);
+		List<Promocion> promociones = PromocionesDAOImpl.getPromociones(atraccionesList);
 
 		for (Promocion promocion : promociones) {
 			System.out.println(promocion.getAtraccionesPromo());

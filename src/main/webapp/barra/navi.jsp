@@ -17,6 +17,8 @@
 					<c:if test="${user.isAdmin()}">
 						<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="/TierraMedia/users/indexu.do">Usuarios</a></li>
+						<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="/TierraMedia/promociones/index.do">Promociones</a></li>
 					</c:if>
 			</ul>
 			

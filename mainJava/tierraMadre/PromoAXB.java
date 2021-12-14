@@ -4,6 +4,10 @@ import java.util.List;
 
 public class PromoAXB extends Promocion {
 
+	public PromoAXB(Integer id, String nombre) {
+		super(id, nombre);
+	}
+	
 	public PromoAXB(String nombre,List<Atraccion> atraccionesPromo, double montoPromo, TipoPromo tipo) {
 		super(nombre, atraccionesPromo, montoPromo, tipo);
 	}
