@@ -18,7 +18,7 @@
 
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
 		<div class="container">
-			<a class="btn btn-outline-success" href="">Turismo en la Tierra
+			<a class="btn btn-outline-success" href="/TierraMedia/index.jsp">Turismo en la Tierra
 				Media</a>
 			<div class="btn btn-outline-success">
 
@@ -91,7 +91,7 @@
 						<div class="carousel-item active" align="right">
 
 							<img src="img/abismoDeHelm.jpg" width="500" height="500"
-								class="d-block w-100" alt="...">
+								class="d-block w-100" alt="..." >
 							<div class="carousel-caption d-none d-md-block" align="right">
 								<h5>El Abismo de Helm</h5>
 								<p>Paisaje</p>

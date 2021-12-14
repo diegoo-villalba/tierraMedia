@@ -55,7 +55,13 @@
 						</button></td>
 
 
-					<td><c:out value="${promo.getAtracciones()}"></c:out></td>
+
+					<td><button type="button" class="btn btn-secondary btn-sm">
+							<i class="bi bi-boxes"></i>
+							<c:out value="${promo.getAtracciones()}"></c:out>
+						</button></td>
+
+
 
 					<td><c:choose>
 							<c:when test="${promocion.puedoOfrecer(turista)}">
