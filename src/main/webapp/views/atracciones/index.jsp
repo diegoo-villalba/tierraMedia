@@ -40,17 +40,26 @@
 					<td><i class="bi bi-signpost-fill"></i> <a href="#"
 						class="btn btn-dark btn-lg" role="button"><c:out
 								value="${attraction.nombre}"></c:out></a></td>
-					<td><c:out value="${attraction.costo}"></c:out></td>
-					<td><c:out value="${attraction.tiempoRecorrido}"></c:out></td>
-					<td><c:out value="${attraction.cupo}"></c:out></td>
+								
+					<td><button type="button" class="btn btn-secondary btn-sm"><i class="bi bi-currency-dollar"></i>
+					<c:out value="${attraction.costo}"></c:out></button>
+					</td>
+					
+					<td><button type="button" class="btn btn-secondary btn-sm"><i class="bi bi-clock-history"></i>
+					<c:out value="${attraction.tiempoRecorrido}"></c:out></button>
+					</td>
+					
+					<td><button type="button" class="btn btn-secondary btn-sm"><i class="bi bi-sticky-fill"></i>
+					<c:out value="${attraction.cupo}"></c:out></button>
+					</td>
 
 					<td><c:if test="${user.admin}">
 							<a href="/turismo/attractions/edit.do?id=${attraction.id}"
-								class="btn btn-light rounded-0" role="button"><i
-								class="bi bi-pencil-fill"></i></a>
+								class="btn btn-dark" role="button"><i
+								class="bi bi-gear-fill"></i></a>
 							<a href="/TierraMedia/atracciones/borrar.do?id=${attraction.id}"
 								class="btn btn-danger rounded" role="button"><i
-								class="bi bi-x-circle-fill"></i></a>
+								class="bi bi-trash-fill"></i></a>
 						</c:if> <c:choose>
 							<c:when
 								test="${user.puedeComprar(attraction) && user.puedeSubir(attraction) && attraction.tieneCupo(1)}">
