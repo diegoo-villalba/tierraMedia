@@ -22,13 +22,13 @@
 
 	<table class="table">
 		<thead class="thead-dark">
-			<tr bgcolor= "#ccccff">
+			<tr bgcolor="#ccccff">
 				<th scope="col">Atracci&oacute;n</th>
 				<th scope="col">Costo</th>
 				<th scope="col">Duraci&oacute;n</th>
 				<th scope="col">Cupo</th>
 				<th scope="col">Acciones</th>
-				
+
 			</tr>
 		</thead>
 		<tbody>
@@ -36,34 +36,39 @@
 			<c:forEach items="${attractions}" var="attraction">
 				<tr>
 
-				
-					<td>
-					<i class="bi bi-signpost-fill"></i> <a href="#" class="btn btn-dark btn-lg"
-								role="button"><c:out value="${attraction.nombre}"></c:out></a>
-					</td>
+
+					<td><i class="bi bi-signpost-fill"></i> <a href="#"
+						class="btn btn-dark btn-lg" role="button"><c:out
+								value="${attraction.nombre}"></c:out></a></td>
 					<td><c:out value="${attraction.costo}"></c:out></td>
 					<td><c:out value="${attraction.tiempoRecorrido}"></c:out></td>
 					<td><c:out value="${attraction.cupo}"></c:out></td>
-					
-					<td>
-					<c:choose>
-						<c:when
-							test="${user.puedeComprar(attraction) && user.puedeSubir(attraction) && attraction.tieneCupo(1)}">
-							<a
-						href="/TierraMedia/atracciones/comprar.do?id=${attraction.id}"
-						class="btn btn-primary rounded" role="button">Comprar</a>
-						</c:when>
-						<c:otherwise>
-							<a href="#" class="btn btn-secondary rounded disabled"
-								role="button">No se puede comprar</a>
-						</c:otherwise>
-					</c:choose></td>
+
+					<td><c:if test="${user.admin}">
+							<a href="/turismo/attractions/edit.do?id=${attraction.id}"
+								class="btn btn-light rounded-0" role="button"><i
+								class="bi bi-pencil-fill"></i></a>
+							<a href="/turismo/attractions/delete.do?id=${attraction.id}"
+								class="btn btn-danger rounded" role="button"><i
+								class="bi bi-x-circle-fill"></i></a>
+						</c:if> <c:choose>
+							<c:when
+								test="${user.puedeComprar(attraction) && user.puedeSubir(attraction) && attraction.tieneCupo(1)}">
+								<a
+									href="/TierraMedia/atracciones/comprar.do?id=${attraction.id}"
+									class="btn btn-primary rounded" role="button">Comprar</a>
+							</c:when>
+							<c:otherwise>
+								<a href="#" class="btn btn-secondary rounded disabled"
+									role="button">No se puede comprar</a>
+							</c:otherwise>
+						</c:choose></td>
 
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-<c:if test="${flash != null}">
+	<c:if test="${flash != null}">
 		<div class="alert alert-danger">
 			<p>
 				<c:out value="${flash}" />
