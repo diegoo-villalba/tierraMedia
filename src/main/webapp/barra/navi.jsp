@@ -52,7 +52,7 @@
 			
 		</c:if>
 		</li>
-						<li><a href="/TierraMedia/logout" class="dropdown-item"><i style="color: red;" class="bi bi-power"></i>.  Salir</a></li>
+						<li><a href="/TierraMedia/logout" class="dropdown-item"><i style="color: red;" class="bi bi-power"></i>   Salir</a></li>
 					</ul>
 				</li>
 			</ul>

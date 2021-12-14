@@ -19,28 +19,27 @@
 
 <body background="/TierraMedia/img/tm3.jpg">
 	<jsp:include page="/barra/navi.jsp"></jsp:include>
-	<div class="p-3 mb-2 bg-dark text-white">Estas son las atracciones de la Tierra Media</div>
-	<p class="text-white bg-dark"></p>
-		
-	
 
-	<table class="table table-stripped table-hover">
-		<thead>
-			<tr>
-				<th>Atracci&oacute;n</th>
-				<th>Costo</th>
-				<th>Duraci&oacute;n</th>
-				<th>Cupo</th>
-				<th>Acciones</th>
+	<table class="table">
+		<thead class="thead-dark">
+			<tr bgcolor= "#ccccff">
+				<th scope="col">Atracci&oacute;n</th>
+				<th scope="col">Costo</th>
+				<th scope="col">Duraci&oacute;n</th>
+				<th scope="col">Cupo</th>
+				<th scope="col">Acciones</th>
+				
 			</tr>
 		</thead>
 		<tbody>
 
 			<c:forEach items="${attractions}" var="attraction">
 				<tr>
+
 				
 					<td>
-					<a class="text-white bg-dark"><i class="bi bi-signpost-fill"></i><c:out value="${attraction.nombre}"></c:out></a>
+					<i class="bi bi-signpost-fill"></i> <a href="#" class="btn btn-dark btn-lg"
+								role="button"><c:out value="${attraction.nombre}"></c:out></a>
 					</td>
 					<td><c:out value="${attraction.costo}"></c:out></td>
 					<td><c:out value="${attraction.tiempoRecorrido}"></c:out></td>
@@ -64,6 +63,19 @@
 			</c:forEach>
 		</tbody>
 	</table>
-
+<c:if test="${flash != null}">
+		<div class="alert alert-danger">
+			<p>
+				<c:out value="${flash}" />
+				<c:if test="${errors != null}">
+					<ul>
+						<c:forEach items="${errors}" var="entry">
+							<li><c:out value="${entry.getValue()}"></c:out></li>
+						</c:forEach>
+					</ul>
+				</c:if>
+			</p>
+		</div>
+	</c:if>
 </body>
 </html>

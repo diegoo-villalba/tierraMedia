@@ -68,7 +68,7 @@ public class Atraccion {
 	public TipoDeAtraccion getTipo() {
 		return tipo;
 	}
-
+	
 	public void elegirAtraccion() {
 		this.cupo -= 1;
 	}
