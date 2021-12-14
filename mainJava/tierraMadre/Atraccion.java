@@ -10,6 +10,14 @@ public class Atraccion {
 	private Integer cupo;
 	private TipoDeAtraccion tipo;
 	private Map<String, String> errors;
+	
+	public Atraccion(Integer id, String nombre, Integer costo, Double tiempoRecorrido, Integer cupo) {
+		this.id = id;
+		this.nombre = nombre;
+		this.costo = costo;
+		this.tiempoRecorrido = tiempoRecorrido;
+		this.cupo = cupo;
+		}
 
 	public Atraccion(String nombre, Integer costo, Double tiempoRecorrido, Integer cupo, TipoDeAtraccion tipo) {
 		this.nombre = nombre;

@@ -171,9 +171,19 @@ public class AtraccionesDAOImpl implements AtraccionesDAO {
 	}
 
 	@Override
-	public int delete(Atraccion t) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int delete(Atraccion atraccion) {
+		try {
+			String sql = "DELETE FROM Atracciones WHERE Id = ?";
+			Connection conn = ConnectionProvider.getConnection();
+
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setInt(1, atraccion.getId());
+			int rows = statement.executeUpdate();
+
+			return rows;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
 	}
 
 }
