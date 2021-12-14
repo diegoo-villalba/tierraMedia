@@ -38,7 +38,7 @@ public class OfertadordePromosServlet extends HttpServlet {
 
 		req.setAttribute("promociones", promociones);
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/atracciones/index.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/promociones/index.jsp");
 		dispatcher.forward(req, resp);
 
 	}
