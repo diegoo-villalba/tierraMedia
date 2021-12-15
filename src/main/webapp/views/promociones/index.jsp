@@ -64,9 +64,9 @@
 
 
 					<td><c:choose>
-							<c:when test="${promocion.puedoOfrecer(turista)}">
+							<c:when test="${promo.puedoOfrecer(user)}">
 								<a
-									href="/TierraMedia/promociones/comprar.do?id=${promocion.getNombre()}"
+									href="/TierraMedia/promociones/comprar.do?id=${promo.getIdPromo()}"
 									class="btn btn-primary rounded" role="button">Comprar</a>
 							</c:when>
 							<c:otherwise>

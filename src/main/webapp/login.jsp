@@ -43,10 +43,7 @@
 	</div>
 </nav>
 
-<table align="center">
-<tr>
-<td width="500">
- <div class="col-lg-5 mx-auto p-3 py-md-5">
+ 	<div class="col-lg-5 mx-auto p-3 py-md-5">
       
       		<c:if test="${flash != null}">
 				<div class="alert alert-danger">
@@ -57,7 +54,7 @@
 			</c:if>
 
 			<form action="login" method="post">
-				<h3 align="center">¡Bienvenido!</h3>
+				<h3 align="center">Tierra Media</h3>
 				<div class="mb-3">
 					<label for="username" class="form-label">Usuario</label> <input
 						class="form-control" name="username">
@@ -73,105 +70,6 @@
 				</div>
 			</form>
       </div>
-   </td>
-   <td>
-   
-   </td>
-   <td width="700">
-      
-
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" align="right">
-        <div class="carousel-indicators" align="right">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>        
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 8"></button>
-          
-        </div>
-        <div class="carousel-inner" align="center">
-        
-          <div class="carousel-item active">
-          
-            <img src="img/abismoDeHelm.jpg" width="500" height= "500" alt="Responsive image">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>El Abismo de Helm</h5>
-              <p>Paisaje</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="img/bosqueNegro.jpg" width="500" height= "500" alt="Responsive image">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>El Bosque Negro</h5>
-              <p>Aventura</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="img/comarca.jpg" width="500" height= "500" alt="Responsive image">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>La Comarca</h5>
-              <p>Degustacion</p>
-            </div>
-          </div>
-          
-          <div class="carousel-item">
-            <img src="img/erebor.jpg" width="500" height= "500" alt="Responsive image">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Erebor</h5>
-              <p>Paisaje</p>
-            </div>
-          </div>
-          
-          <div class="carousel-item" >
-            <img src="img/moria.jpg" width="500" height= "500" alt="Responsive image">
-            <div class="carousel-caption d-none d-md-block" >
-              <h5>Moria</h5>
-              <p>Aventura</p>
-            </div>
-          </div>
-          
-          <div class="carousel-item" >
-            <img src="img/mordor.jpg" width="500" height= "500" alt="Responsive image">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Mordor</h5>
-              <p>Aventura</p>
-            </div>
-          </div>
-          
-          <div class="carousel-item">
-            <img src="img/minasTirith.jpg" width="500" height= "500" alt="Responsive image">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Minas Tirith</h5>
-              <p>Paisaje</p>
-            </div>
-          </div>
-          
-          <div class="carousel-item" >
-            <img src="img/lothlorien.jpg" width="500" height= "500" alt="Responsive image">
-            <div class="carousel-caption d-none d-md-block" >
-              <h5>Lothlorien</h5>
-              <p>Degustacion</p>
-            </div>
-          </div>
-          
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div> 
-      
-	</td>
-	</tr>
-</table> 
-   
 
 </body>
 </html>

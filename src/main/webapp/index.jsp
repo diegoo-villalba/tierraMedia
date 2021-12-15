@@ -20,9 +20,8 @@
 		<div class="container">
 			<a class="btn btn-outline-success" href="/TierraMedia/index.jsp">Turismo en la Tierra
 				Media</a>
-			<div class="btn btn-outline-success">
-
-				¡Bienvenido,
+			<div class="btn btn-outline-success" align="right">
+			¡Bienvenido,
 				<c:out value="${user.username}" />
 				!
 			</div>
@@ -49,6 +48,8 @@
 									class="dropdown-item">Usuarios</a></li>
 								<li class="nav-item"><a href="/TierraMedia/promociones/index.do"
 									class="dropdown-item">Promociones</a></li>
+								<li class="nav-item"><a href="/TierraMedia/logout"
+									class="dropdown-item">Salir</a></li>
 							</ul></li>
 					</ul>
 				</div>

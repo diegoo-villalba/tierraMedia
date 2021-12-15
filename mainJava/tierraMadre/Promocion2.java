@@ -73,7 +73,7 @@ public class Promocion2 {
 			return sumaCostos;
 		}
 		
-		private boolean tienenCupo() {
+		public boolean tienenCupo() {
 			boolean cupo = true;
 			for (Atraccion atraccion : atracciones) {
 				if (atraccion.getCupo() == 0) {
@@ -103,7 +103,7 @@ public class Promocion2 {
 
 		public void aceptarPromocion() {
 			for (Atraccion atraccion : atracciones) {
-				atraccion.elegirAtraccion();;
+				atraccion.elegirAtraccion();
 			}
 		}
 

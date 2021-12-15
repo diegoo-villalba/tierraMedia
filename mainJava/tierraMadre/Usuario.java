@@ -12,6 +12,15 @@ public class Usuario {
 	private TipoDeAtraccion atraccion;
 	private Boolean admin; 
 	private HashMap<String, String> errors;
+	
+	public Usuario(String nombre1, String username, String password, Double dinero, Double tiempo, boolean b) {
+        this.nombre = nombre1;
+        this.presupuesto = dinero;
+        this.tiempoDisponible = tiempo;
+        this.username = username;
+        this.password=password;
+        this.setAdmin(admin);
+    }
 
 
 	public Usuario(int id,String nombre, double presupuesto, double tiempoDisponible, TipoDeAtraccion atraccion, String username, String password, Boolean admin) {

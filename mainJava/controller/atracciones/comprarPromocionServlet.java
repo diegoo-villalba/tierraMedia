@@ -11,28 +11,29 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import persistence.commons.DAOFactory;
+import services.ComprarPromocionService;
 import services.comprarAtraccionService;
 import tierraMadre.Usuario;
 
-@WebServlet("/atracciones/comprar.do")
-public class comprarAtraccionServlet extends HttpServlet implements Servlet {
+@WebServlet("/promociones/comprar.do")
+public class comprarPromocionServlet extends HttpServlet implements Servlet {
 
 	private static final long serialVersionUID = 3966188068793716237L;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		comprarAtraccionService comprarAtraccionService = new comprarAtraccionService();
+		ComprarPromocionService comprarPromocionService = new ComprarPromocionService();
 		
 		/*Primero levanta el id de la atraccion que quiero comprar
 		 *y tambien levanta el usuario que inicio sesion (el que esta logueado)
 		 * */
-		Integer atracctionId = Integer.parseInt(req.getParameter("id"));
+		Integer promoId = Integer.parseInt(req.getParameter("id"));
 		Usuario user = (Usuario) req.getSession().getAttribute("user");
 		
 		/*Con esa informacion, ahora delegamos al SERVICIO de comprar atraccion pasandole
 		 * el usuario que quiere comprar y el id de la atraccion*/
-		Map<String, String> errors = comprarAtraccionService.comprar(user.getId(), atracctionId);
+		Map<String, String> errors = comprarPromocionService.comprar(user.getId(), promoId);
 		
 		Usuario user2 = DAOFactory.getUsuariosDAO().find(user.getId());
 		req.getSession().setAttribute("user", user2);
@@ -46,7 +47,7 @@ public class comprarAtraccionServlet extends HttpServlet implements Servlet {
 		}
 		
 		RequestDispatcher dispatcher = getServletContext()
-				.getRequestDispatcher("/atracciones/index.do");
+				.getRequestDispatcher("/promociones/index.do");
 		dispatcher.forward(req, resp);
 	}
 }

@@ -77,25 +77,30 @@ public class PromocionesDAOImpl implements PromocionesDAO {
 			throw new MissingDataException(e);
 		}
 	}
-	public static int updateAtraccionPromo(Promocion promo) throws SQLException {
-		List<Atraccion> atracciones = promo.getAtraccionesPromo();
+	public int updateAtraccionPromo(Promocion2 promo) {
+		
+		try {
+		List<Atraccion> atracciones = promo.getAtracciones();
 		
 		int row = 0;
 		
 		for (Atraccion atraccion : atracciones) {
 			
-			String query = "UPDATE Atracciones SET Cupo = ? WHERE Nombre = ?";
+			String query = "UPDATE Atracciones SET Cupo = ?  WHERE Id = ?";
 
 			Connection connection = ConnectionProvider.getConnection();
 
 			PreparedStatement preparedStatement = connection.prepareStatement(query);
 
 			preparedStatement.setInt(1, atraccion.getCupo());
-			preparedStatement.setString(2, atraccion.getNombre());
+			preparedStatement.setInt(2, atraccion.getId());
 			row = preparedStatement.executeUpdate();
 			//row = row2;
 		}
 		return row;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
 	}
 
 	@Override
@@ -167,11 +172,33 @@ public class PromocionesDAOImpl implements PromocionesDAO {
 			throw new MissingDataException(e);
 		}
 	}
-
+	
 	@Override
 	public Promocion2 find(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			String sql = "SELECT * FROM Promociones WHERE id = ?";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setInt(1, id);
+			ResultSet resultados = statement.executeQuery();
+
+			Promocion2 promo = null;
+
+			if (resultados.next()) {
+				promo = crearPromo(resultados);
+			}
+
+			return promo;
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new MissingDataException(e);
+		}
+	}
+	
+	public static void main(String[] args) {
+		PromocionesDAOImpl promoDAO = new PromocionesDAOImpl();
+		Promocion2 promo = promoDAO.find(1);
+		System.out.println(promo.getNombrePromo());
 	}
 
 	@Override
