@@ -17,7 +17,7 @@
 			</div>
 		</c:if>
 
-		<form action="/TierraMedia/atracciones/editar.do" method="post">
+		<form action="/TierraMedia/atracciones/crear.do" method="post">
 			<input type="hidden" name="id" value="${attraction.id}">
 			<jsp:include page="/views/atracciones/formulario.jsp"></jsp:include>
 		</form>

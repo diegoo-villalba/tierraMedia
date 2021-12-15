@@ -44,7 +44,7 @@ public class ComprarPromocionService {
 			//TODO: AGREGAR METODO PARA NO OFRECER DE NUEVO UNA ATRACCION YA COMPRADA
 
 			promocionesDAO.updateAtraccionPromo(promocion);
-			usuariosDAO.update(turista);
+			usuariosDAO.update2(turista);
 		}
 		//Siempre retorno la lista de errores, segun haya o no, si la lista esta vacia (VER Servlet)
 		return errors;
