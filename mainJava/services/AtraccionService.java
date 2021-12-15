@@ -37,14 +37,24 @@ public class AtraccionService {
 		return atraccion;
 	}
 	
-	public static void main(String[] args) {
-		AtraccionService atraccionServ = new AtraccionService();
-		Atraccion unaAtrac = atraccionServ.crear("Cockworking", 2, 4.0, 3);
-		System.out.println(unaAtrac.toString());
-		System.out.println(unaAtrac.getCosto());
-		System.out.println(unaAtrac.getTiempoRecorrido());
-		System.out.println(unaAtrac.getCupo());
-	}
+	public Atraccion update(Integer id, String name, Integer cost, Double duration, Integer capacity) {
+				
+				AtraccionesDAO attractionDAO = DAOFactory.getAtraccionesDAO();
+				Atraccion attraction = attractionDAO.find(id);
+				
+				attraction.setNombre(name);
+				attraction.setCosto(cost);
+				attraction.setTiempoRecorrido(duration);
+				attraction.setCupo(capacity);
+				
+				
+				if (attraction.esValida()) {
+					attractionDAO.update(attraction);
+					// XXX: si no devuelve "1", es que hubo más errores
+				}
+			
+		return attraction;
+			}
 	
 
 }

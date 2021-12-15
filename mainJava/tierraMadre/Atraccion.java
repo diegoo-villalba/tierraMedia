@@ -51,6 +51,26 @@ public class Atraccion {
 	public Integer getId() {
 		return id;
 	}
+	
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public void setCosto(Integer costo) {
+		this.costo = costo;
+	}
+	
+	public void setTiempoRecorrido(Double tiempoRecorrido) {
+		this.tiempoRecorrido = tiempoRecorrido;
+	}
+	
+	public void setCupo(Integer cupo) {
+		this.cupo = cupo;
+	}
+	
+	public void setTipo(TipoDeAtraccion tipo) {
+		this.tipo = tipo;
+	}
 
 	public boolean esValida() {
 		validacion();

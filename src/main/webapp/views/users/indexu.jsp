@@ -6,7 +6,7 @@
 <head>
 <jsp:include page="/ini.jsp"></jsp:include>
 </head>
-<body>
+<body background="/TierraMedia/img/tm2.jpg">
 
 	<jsp:include page="/barra/navi.jsp"></jsp:include>
 
@@ -27,20 +27,16 @@
 			</div>
 		</c:if>
 
-		<div class="bg-light p-4 mb-3 rounded">
-			<h1>Usuarios</h1>
-		</div>
-
 		<c:if test="${user.isAdmin()}">
 			<div class="mb-3">
 				<a href="/turismo/users/create.do" class="btn btn-primary"
-					role="button"> <i class="bi bi-plus-lg"></i> Nuevo Usuario
+					role="button"> <i class="bi bi-people-fill"></i> Nuevo Usuario
 				</a>
 			</div>
 		</c:if>
 		<table class="table table-stripped table-hover">
 			<thead>
-				<tr>
+				<tr bgcolor="#00dddd">
 					<th>Nombre</th>
 					<th>Monedas</th>
 					<th>Tiempo</th>
@@ -51,10 +47,24 @@
 			<tbody>
 				<c:forEach items="${users}" var="user">
 					<tr>
-						<td><strong><c:out value="${user.username}"></c:out></strong></td>
-						<td><c:out value="${user.presupuesto}"></c:out></td>
-						<td><c:out value="${user.tiempoDisponible}"></c:out></td>
-						<td>
+						<td style="background: rgba(76, 175, 180, 0.3);"><button
+								type="button" class="btn btn-primary">
+								<i class="bi bi-person-lines-fill"></i> <a
+									style="text-transform: uppercase;"><c:out
+										value="${user.username}"></c:out> </a>
+							</button>
+							</td>
+						<td style="background: rgba(76, 175, 180, 0.3);">
+						<button type="button" class="btn btn-primary">
+						<c:out value="${user.presupuesto}"></c:out>
+						</button></td>
+						<td style="background: rgba(76, 175, 180, 0.3);">
+						<button type="button" class="btn btn-primary">
+
+						<c:out value="${user.tiempoDisponible}"></c:out>
+						</button></td>
+						<td style="background: rgba(76, 175, 180, 0.3);">
+							<button type="button" class="btn btn-primary">
 							<c:choose>
 								<c:when test="${user.admin}">
 									Admin
@@ -62,8 +72,18 @@
 								<c:otherwise>
 									Normal
 								</c:otherwise>
-							</c:choose>						
-						</td>
+							</c:choose>
+							</button>
+							<td style="background: rgba(76, 175, 180, 0.3);">
+
+							<a href=""
+								class="btn btn-dark" role="button"><i
+								class="bi bi-gear-fill"></i></a>
+							<a href=""
+								class="btn btn-danger rounded" role="button"><i
+								class="bi bi-trash-fill"></i></a>
+
+						
 					</tr>
 				</c:forEach>
 			</tbody>

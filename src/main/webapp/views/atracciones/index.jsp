@@ -62,7 +62,7 @@
 					</td>
 
 					<td><c:if test="${user.admin}">
-							<a href="/turismo/attractions/edit.do?id=${attraction.id}"
+							<a href="/TierraMedia/atracciones/editar.do?id=${attraction.id}"
 								class="btn btn-dark" role="button"><i
 								class="bi bi-gear-fill"></i></a>
 							<a href="/TierraMedia/atracciones/borrar.do?id=${attraction.id}"
