@@ -3,10 +3,10 @@ package services;
 import java.util.HashMap;
 import java.util.Map;
 
+import modelos.Usuario;
+import persistence.impl.PromocionesDAOImpl;
+import persistence.impl.UsuariosDAOImpl;
 import tierraMadre.Promocion2;
-import tierraMadre.Usuario;
-import tierraMedia.dao.PromocionesDAOImpl;
-import tierraMedia.dao.UsuariosDAOImpl;
 
 public class ComprarPromocionService {
 	

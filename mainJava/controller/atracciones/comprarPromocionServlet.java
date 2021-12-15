@@ -10,10 +10,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import modelos.Usuario;
 import persistence.commons.DAOFactory;
 import services.ComprarPromocionService;
-import services.comprarAtraccionService;
-import tierraMadre.Usuario;
 
 @WebServlet("/promociones/comprar.do")
 public class comprarPromocionServlet extends HttpServlet implements Servlet {

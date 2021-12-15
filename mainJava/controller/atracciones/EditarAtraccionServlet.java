@@ -9,8 +9,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import modelos.Atraccion;
 import services.AtraccionService;
-import tierraMadre.Atraccion;
 
 @WebServlet("/atracciones/editar.do")
 public class EditarAtraccionServlet extends HttpServlet implements Servlet {
@@ -40,8 +40,6 @@ public class EditarAtraccionServlet extends HttpServlet implements Servlet {
 		Integer id = Integer.parseInt(req.getParameter("id"));
 		String name = req.getParameter("name");
 		Integer cost = Integer.parseInt(req.getParameter("cost"));
-		// Integer cost = req.getParameter("cost").trim() == "" ? null :
-		// Integer.parseInt(req.getParameter("cost"));
 		Double duration = Double.parseDouble(req.getParameter("duration"));
 		Integer capacity = Integer.parseInt(req.getParameter("capacity"));
 		Atraccion attraction = attractionService.update(id, name, cost, duration, capacity);

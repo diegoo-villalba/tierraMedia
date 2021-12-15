@@ -11,8 +11,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import modelos.Usuario;
 import services.UsuarioService;
-import tierraMadre.Usuario;
 
 
 @WebServlet("/users/indexu.do")

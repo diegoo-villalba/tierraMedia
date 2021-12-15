@@ -1,14 +1,12 @@
 package tierraMedia.dao;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
-import tierraMadre.Atraccion;
-
-
-import java.sql.Connection;
-import tierraMedia.db.ConnectionProvider;
+import modelos.Atraccion;
+import persistence.commons.ConnectionProvider;
 
 public class ItinerarioDAO {
 		

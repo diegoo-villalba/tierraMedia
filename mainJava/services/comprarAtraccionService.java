@@ -3,12 +3,12 @@ package services;
 import java.util.HashMap;
 import java.util.Map;
 
-import tierraMadre.Atraccion;
-import tierraMadre.Usuario;
-import tierraMedia.dao.AtraccionesDAOImpl;
-import tierraMedia.dao.UsuariosDAOImpl;
+import modelos.Atraccion;
+import modelos.Usuario;
+import persistence.impl.AtraccionesDAOImpl;
+import persistence.impl.UsuariosDAOImpl;
 
-public class comprarAtraccionService {
+public class ComprarAtraccionService {
 	
 	AtraccionesDAOImpl atraccionesDAO = new AtraccionesDAOImpl();
 	UsuariosDAOImpl usuariosDAO = new UsuariosDAOImpl();

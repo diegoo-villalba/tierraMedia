@@ -16,7 +16,7 @@
 
 <body background= "img/tierramedia.jpg">
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+ <!--   <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
 	<div class="container">
 		<a class="btn btn-outline-success my-2 my-sm-0" href="bienvenida.jsp">Turismo en la Tierra Media</a>
 		
@@ -42,7 +42,7 @@
 		</form>
 	</div>
 </nav>
-
+-->  
  	<div class="col-lg-5 mx-auto p-3 py-md-5">
       
       		<c:if test="${flash != null}">

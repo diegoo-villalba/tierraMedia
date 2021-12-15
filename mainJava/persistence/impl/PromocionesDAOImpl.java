@@ -1,15 +1,16 @@
-package tierraMedia.dao;
+package persistence.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import modelos.Atraccion;
+import persistence.PromocionesDAO;
+import persistence.commons.ConnectionProvider;
 import persistence.commons.MissingDataException;
-import tierraMadre.Atraccion;
 import tierraMadre.PromoAXB2;
 import tierraMadre.PromoAbsoluta2;
 import tierraMadre.PromoFactory;
@@ -17,7 +18,6 @@ import tierraMadre.PromoPorcentual2;
 import tierraMadre.Promocion;
 import tierraMadre.Promocion2;
 import tierraMadre.TipoPromo;
-import tierraMedia.db.ConnectionProvider;
 
 public class PromocionesDAOImpl implements PromocionesDAO {
 

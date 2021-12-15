@@ -1,6 +1,5 @@
 package GeneralTests;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.ArrayList;
@@ -8,12 +7,11 @@ import java.util.List;
 
 import org.junit.Test;
 
-import tierraMadre.Atraccion;
+import modelos.Atraccion;
 import tierraMadre.PromoAbsoluta;
 import tierraMadre.Promocion;
 import tierraMadre.TipoDeAtraccion;
 import tierraMadre.TipoPromo;
-import tierraMadre.Usuario;
 /*
 public class TuristaTests {
 	Promocion unaPromocion;

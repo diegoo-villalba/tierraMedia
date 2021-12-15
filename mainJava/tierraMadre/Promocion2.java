@@ -3,6 +3,9 @@ package tierraMadre;
 import java.util.ArrayList;
 import java.util.List;
 
+import modelos.Atraccion;
+import modelos.Usuario;
+
 public class Promocion2 {
 
 		List<Atraccion> atracciones = new ArrayList<Atraccion>();

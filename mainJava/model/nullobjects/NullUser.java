@@ -1,6 +1,6 @@
 package model.nullobjects;
 
-import tierraMadre.Usuario;
+import modelos.Usuario;
 
 public class NullUser extends Usuario {
 

@@ -18,10 +18,10 @@
 
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
 		<div class="container">
-			<a class="btn btn-outline-success" href="/TierraMedia/index.jsp">Turismo en la Tierra
-				Media</a>
+			<a class="btn btn-outline-success" href="/TierraMedia/index.jsp">Turismo
+				en la Tierra Media</a>
 			<div class="btn btn-outline-success" align="right">
-			¡Bienvenido,
+				¡Bienvenido,
 				<c:out value="${user.username}" />
 				!
 			</div>
@@ -46,8 +46,8 @@
 									class="dropdown-item">Atracciones</a></li>
 								<li class="nav-item"><a href="/TierraMedia/users/indexu.do"
 									class="dropdown-item">Usuarios</a></li>
-								<li class="nav-item"><a href="/TierraMedia/promociones/index.do"
-									class="dropdown-item">Promociones</a></li>
+								<li class="nav-item"><a
+									href="/TierraMedia/promociones/index.do" class="dropdown-item">Promociones</a></li>
 								<li class="nav-item"><a href="/TierraMedia/logout"
 									class="dropdown-item">Salir</a></li>
 							</ul></li>
@@ -60,7 +60,7 @@
 	<main class="container"></main>
 
 	<table align="center">
-		
+
 		<tr>
 			<td width="700">
 
@@ -92,7 +92,7 @@
 						<div class="carousel-item active" align="right">
 
 							<img src="img/abismoDeHelm.jpg" width="500" height="500"
-								class="d-block w-100" alt="..." >
+								class="d-block w-100" alt="...">
 							<div class="carousel-caption d-none d-md-block" align="right">
 								<h5>El Abismo de Helm</h5>
 								<p>Paisaje</p>

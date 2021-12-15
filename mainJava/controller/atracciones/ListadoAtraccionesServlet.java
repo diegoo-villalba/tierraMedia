@@ -13,8 +13,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import modelos.Atraccion;
 import services.AtraccionService;
-import tierraMadre.Atraccion;
 
 @WebServlet("/atracciones/index.do")
 public class ListadoAtraccionesServlet extends HttpServlet implements Servlet {

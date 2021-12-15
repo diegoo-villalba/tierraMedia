@@ -8,8 +8,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import modelos.Atraccion;
 import services.AtraccionService;
-import tierraMadre.Atraccion;
 
 @WebServlet("/atracciones/crear.do")
 public class CrearAtraccionServlet extends HttpServlet {

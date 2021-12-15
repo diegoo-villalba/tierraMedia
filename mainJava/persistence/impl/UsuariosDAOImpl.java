@@ -1,4 +1,4 @@
-package tierraMedia.dao;
+package persistence.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,11 +9,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 import model.nullobjects.NullUser;
+import modelos.Usuario;
 import persistence.UsuariosDAO;
+import persistence.commons.ConnectionProvider;
 import persistence.commons.MissingDataException;
 import tierraMadre.TipoDeAtraccion;
-import tierraMadre.Usuario;
-import tierraMedia.db.ConnectionProvider;
 
 public class UsuariosDAOImpl implements UsuariosDAO {
 	
@@ -49,13 +49,17 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 		
 		
 			try {
-				String sql = "UPDATE Usuarios SET Dinero = ?, Tiempo = ? WHERE Id = ?";
+				String sql = "UPDATE Usuarios SET Nombre = ?, username = ?, password = ? Dinero = ?, Tiempo = ? WHERE Id = ?";
 				Connection conn = ConnectionProvider.getConnection();
 
 				PreparedStatement statement = conn.prepareStatement(sql);
-				statement.setDouble(1, turista.getPresupuesto());
-				statement.setDouble(2, turista.getTiempoDisponible());
-				statement.setDouble(3, turista.getId());
+				int i = 1;
+				statement.setString(i++, turista.getNombre());
+				statement.setString(i++, turista.getUsername());
+				statement.setString(i++, turista.getPassword());
+				statement.setDouble(i++, turista.getPresupuesto());
+				statement.setDouble(i++, turista.getTiempoDisponible());
+				statement.setInt(i++, turista.getId());
 				int rows = statement.executeUpdate();
 
 				return rows;
@@ -63,17 +67,39 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 				throw new MissingDataException(e);
 			}
 		}
-
 	
+	public int update2(Usuario usuario) {
+
+		try {
+			String sql = "UPDATE Usuarios SET Nombre = ?, Dinero = ?, Tiempo = ?, username = ?, password = ? WHERE Id = ?";
+
+			Connection conn = ConnectionProvider.getConnection();
+
+			PreparedStatement statement = conn.prepareStatement(sql);
+			int i = 1;
+			statement.setString(i++, usuario.getNombre());
+			statement.setDouble(i++, usuario.getPresupuesto());
+			statement.setDouble(i++, usuario.getTiempoDisponible());
+			statement.setString(i++, usuario.getUsername());
+			statement.setString(i++, usuario.getPassword());
+			statement.setInt(i++, usuario.getId());
+			int rows = statement.executeUpdate();
+
+			return rows;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
 	
 	@Override
 	public int delete(Usuario turista) {
 		try {
-			String sql = "DELETE FROM Usuarios WHERE Nombre = ?";
+			String sql = "DELETE FROM Usuarios WHERE Id = ?";
 			Connection conn = ConnectionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, turista.getNombre());
+			statement.setInt(1, turista.getId());
 			int rows = statement.executeUpdate();
 
 			return rows;

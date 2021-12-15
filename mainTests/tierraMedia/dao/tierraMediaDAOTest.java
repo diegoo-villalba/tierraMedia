@@ -12,10 +12,11 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import persistence.AtraccionesDAO;
-import tierraMadre.Atraccion;
-import tierraMadre.Usuario;
-import tierraMedia.db.ConnectionProvider;
+import modelos.Atraccion;
+import modelos.Usuario;
+import persistence.commons.ConnectionProvider;
+import persistence.impl.AtraccionesDAOImpl;
+import persistence.impl.UsuariosDAOImpl;
 
 public class tierraMediaDAOTest {
 

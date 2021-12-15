@@ -6,6 +6,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import modelos.Atraccion;
+
 public class Itinerario {
 	private static List<Atraccion> atracciones;
 	private static double tiempoTotal;

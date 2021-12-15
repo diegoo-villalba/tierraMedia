@@ -1,14 +1,15 @@
-package tierraMadre;
+package modelos;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import tierraMadre.TipoDeAtraccion;
 import utils.Crypt;
 
 public class Usuario {
 	private int id;
 	private String nombre, username, password;
-	private double presupuesto, tiempoDisponible;
+	private Double presupuesto, tiempoDisponible;
 	private TipoDeAtraccion atraccion;
 	private Boolean admin; 
 	private HashMap<String, String> errors;
@@ -23,7 +24,7 @@ public class Usuario {
     }
 
 
-	public Usuario(int id,String nombre, double presupuesto, double tiempoDisponible, TipoDeAtraccion atraccion, String username, String password, Boolean admin) {
+	public Usuario(Integer id,String nombre, Double presupuesto, Double tiempoDisponible, TipoDeAtraccion atraccion, String username, String password, Boolean admin) {
 		this.setId(id);
 		this.nombre = nombre;
 		this.presupuesto = presupuesto;
@@ -35,7 +36,7 @@ public class Usuario {
 	}
 	//Integer id, String username, String password, Integer coins, Double time, Boolean admin
 	
-	public Usuario(int id, String nombre, String username, String password, double dinero, double tiempo, Boolean admin ) {
+	public Usuario(Integer id, String nombre, String username, String password, Double dinero, Double tiempo, Boolean admin ) {
 		this.setId(id);
 		this.nombre = nombre;
 		this.presupuesto = dinero;
@@ -44,10 +45,34 @@ public class Usuario {
 		this.password=password;
 		this.setAdmin(admin);
 	}
+	
+	//Usuario crear(String nombre, String username, String password, Double coins, Double time
+	
+	
+
+	public Usuario(int i, String string, int j, int k, Object object, String string2, String string3, boolean b) {
+		// TODO Auto-generated constructor stub
+	}
+
 
 	public String getNombre() {
 		return nombre;
 	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	public void setPresupuesto(double presupuesto) {
+		this.presupuesto = presupuesto;
+	}
+
+
+	public void setTiempoDisponible(double tiempoDisponible) {
+		this.tiempoDisponible = tiempoDisponible;
+	}
+
 
 	public double getPresupuesto() {
 		return presupuesto;

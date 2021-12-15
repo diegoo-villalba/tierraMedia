@@ -2,9 +2,9 @@ package services;
 
 import java.util.List;
 
+import modelos.Atraccion;
 import persistence.AtraccionesDAO;
 import persistence.commons.DAOFactory;
-import tierraMadre.Atraccion;
 
 public class AtraccionService {
 
@@ -31,7 +31,6 @@ public class AtraccionService {
 		if (atraccion.esValida()) {
 			AtraccionesDAO attractionDAO = DAOFactory.getAtraccionesDAO();
 			attractionDAO.insert(atraccion);
-			// XXX: si no devuelve "1", es que hubo más errores
 		}
 
 		return atraccion;
@@ -50,7 +49,6 @@ public class AtraccionService {
 				
 				if (attraction.esValida()) {
 					attractionDAO.update(attraction);
-					// XXX: si no devuelve "1", es que hubo más errores
 				}
 			
 		return attraction;

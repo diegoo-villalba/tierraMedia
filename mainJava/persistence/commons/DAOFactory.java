@@ -1,11 +1,11 @@
 package persistence.commons;
 
 import persistence.AtraccionesDAO;
+import persistence.PromocionesDAO;
 import persistence.UsuariosDAO;
-import tierraMedia.dao.AtraccionesDAOImpl;
-import tierraMedia.dao.PromocionesDAO;
-import tierraMedia.dao.PromocionesDAOImpl;
-import tierraMedia.dao.UsuariosDAOImpl;
+import persistence.impl.AtraccionesDAOImpl;
+import persistence.impl.PromocionesDAOImpl;
+import persistence.impl.UsuariosDAOImpl;
 
 public class DAOFactory {
 	

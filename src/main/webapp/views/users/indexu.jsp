@@ -11,7 +11,7 @@
 	<jsp:include page="/barra/navi.jsp"></jsp:include>
 
 	<main class="container">
-        <c:if test="${flash != null}">
+		<c:if test="${flash != null}">
 			<div class="alert alert-danger">
 				<p>
 					<c:out value="${flash}" />
@@ -25,16 +25,16 @@
 				</p>
 			</div>
 		</c:if>
-        <c:if test="${user.isAdmin()}">
+		<c:if test="${user.isAdmin()}">
 			<div class="mb-3">
 				<a class="btn btn-primary" href="/TierraMedia/users/create.do"
-					role="button"> <i class="bi bi-people-fill" ></i> Crear usuario
+					role="button"> <i class="bi bi-people-fill"></i> Crear usuario
 				</a>
 			</div>
 		</c:if>
-        <table class="table table-stripped table-hover">
+		<table class="table table-stripped table-hover">
 			<thead>
-				<tr bgcolor="#00dddd" >
+				<tr bgcolor="#00dddd">
 					<th>Nombre</th>
 					<th>Monedas</th>
 					<th>Tiempo</th>
@@ -43,52 +43,52 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${users}" var="user">
+				<c:forEach items="${users}" var="tmp_user">
 					<tr>
-                       <td style="background: rgba(76, 175, 180, 0.3);">
-						<button type="button" class="btn btn-primary">
-						<i class="bi bi-person-lines-fill"></i>
-						<a style="text-transform: uppercase;"><c:out value="${user.username}"></c:out>
-						</a>
-						</button>
-						</td>
-                        <td style="background: rgba(76, 175, 180, 0.3);">
-						<button type="button" class="btn btn-primary">
-						<c:out value="${user.presupuesto}"></c:out>
-						</button>
-
-						</td>
-                        <td style="background: rgba(76, 175, 180, 0.3);">
-						<button type="button" class="btn btn-primary">
-
-						<c:out value="${user.tiempoDisponible}"></c:out>
-						</button>
-						</td>
-                        <td style="background: rgba(76, 175, 180, 0.3);">
+						<td style="background: rgba(76, 175, 180, 0.3);">
 							<button type="button" class="btn btn-primary">
-							<c:choose>
-                                <c:when test="${user.admin}">
-									Admin
-								</c:when>
-								<c:otherwise>
-									Normal
-								</c:otherwise>
-							</c:choose>
+								<i class="bi bi-person-lines-fill"></i> <a
+									style="text-transform: uppercase;"><c:out
+										value="${tmp_user.username}"></c:out> </a>
 							</button>
 						</td>
-						
 						<td style="background: rgba(76, 175, 180, 0.3);">
-
-							<a href="/TierraMedia/users/editar.do?id=${user.id}"
-								class="btn btn-dark" role="button"><i
-								class="bi bi-gear-fill"></i></a>
-							<a href="/TierraMedia/users/borrar.do?id=${user.id}"
-								class="btn btn-danger rounded" role="button"><i
-								class="bi bi-trash-fill"></i></a>
+							<button type="button" class="btn btn-primary">
+								<c:out value="${tmp_user.presupuesto}"></c:out>
+							</button>
 
 						</td>
+						<td style="background: rgba(76, 175, 180, 0.3);">
+							<button type="button" class="btn btn-primary">
 
-                    </tr>
+								<c:out value="${tmp_user.tiempoDisponible}"></c:out>
+							</button>
+						</td>
+						<td style="background: rgba(76, 175, 180, 0.3);">
+							<button type="button" class="btn btn-primary">
+								<c:choose>
+									<c:when test="${tmp_user.admin}">
+									Admin
+								</c:when>
+									<c:otherwise>
+									Normal
+								</c:otherwise>
+								</c:choose>
+							</button>
+						</td>
+
+						<td style="background: rgba(76, 175, 180, 0.3);">
+						<td><c:if
+								test="${user.admin && (!tmp_user.admin || tmp_user.id == user.id)}">
+								<a href="/TierraMedia/users/editar.do?id=${tmp_user.id}"
+									class="btn btn-dark" role="button"><i
+									class="bi bi-gear-fill"></i></a>
+								<a href="/TierraMedia/users/borrar.do?id=${tmp_user.id}"
+									class="btn btn-danger rounded" role="button"><i
+									class="bi bi-trash-fill"></i></a>
+							</c:if></td>
+
+					</tr>
 				</c:forEach>
 			</tbody>
 		</table>

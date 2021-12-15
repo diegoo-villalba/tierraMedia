@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import tierraMedia.dao.AtraccionesDAOImpl;
-import tierraMedia.dao.PromocionesDAOImpl;
+import modelos.Atraccion;
+import modelos.Usuario;
+import persistence.impl.AtraccionesDAOImpl;
+import persistence.impl.PromocionesDAOImpl;
 
 public abstract class Promocion {
 

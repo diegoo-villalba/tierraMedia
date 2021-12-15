@@ -2,6 +2,8 @@ package tierraMadre;
 
 import java.util.Comparator;
 
+import modelos.Atraccion;
+
 public class CostoComparacion implements Comparator<Atraccion> {
 	
 	@Override

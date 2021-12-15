@@ -2,6 +2,8 @@ package tierraMadre;
 
 import java.util.List;
 
+import modelos.Atraccion;
+
 public class PromoFactory {
 
 	public static Promocion buildPromocion(String nombre, List<Atraccion> atraccionesPromo, TipoPromo promotionType, double montoPromo ) {

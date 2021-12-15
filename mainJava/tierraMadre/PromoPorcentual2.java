@@ -2,6 +2,8 @@ package tierraMadre;
 
 import java.util.List;
 
+import modelos.Atraccion;
+
 public class PromoPorcentual2 extends Promocion2 {
 	
 	public PromoPorcentual2(Integer id, String nombre) {

@@ -1,9 +1,9 @@
 package services;
 
 import model.nullobjects.NullUser;
+import modelos.Usuario;
 import persistence.UsuariosDAO;
 import persistence.commons.DAOFactory;
-import tierraMadre.Usuario;
 
 public class LoginService {
 

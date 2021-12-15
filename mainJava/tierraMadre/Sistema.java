@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
 
+import modelos.Atraccion;
 import tierraMedia.dao.AtraccionesDAOImpl;
 import tierraMedia.dao.ItinerarioDAO;
 import tierraMedia.dao.PromocionesDAO;

@@ -10,9 +10,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import modelos.Usuario;
 import persistence.commons.DAOFactory;
-import services.comprarAtraccionService;
-import tierraMadre.Usuario;
+import services.ComprarAtraccionService;
 
 @WebServlet("/atracciones/comprar.do")
 public class comprarAtraccionServlet extends HttpServlet implements Servlet {
@@ -22,7 +22,7 @@ public class comprarAtraccionServlet extends HttpServlet implements Servlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		comprarAtraccionService comprarAtraccionService = new comprarAtraccionService();
+		ComprarAtraccionService comprarAtraccionService = new ComprarAtraccionService();
 		
 		/*Primero levanta el id de la atraccion que quiero comprar
 		 *y tambien levanta el usuario que inicio sesion (el que esta logueado)

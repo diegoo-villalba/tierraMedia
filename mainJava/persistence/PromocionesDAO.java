@@ -1,4 +1,4 @@
-package tierraMedia.dao;
+package persistence;
 
 import persistence.commons.GenericDAO;
 import tierraMadre.Promocion2;
