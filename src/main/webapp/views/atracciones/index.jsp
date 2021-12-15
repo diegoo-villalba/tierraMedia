@@ -45,8 +45,8 @@
 				<tr>
 
 
-					<td><i class="bi bi-signpost-fill"></i> <a href="#"
-						class="btn btn-dark btn-lg" role="button"><c:out
+					<td> <a href="#"
+						class="btn btn-dark btn-lg" role="button"><i class="bi bi-signpost-fill"></i><c:out
 								value="${attraction.nombre}"></c:out></a></td>
 								
 					<td><button type="button" class="btn btn-secondary btn-sm"><i class="bi bi-currency-dollar"></i>

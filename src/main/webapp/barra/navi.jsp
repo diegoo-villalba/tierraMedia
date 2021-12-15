@@ -42,7 +42,7 @@
 						<li>
 						<c:if test="${user.isAdmin()}">
 			
-				<a href="" class="dropdown-item"
+				<a href="/TierraMedia/atracciones/crear.do" class="dropdown-item"
 					role="button"> <i style="color: blue;" class="bi bi-file-arrow-up"></i> Nueva Atraccion
 				</a>
 			
@@ -51,7 +51,7 @@
 		<li>
 						<c:if test="${user.isAdmin()}">
 			
-				<a href="" class="dropdown-item"
+				<a href="/TierraMedia/users/create.do" class="dropdown-item"
 					role="button"> <i style="color: blue;"class="bi bi-person-plus-fill"></i> Nuevo Usuario
 				</a>
 			

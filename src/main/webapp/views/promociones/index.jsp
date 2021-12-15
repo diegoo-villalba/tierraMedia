@@ -17,7 +17,7 @@
 </head>
 
 
-<body background="/TierraMedia/img/tm3.jpg">
+<body background="/TierraMedia/img/tm1.jpg">
 	<jsp:include page="/barra/navi.jsp"></jsp:include>
 
 
@@ -39,8 +39,8 @@
 			<c:forEach items="${promociones}" var="promo">
 				<tr>
 
-					<td><i class="bi bi-signpost-fill"></i> <a href="#"
-						class="btn btn-dark btn-lg" role="button"><c:out
+					<td> <a href="#"
+						class="btn btn-dark btn-lg" role="button"><i class="bi bi-signpost-fill"></i><c:out
 								value="${promo.nombrePromo}"></c:out></a></td>
 
 					<td><button type="button" class="btn btn-secondary btn-sm">

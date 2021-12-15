@@ -15,34 +15,8 @@
 </head>
 
 <body background= "img/tierramedia.jpg">
+<jsp:include page="banner.jsp"></jsp:include>
 
- <!--   <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-	<div class="container">
-		<a class="btn btn-outline-success my-2 my-sm-0" href="bienvenida.jsp">Turismo en la Tierra Media</a>
-		
-		<form class="form-inline my-2 my-lg-0">
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-			data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
-			aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		
-		<div class="collapse navbar-collapse" id="navbarCollapse" align="right">
-			
-			<ul class="navbar-nav">
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
-						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">								
-						<li><hr class="dropdown-divider"></li>
-						<li><a href="/TierraMedia/atracciones/index.do" class="dropdown-item">Atracciones</a></li>
-						</ul>
-				</li>
-			</ul>
-		</div>
-		</form>
-	</div>
-</nav>
--->  
  	<div class="col-lg-5 mx-auto p-3 py-md-5">
       
       		<c:if test="${flash != null}">
@@ -54,7 +28,7 @@
 			</c:if>
 
 			<form action="login" method="post">
-				<h3 align="center">Tierra Media</h3>
+				<h3 align="center">Login</h3>
 				<div class="mb-3">
 					<label for="username" class="form-label">Usuario</label> <input
 						class="form-control" name="username">
@@ -70,6 +44,7 @@
 				</div>
 			</form>
       </div>
+      <jsp:include page="/foot.jsp"></jsp:include>
 
 </body>
 </html>

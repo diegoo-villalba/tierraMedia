@@ -176,6 +176,6 @@
 			</td>
 		</tr>
 	</table>
-
+<jsp:include page="/foot.jsp"></jsp:include>
 </body>
 </html>

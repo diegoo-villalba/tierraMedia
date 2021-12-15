@@ -54,23 +54,27 @@
 						</td>
 						<td style="background: rgba(76, 175, 180, 0.3);">
 							<button type="button" class="btn btn-primary">
+							<i class="bi bi-coin"></i>
 								<c:out value="${tmp_user.presupuesto}"></c:out>
 							</button>
 
 						</td>
 						<td style="background: rgba(76, 175, 180, 0.3);">
 							<button type="button" class="btn btn-primary">
-
+								<i class="bi bi-clock-fill"></i>
 								<c:out value="${tmp_user.tiempoDisponible}"></c:out>
 							</button>
 						</td>
 						<td style="background: rgba(76, 175, 180, 0.3);">
 							<button type="button" class="btn btn-primary">
+							
 								<c:choose>
 									<c:when test="${tmp_user.admin}">
+									<i class="bi bi-house-door"></i>
 									Admin
 								</c:when>
 									<c:otherwise>
+									<i class="bi bi-house-fill"></i>
 									Normal
 								</c:otherwise>
 								</c:choose>
@@ -78,7 +82,7 @@
 						</td>
 
 						<td style="background: rgba(76, 175, 180, 0.3);">
-						<td><c:if
+						<c:if
 								test="${user.admin && (!tmp_user.admin || tmp_user.id == user.id)}">
 								<a href="/TierraMedia/users/editar.do?id=${tmp_user.id}"
 									class="btn btn-dark" role="button"><i
