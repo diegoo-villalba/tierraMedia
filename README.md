@@ -30,17 +30,27 @@ Se debe de instalar el contenedor de servlets "Apache Tomcat" el cual nos va a p
 
 
 -Usuario:
+
 sam
+
 gandalf
+
 eowyn
+
 galadriel
+
 rober (ADMIN)
 
 -Password:
+
 sam1234
+
 gandalf1234
+
 eowyn1234
+
 galadriel1234
+
 rober1234
 
 
