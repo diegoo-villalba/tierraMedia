@@ -41,7 +41,7 @@ eowyn
 
 galadriel
 
-rober (ADMIN)
+rober
 
 -Password:
 
