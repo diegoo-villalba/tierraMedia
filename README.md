@@ -4,6 +4,7 @@ Proyecto de finalizacion de cursada - "Tierra Media"
 Proyecto de finalizacion de cursada que consiste en una aplicación web que ofrece atracciones y pack de atracciones a turistas en base a su gusto, dinero y tiempo disponible. Ademas cuenta con la funcionalidad de "administrador" para poder hacer el CRUD de las atracciones y los turistas que se inscriben para visitar las atracciones.
 
 Pasos para clonar archivo:
+
 1-Abrir la consola de Git Bash en el workspace de Eclipse.
 
 2-Introducir el siguiente comando: git clone https://github.com/diegoo-villalba/tierraMedia.git
@@ -11,6 +12,7 @@ Pasos para clonar archivo:
 3-Desde eclipse importar el proyecto, para ello nos posicionamos sobre la pestaña "Workspace", click derecho, "Import" y alli buscamos la raiz donde clonamos el proyecto, le damos importar y listo.
 
 Pasos para levantar la aplicacion web:
+
 Se debe de instalar el contenedor de servlets "Apache Tomcat" el cual nos va a permitir compilar y ejecutar la aplicacion web, para ello hacemos los siguientes pasos:
 
 1-Nos dirigimos a la pestaña "Servers", hacemos click sobre "Click this link to create a new server..."
