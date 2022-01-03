@@ -55,7 +55,13 @@ galadriel1234
 
 rober1234
 
-
+Tecnologías/Softwares utilizados para el desarrollo del proyecto:
+IDE: Eclipse
+Gestion y arquitectura: MAVEN
+Contenedor de servlets: Apache Tomcat
+Sistema de gestión de base de datos: SQLite
+Patrones de diseño: DAO, MVC & Services.
+Stylesheets: Bootstrap
 
 
 Proyecto de fin de cursada "Argentina Programa 2021" realizado por: Casarré Clara, Calamullo Diego, Halbrandt Ivan, Kerkaert Nahuel y Villalba Diego.
