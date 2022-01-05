@@ -10,6 +10,7 @@ public class Usuario {
 	private int id;
 	private String nombre, username, password;
 	private Double presupuesto, tiempoDisponible;
+	private String tipoAtraccion;
 	private TipoDeAtraccion atraccion;
 	private Boolean admin; 
 	private HashMap<String, String> errors;
@@ -24,19 +25,19 @@ public class Usuario {
     }
 
 
-	public Usuario(Integer id,String nombre, Double presupuesto, Double tiempoDisponible, TipoDeAtraccion atraccion, String username, String password, Boolean admin) {
+	public Usuario(int id,String nombre, Double presupuesto, Double tiempoDisponible, String tipoAtraccion, String username, String password, Boolean admin) {
 		this.setId(id);
 		this.nombre = nombre;
 		this.presupuesto = presupuesto;
 		this.tiempoDisponible = tiempoDisponible;
-		this.atraccion = atraccion;
+		this.tipoAtraccion = tipoAtraccion;
 		this.username = username;
 		this.password=password;
 		this.setAdmin(admin);
 	}
 	//Integer id, String username, String password, Integer coins, Double time, Boolean admin
 	
-	public Usuario(Integer id, String nombre, String username, String password, Double dinero, Double tiempo, Boolean admin ) {
+	public Usuario(int id, String nombre, String username, String password, Double dinero, Double tiempo, Boolean admin ) {
 		this.setId(id);
 		this.nombre = nombre;
 		this.presupuesto = dinero;
@@ -162,6 +163,11 @@ public class Usuario {
 
 	public boolean isNull() {
 		return false;
+	}
+
+
+	public String getTipoAtraccion() {
+		return tipoAtraccion;
 	}
 
 }

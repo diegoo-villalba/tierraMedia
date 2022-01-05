@@ -40,7 +40,7 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 	public Usuario toUsuario(ResultSet resultados) throws SQLException {
 
 		return new Usuario(resultados.getInt("id"), resultados.getString("Nombre"), resultados.getDouble("Dinero"),
-				resultados.getDouble("Tiempo"), TipoDeAtraccion.valueOf(resultados.getString("Preferencia")), resultados.getString("username"),
+				resultados.getDouble("Tiempo"), resultados.getString("Preferencia"), resultados.getString("username"),
 				resultados.getString("password"), resultados.getBoolean("admin"));
 	}
 	
@@ -147,6 +147,15 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 			return usuarios;
 		} catch (Exception e) {
 			throw new MissingDataException(e);
+		}
+	}
+	
+	public static void main(String[] args) {
+		UsuariosDAOImpl usuariosDAO = new UsuariosDAOImpl();
+		List<Usuario> listado = usuariosDAO.findAll();
+		for (Usuario usu: listado) {
+			System.out.println(usu.getNombre());
+			System.out.println(usu.getTipoAtraccion());
 		}
 	}
 
