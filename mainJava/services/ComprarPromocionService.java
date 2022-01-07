@@ -3,10 +3,10 @@ package services;
 import java.util.HashMap;
 import java.util.Map;
 
-import modelos.Usuario;
+import model.Promocion;
+import model.Usuario;
 import persistence.impl.PromocionesDAOImpl;
 import persistence.impl.UsuariosDAOImpl;
-import tierraMadre.Promocion2;
 
 public class ComprarPromocionService {
 	
@@ -18,7 +18,7 @@ public class ComprarPromocionService {
 		Map<String, String> errors = new HashMap<String, String>();
 
 		Usuario turista = usuariosDAO.find(usuarioId);
-		Promocion2 promocion = promocionesDAO.find(promoId);
+		Promocion promocion = promocionesDAO.find(promoId);
 		
 		//Si la atraccion ya no tiene cupo
 		if (!promocion.tienenCupo()) {
@@ -44,7 +44,7 @@ public class ComprarPromocionService {
 			//TODO: AGREGAR METODO PARA NO OFRECER DE NUEVO UNA ATRACCION YA COMPRADA
 
 			promocionesDAO.updateAtraccionPromo(promocion);
-			usuariosDAO.update2(turista);
+			usuariosDAO.update(turista);
 		}
 		//Siempre retorno la lista de errores, segun haya o no, si la lista esta vacia (VER Servlet)
 		return errors;

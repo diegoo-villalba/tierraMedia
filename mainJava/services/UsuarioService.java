@@ -2,7 +2,7 @@ package services;
 
 import java.util.List;
 
-import modelos.Usuario;
+import model.Usuario;
 import persistence.UsuariosDAO;
 import persistence.commons.DAOFactory;
 import persistence.impl.UsuariosDAOImpl;
@@ -39,7 +39,7 @@ public class UsuarioService {
 		user.setPassword(password);
 
 		if (user.isValid()) {
-			usuarioDAO.update2(user);
+			usuarioDAO.update(user);
 		}
 
 		return user;

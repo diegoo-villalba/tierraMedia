@@ -1,7 +1,7 @@
 package services;
 
+import model.Usuario;
 import model.nullobjects.NullUser;
-import modelos.Usuario;
 import persistence.UsuariosDAO;
 import persistence.commons.DAOFactory;
 

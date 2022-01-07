@@ -9,7 +9,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import modelos.Atraccion;
+import model.Atraccion;
 import services.AtraccionService;
 
 @WebServlet("/atracciones/editar.do")

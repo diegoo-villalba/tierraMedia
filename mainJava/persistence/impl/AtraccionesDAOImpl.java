@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import modelos.Atraccion;
+import model.Atraccion;
+import model.enums.TipoDeAtraccion;
 import persistence.AtraccionesDAO;
 import persistence.commons.ConnectionProvider;
 import persistence.commons.MissingDataException;
-import tierraMadre.TipoDeAtraccion;
 
 public class AtraccionesDAOImpl implements AtraccionesDAO {
 
@@ -196,6 +196,23 @@ public class AtraccionesDAOImpl implements AtraccionesDAO {
 
 			return rows;
 		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
+	@Override
+	public int findIDByNombre(String nombre) {
+		try {
+			String sql = "SELECT Id FROM Atracciones WHERE Nombre = ?";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, nombre);
+			ResultSet resultados = statement.executeQuery();
+
+
+
+			return resultados.getInt("Id");
+		} catch(Exception e) {
 			throw new MissingDataException(e);
 		}
 	}

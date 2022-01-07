@@ -13,7 +13,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import modelos.Atraccion;
+import model.Atraccion;
 import services.AtraccionService;
 
 @WebServlet("/atracciones/index.do")
@@ -38,8 +38,6 @@ public class ListadoAtraccionesServlet extends HttpServlet implements Servlet {
 		dispatcher.forward(req, resp);
 
 	}
-	
-	//http://localhost:8080/TierraMedia/atracciones/index
 	
 }
 

@@ -48,6 +48,8 @@
 									class="dropdown-item">Usuarios</a></li>
 								<li class="nav-item"><a
 									href="/TierraMedia/promociones/index.do" class="dropdown-item">Promociones</a></li>
+								<li><a href="/TierraMedia/itinerarios/index.do"
+									class="dropdown-item">Itinerario</a></li>
 								<li class="nav-item"><a href="/TierraMedia/logout"
 									class="dropdown-item">Salir</a></li>
 							</ul></li>
@@ -176,6 +178,6 @@
 			</td>
 		</tr>
 	</table>
-<jsp:include page="/foot.jsp"></jsp:include>
+	<jsp:include page="/foot.jsp"></jsp:include>
 </body>
 </html>

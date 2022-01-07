@@ -12,8 +12,8 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import modelos.Atraccion;
-import modelos.Usuario;
+import model.Atraccion;
+import model.Usuario;
 import persistence.commons.ConnectionProvider;
 import persistence.impl.AtraccionesDAOImpl;
 import persistence.impl.UsuariosDAOImpl;

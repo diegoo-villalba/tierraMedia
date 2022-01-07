@@ -8,15 +8,14 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import model.Usuario;
 import model.nullobjects.NullUser;
-import modelos.Usuario;
 import persistence.UsuariosDAO;
 import persistence.commons.ConnectionProvider;
 import persistence.commons.MissingDataException;
-import tierraMadre.TipoDeAtraccion;
 
 public class UsuariosDAOImpl implements UsuariosDAO {
-	
+
 	public List<Usuario> getUsuarios() throws SQLException {
 
 		List<Usuario> usuario = new ArrayList<Usuario>();
@@ -43,32 +42,9 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 				resultados.getDouble("Tiempo"), resultados.getString("Preferencia"), resultados.getString("username"),
 				resultados.getString("password"), resultados.getBoolean("admin"));
 	}
-	
+
 	@Override
-	public int update(Usuario turista) {
-		
-		
-			try {
-				String sql = "UPDATE Usuarios SET Nombre = ?, username = ?, password = ? Dinero = ?, Tiempo = ? WHERE Id = ?";
-				Connection conn = ConnectionProvider.getConnection();
-
-				PreparedStatement statement = conn.prepareStatement(sql);
-				int i = 1;
-				statement.setString(i++, turista.getNombre());
-				statement.setString(i++, turista.getUsername());
-				statement.setString(i++, turista.getPassword());
-				statement.setDouble(i++, turista.getPresupuesto());
-				statement.setDouble(i++, turista.getTiempoDisponible());
-				statement.setInt(i++, turista.getId());
-				int rows = statement.executeUpdate();
-
-				return rows;
-			} catch (Exception e) {
-				throw new MissingDataException(e);
-			}
-		}
-	
-	public int update2(Usuario usuario) {
+	public int update(Usuario usuario) {
 
 		try {
 			String sql = "UPDATE Usuarios SET Nombre = ?, Dinero = ?, Tiempo = ?, username = ?, password = ? WHERE Id = ?";
@@ -91,7 +67,6 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 		}
 	}
 
-	
 	@Override
 	public int delete(Usuario turista) {
 		try {
@@ -107,7 +82,100 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 			throw new MissingDataException(e);
 		}
 	}
-	
+
+	@Override
+	public int countAll() {
+		try {
+			String sql = "SELECT COUNT(1) AS TOTAL FROM Usuarios";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			ResultSet resultados = statement.executeQuery();
+
+			resultados.next();
+			int total = resultados.getInt("TOTAL");
+
+			return total;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
+	@Override
+	public int insert(Usuario turista) {
+		try {
+			String sql = "INSERT INTO USUARIOS (NOMBRE, DINERO, TIEMPO, USERNAME, PASSWORD) VALUES (?, ?, ?, ?, ?)";
+			Connection conn = ConnectionProvider.getConnection();
+			// id, nombre, preferencia, dinero, tiempo, username, password
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, turista.getNombre());
+			statement.setDouble(2, turista.getPresupuesto());
+			statement.setDouble(3, turista.getTiempoDisponible());
+			statement.setString(4, turista.getUsername());
+			statement.setString(5, turista.getPassword());
+
+			int rows = statement.executeUpdate();
+			return rows;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+
+	}
+
+	@Override
+	public Usuario find(Integer id) {
+		try {
+			String sql = "SELECT * FROM Usuarios WHERE Id = ?";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setInt(1, id);
+			ResultSet resultados = statement.executeQuery();
+
+			Usuario turista = NullUser.build();
+
+			if (resultados.next()) {
+				turista = toUsuario(resultados);
+			}
+
+			return turista;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
+	@Override
+	public List<Usuario> findAll() {
+		try {
+			String sql = "SELECT * FROM Usuarios";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			ResultSet resultados = statement.executeQuery();
+
+			List<Usuario> usuarios = new LinkedList<Usuario>();
+			while (resultados.next()) {
+				usuarios.add(toUsuario(resultados));
+			}
+
+			return usuarios;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
+	@Override
+	public int findIDByNombre(String nombre) {
+		try {
+			String sql = "SELECT Id FROM Usuarios WHERE Nombre = ? AND Deleted = 0";
+			Connection conn = ConnectionProvider.getConnection();
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, nombre);
+			ResultSet resultados = statement.executeQuery();
+
+			return resultados.getInt("Id");
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
 	@Override
 	public Usuario findByNombre(String nombre) {
 		try {
@@ -130,76 +198,7 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 		}
 	}
 
-
-	@Override
-	public List<Usuario> findAll() {
-		try {
-			String sql = "SELECT * FROM Usuarios";
-			Connection conn = ConnectionProvider.getConnection();
-			PreparedStatement statement = conn.prepareStatement(sql);
-			ResultSet resultados = statement.executeQuery();
-
-			List<Usuario> usuarios = new LinkedList<Usuario>();
-			while (resultados.next()) {
-				usuarios.add(toUsuario(resultados));
-			}
-
-			return usuarios;
-		} catch (Exception e) {
-			throw new MissingDataException(e);
-		}
-	}
-	
-	public static void main(String[] args) {
-		UsuariosDAOImpl usuariosDAO = new UsuariosDAOImpl();
-		List<Usuario> listado = usuariosDAO.findAll();
-		for (Usuario usu: listado) {
-			System.out.println(usu.getNombre());
-			System.out.println(usu.getTipoAtraccion());
-		}
-	}
-
-	@Override
-	public int countAll() {
-		try {
-			String sql = "SELECT COUNT(1) AS TOTAL FROM Usuarios";
-			Connection conn = ConnectionProvider.getConnection();
-			PreparedStatement statement = conn.prepareStatement(sql);
-			ResultSet resultados = statement.executeQuery();
-
-			resultados.next();
-			int total = resultados.getInt("TOTAL");
-
-			return total;
-		} catch (Exception e) {
-			throw new MissingDataException(e);
-		}
-	}
-
-	@Override
-    public int insert(Usuario turista) {
-        try {
-            String sql = "INSERT INTO USUARIOS (NOMBRE, DINERO, TIEMPO, USERNAME, PASSWORD) VALUES (?, ?, ?, ?, ?)";
-            Connection conn = ConnectionProvider.getConnection();
-            //id, nombre, preferencia, dinero, tiempo, username, password
-            PreparedStatement statement = conn.prepareStatement(sql);
-            statement.setString(1, turista.getNombre());
-            statement.setDouble(2, turista.getPresupuesto());
-            statement.setDouble(3, turista.getTiempoDisponible());
-            statement.setString(4, turista.getUsername());
-            statement.setString(5, turista.getPassword());
-            
-            
-            int rows = statement.executeUpdate();
-            return rows;
-        } catch (Exception e) {
-            throw new MissingDataException(e);
-        }
-        
-    }
-	
-	@Override
-	public Usuario find(Integer id) {
+	public Usuario findById(Integer id) {
 		try {
 			String sql = "SELECT * FROM Usuarios WHERE Id = ?";
 			Connection conn = ConnectionProvider.getConnection();
@@ -218,5 +217,21 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 			throw new MissingDataException(e);
 		}
 	}
-	
+
+	@Override
+	public int logicalDelete(Usuario usuario) {
+		try {
+			String sql = "UPDATE Usuarios SET Deleted = 1 WHERE Nombre = ?";
+			Connection conn = ConnectionProvider.getConnection();
+
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, usuario.getNombre());
+			int rows = statement.executeUpdate();
+
+			return rows;
+		} catch (Exception e) {
+			throw new MissingDataException(e);
+		}
+	}
+
 }

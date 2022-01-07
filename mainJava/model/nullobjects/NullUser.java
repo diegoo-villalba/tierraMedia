@@ -1,6 +1,6 @@
 package model.nullobjects;
 
-import modelos.Usuario;
+import model.Usuario;
 
 public class NullUser extends Usuario {
 

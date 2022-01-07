@@ -10,10 +10,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Promocion;
 import services.AtraccionService;
 import services.PromotionService;
-import tierraMadre.Promocion;
-import tierraMadre.Promocion2;
 
 @WebServlet("/promociones/index.do")
 public class OfertadordePromosServlet extends HttpServlet {
@@ -34,7 +33,7 @@ public class OfertadordePromosServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		
-		List<Promocion2> promociones = promotionService.list();
+		List<Promocion> promociones = promotionService.list();
 
 		req.setAttribute("promociones", promociones);
 

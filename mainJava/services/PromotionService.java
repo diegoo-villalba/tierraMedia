@@ -2,12 +2,12 @@ package services;
 
 import java.util.List;
 
+import model.Promocion;
 import persistence.commons.DAOFactory;
-import tierraMadre.Promocion2;
 
 public class PromotionService {
 
-	public List<Promocion2> list() {
+	public List<Promocion> list() {
 		return DAOFactory.getPromocionesDAO().findAll();
 
 	}

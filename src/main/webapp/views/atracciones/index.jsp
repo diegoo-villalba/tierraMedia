@@ -68,13 +68,29 @@
 							<a href="/TierraMedia/atracciones/borrar.do?id=${attraction.id}"
 								class="btn btn-danger rounded" role="button"><i
 								class="bi bi-trash-fill"></i></a>
-						</c:if> <c:choose>
-							<c:when
-								test="${user.puedeComprar(attraction) && user.puedeSubir(attraction) && attraction.tieneCupo(1)}">
+								<!-- <c:when
+									test="${user.podesIrA(atraccion) && user.todaviaNoVasA(atraccion) && atraccion.podesRecibir()}">
+									<a href="/AP_parte3_webv02/attractions/buy.do?nombre=${atraccion.getNombre().replace(' ','%20')}"
+										class="btn btn-success rounded excepciona" role="button">Comprar</a>
+								</c:when> -->
+								
+								<!-- <c:when
+								test="${user.noTieneAtraccion(attraction) && user.puedeComprar(attraction) 
+								&& user.puedeSubir(attraction) && attraction.tieneCupo(1)}">
 								<a
 									href="/TierraMedia/atracciones/comprar.do?id=${attraction.id}"
 									class="btn btn-primary rounded" role="button">Comprar</a>
+							</c:when>  -->
+								
+						
+						</c:if> <c:choose>
+							<c:when
+								test="${user.canGoAttraction(attraction) && user.notYetAttraction(attraction) 
+								&& attraction.hasAPlace()}">
+								<a href="/TierraMedia/atracciones/comprar.do?id=${attraction.id}"
+									class="btn btn-primary rounded" role="button">Comprar</a>
 							</c:when>
+							
 							<c:otherwise>
 								<a href="#" class="btn btn-secondary rounded disabled"
 									role="button">No se puede comprar</a>

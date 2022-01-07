@@ -1,11 +1,17 @@
-/*package tierraMadre;
+package utils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Scanner;
 
+import model.Atraccion;
+import model.Promocion;
+import model.Usuario;
+import model.enums.TipoDeAtraccion;
+import model.enums.TipoPromo;
+
+@Deprecated
 public class ReaderFile {
 	
 	
@@ -19,12 +25,18 @@ public class ReaderFile {
                 String linea = sc.nextLine();
                 String datos[] = linea.split(" ");
                 // creo una Persona a partir de los datos leídos de la linea.
-                String nombre = datos[0];
-                double presupuesto = Double.parseDouble(datos[1]);
-                double tiempodisp = Double.parseDouble(datos[2]);
-                TipoDeAtraccion tipoAtraccion = TipoDeAtraccion.valueOf(datos[3]);
+                int id = Integer.parseInt(datos[0]);
+                String nombre = datos[1];
+                Double presupuesto = Double.parseDouble(datos[2]);
+                Double tiempodisp = Double.parseDouble(datos[3]);
+                String tipoAtraccion = datos[4];
+                String username = datos[5];
+                String password = datos[6];
+                Boolean isAdmin = Boolean.parseBoolean(datos[7]);
+                
                 // agrego esa persona a la lista, siempre y cuando no est� repetida
-                Usuario p = new Usuario(nombre, presupuesto, tiempodisp, tipoAtraccion);
+                
+                Usuario p = new Usuario(id, nombre, presupuesto, tiempodisp, tipoAtraccion, username, password, isAdmin);
                 if (!usuarios.contains(p))
                     usuarios.add(p);
             }
@@ -69,37 +81,56 @@ public class ReaderFile {
 	}
 	
 	
-	public static LinkedList<Promocion> getPromociones(String archivo, List<Atraccion> atracciones) {
-        // para leer el archivo de promociones y armar una lista con ellas
-        LinkedList<Promocion> promociones = new LinkedList<Promocion>();
-        Scanner sc = null;
-        try {
-            sc = new Scanner(new File(archivo));
-            while (sc.hasNext()) {
-                // leo cada linea del archivo
-                String linea = sc.nextLine();
-                String datos[] = linea.split(",");
-                // creo una Promocion a partir de los datos le�dos de la l�nea.
-                // las promos son de dos o tres atracciones
-                double montoPromo = Double.parseDouble(datos[0]);
-                TipoPromo tipoPromo = TipoPromo.valueOf(datos[1]);
-                String nombre = datos[2];
-                String atraccion1 = datos[3];
-                String atraccion2 = datos[4];
-                String atraccion3 = datos[5];
-                List<Atraccion> atraccionesPromo = Promocion.filtroAtraccion(atraccion1, atraccion2, atraccion3, atracciones);
-                // agrego esa persona a la lista, siempre y cuando no est� repetida
-                Promocion p = PromoFactory.buildPromocion(nombre, atraccionesPromo, tipoPromo, montoPromo);
-                if (!promociones.contains(p))
-                    promociones.add(p);
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        // cierro el archivo
-        sc.close();
-        return promociones;
-    }
+	public LinkedList<Promocion> getPromociones(String archivo) {
+		LinkedList<Promocion> promociones = new LinkedList<Promocion>();
+		Scanner sc = null;
+		try { //
+			sc = new Scanner(new File(archivo));
+			while (sc.hasNext()) {
+				String linea = sc.nextLine();
+				String datos[] = linea.split(", ");
+
+				TipoPromo tipoDePromocion = TipoPromo.valueOf(datos[1]);
+
+				Promocion promocion = Promocion.generarPromo(datos, tipoDePromocion);
+
+				int id1 = Integer.parseInt(datos[3]);
+				int id2 = Integer.parseInt(datos[4]);
+
+				Atraccion atraccion1 = Atraccion.encontrarPorId(id1);
+				Atraccion atraccion2 = Atraccion.encontrarPorId(id2);
+
+				promocion.getAtracciones().add(atraccion1);
+				promocion.getAtracciones().add(atraccion2);
+
+				if (TipoPromo.AXB.equals(TipoPromo.valueOf(datos[1]))) {
+					Atraccion atraccion3 = Atraccion.encontrarPorId(Integer.parseInt(datos[5]));
+					promocion.getAtracciones().add(atraccion3);
+				}
+
+				promociones.add(promocion);
+
+			}
+
+		}
+
+		catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+
+			try {
+				if (sc != null) {
+					sc.close();
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		sc.close();
+		return promociones;
+	}
 	
 
-}*/
+}
