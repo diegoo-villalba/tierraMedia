@@ -12,10 +12,23 @@
     <title>TurismoTierraMedia</title>
     <jsp:include page="ini.jsp"></jsp:include>
     
+    <style type="text/css">
+    
+    .loginText {
+     color: black;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 2px;
+    }
+    
+    </style>
+    
 </head>
 
-<body background= "img/tierramedia.jpg">
-<jsp:include page="banner.jsp"></jsp:include>
+<body background= "img/wall.jpg">
+<!-- <jsp:include page="banner.jsp"></jsp:include> -->
+
+<h1 class = "titulo" > Turismo en la tierra Media</h1>
 
  	<div class="col-lg-5 mx-auto p-3 py-md-5">
       
@@ -28,14 +41,13 @@
 			</c:if>
 
 			<form action="login" method="post">
-				<h3 align="center">Login</h3>
 				<div class="mb-3">
-					<label for="username" class="form-label">Usuario</label> <input
+					<label for="username" class="form-label loginText">Usuario</label> <input
 						class="form-control" name="username">
 				</div>
 
 				<div class="mb-3">
-					<label for="password" class="form-label">Contraseña</label> <input
+					<label for="password" class="form-label loginText">Contraseña</label> <input
 						type="password" class="form-control" name="password">
 				</div>
 
@@ -44,7 +56,6 @@
 				</div>
 			</form>
       </div>
-      <jsp:include page="/foot.jsp"></jsp:include>
 
 </body>
 </html>

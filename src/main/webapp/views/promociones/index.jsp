@@ -17,7 +17,7 @@
 </head>
 
 
-<body background="/TierraMedia/img/tm1.jpg">
+<body background="/TierraMedia/img/regul.jpg">
 	<jsp:include page="/barra/navi.jsp"></jsp:include>
 
 
@@ -78,5 +78,10 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	
+	<footer class="page-footer font-small teal pt-4 bg-dark text-white fixed-bottom"
+		style="background-color: rgba(0, 0, 0, 0.2);">
+	<jsp:include page="/foot.jsp"></jsp:include>
+	</footer>
 </body>
 </html>

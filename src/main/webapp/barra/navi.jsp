@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4 fixed top">
 	<div class="container">
 		<a class="btn btn-outline-success" href="/TierraMedia/index.jsp">Turismo
 			en la Tierra Media</a>
@@ -13,8 +13,9 @@
 
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav me-auto mb-2 mb-md-0">
+
 				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="/TierraMedia/atracciones/index.do">Atracciones</a></li>
+					aria-current="page" href="/TierraMedia/atracciones/atracciones.do">Atracciones</a></li>
 				<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href="/TierraMedia/promociones/index.do">Promociones</a></li>
 				<li class="nav-item"><a class="nav-link active"
@@ -24,6 +25,14 @@
 						aria-current="page" href="/TierraMedia/users/indexu.do">Usuarios</a></li>
 				</c:if>
 			</ul>
+
+			<c:if test="${success != null}">
+				<div class="alert alert-success">
+					<p>
+						<c:out value="${success}" />
+					</p>
+				</div>
+			</c:if>
 
 			<ul class="navbar-nav">
 				<li class="nav-item dropdown"><a
@@ -44,6 +53,10 @@
 								class="bi bi-hourglass-split"></i> <c:out
 									value="${user.tiempoDisponible}"></c:out>
 						</a></li>
+						<li><hr class="dropdown-divider"></li>
+
+						<li><a href="/TierraMedia/itinerarios/index.do"
+							class="dropdown-item">Mi itinerario</a></li>
 
 						<li><hr class="dropdown-divider"></li>
 						<li><c:if test="${user.isAdmin()}">
@@ -63,6 +76,7 @@
 								</a>
 
 							</c:if></li>
+
 						<li><a href="/TierraMedia/logout" class="dropdown-item"><i
 								style="color: red" class="bi bi-power"></i>Salir</a></li>
 					</ul></li>
@@ -73,10 +87,3 @@
 	</div>
 </nav>
 
-<c:if test="${success != null}">
-	<div class="alert alert-success">
-		<p>
-			<c:out value="${success}" />
-		</p>
-	</div>
-</c:if>

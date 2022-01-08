@@ -19,101 +19,94 @@
 
 <body background="/TierraMedia/img/tm3.jpg">
 	<jsp:include page="/barra/navi.jsp"></jsp:include>
-	
-	<c:if test="${user.isAdmin()}">
+	<section>
+		<c:if test="${flash != null}">
+			<div class="alert alert-danger">
+				<p>
+					<c:out value="${flash}" />
+					<c:if test="${errors != null}">
+						<ul>
+							<c:forEach items="${errors}" var="entry">
+								<li><c:out value="${entry.getValue()}"></c:out></li>
+							</c:forEach>
+						</ul>
+					</c:if>
+				</p>
+			</div>
+		</c:if>
+
+		<c:if test="${user.isAdmin()}">
 			<div class="mb-3">
 				<a href="/TierraMedia/atracciones/crear.do" class="btn btn-primary"
 					role="button"> <i class="bi bi-plus-lg"></i> Nueva Atracción
 				</a>
 			</div>
 		</c:if>
-
-	<table class="table">
-		<thead class="thead-dark">
-			<tr bgcolor="#ccccff">
-				<th scope="col">Atracci&oacute;n</th>
-				<th scope="col">Costo</th>
-				<th scope="col">Duraci&oacute;n</th>
-				<th scope="col">Cupo</th>
-				<th scope="col">Acciones</th>
-
-			</tr>
-		</thead>
-		<tbody>
-
-			<c:forEach items="${attractions}" var="attraction">
-				<tr>
-
-
-					<td> <a href="#"
-						class="btn btn-dark btn-lg" role="button"><i class="bi bi-signpost-fill"></i><c:out
-								value="${attraction.nombre}"></c:out></a></td>
-								
-					<td><button type="button" class="btn btn-secondary btn-sm"><i class="bi bi-currency-dollar"></i>
-					<c:out value="${attraction.costo}"></c:out></button>
-					</td>
-					
-					<td><button type="button" class="btn btn-secondary btn-sm"><i class="bi bi-clock-history"></i>
-					<c:out value="${attraction.tiempoRecorrido}"></c:out></button>
-					</td>
-					
-					<td><button type="button" class="btn btn-secondary btn-sm"><i class="bi bi-sticky-fill"></i>
-					<c:out value="${attraction.cupo}"></c:out></button>
-					</td>
-
-					<td><c:if test="${user.admin}">
-							<a href="/TierraMedia/atracciones/editar.do?id=${attraction.id}"
-								class="btn btn-dark" role="button"><i
-								class="bi bi-gear-fill"></i></a>
-							<a href="/TierraMedia/atracciones/borrar.do?id=${attraction.id}"
-								class="btn btn-danger rounded" role="button"><i
-								class="bi bi-trash-fill"></i></a>
-								<!-- <c:when
-									test="${user.podesIrA(atraccion) && user.todaviaNoVasA(atraccion) && atraccion.podesRecibir()}">
-									<a href="/AP_parte3_webv02/attractions/buy.do?nombre=${atraccion.getNombre().replace(' ','%20')}"
-										class="btn btn-success rounded excepciona" role="button">Comprar</a>
-								</c:when> -->
-								
-								<!-- <c:when
-								test="${user.noTieneAtraccion(attraction) && user.puedeComprar(attraction) 
-								&& user.puedeSubir(attraction) && attraction.tieneCupo(1)}">
-								<a
-									href="/TierraMedia/atracciones/comprar.do?id=${attraction.id}"
-									class="btn btn-primary rounded" role="button">Comprar</a>
-							</c:when>  -->
-								
-						
-						</c:if> <c:choose>
-							<c:when
-								test="${user.canGoAttraction(attraction) && user.notYetAttraction(attraction) 
-								&& attraction.hasAPlace()}">
-								<a href="/TierraMedia/atracciones/comprar.do?id=${attraction.id}"
-									class="btn btn-primary rounded" role="button">Comprar</a>
-							</c:when>
-							
-							<c:otherwise>
-								<a href="#" class="btn btn-secondary rounded disabled"
-									role="button">No se puede comprar</a>
-							</c:otherwise>
-						</c:choose></td>
+		<table class="table">
+			<thead class="thead-dark">
+				<tr bgcolor="#ccccff">
+					<th scope="col">Atracci&oacute;n</th>
+					<th scope="col">Costo</th>
+					<th scope="col">Duraci&oacute;n</th>
+					<th scope="col">Cupo</th>
+					<th scope="col">Acciones</th>
 
 				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-	<c:if test="${flash != null}">
-		<div class="alert alert-danger">
-			<p>
-				<c:out value="${flash}" />
-				<c:if test="${errors != null}">
-					<ul>
-						<c:forEach items="${errors}" var="entry">
-							<li><c:out value="${entry.getValue()}"></c:out></li>
-						</c:forEach>
-					</ul>
-				</c:if>
-			</p>
-		</div>
-	</c:if>
+			</thead>
+			<tbody>
+
+				<c:forEach items="${attractions}" var="attraction">
+					<tr>
+
+
+						<td><a href="#" class="btn btn-dark btn-lg" role="button"><i
+								class="bi bi-signpost-fill"></i> <c:out
+									value="${attraction.nombre}"></c:out></a></td>
+
+						<td><button type="button" class="btn btn-secondary btn-sm">
+								<i class="bi bi-currency-dollar"></i>
+								<c:out value="${attraction.costo}"></c:out>
+							</button></td>
+
+						<td><button type="button" class="btn btn-secondary btn-sm">
+								<i class="bi bi-clock-history"></i>
+								<c:out value="${attraction.tiempoRecorrido}"></c:out>
+							</button></td>
+
+						<td><button type="button" class="btn btn-secondary btn-sm">
+								<i class="bi bi-sticky-fill"></i>
+								<c:out value="${attraction.cupo}"></c:out>
+							</button></td>
+
+						<td><c:if test="${user.admin}">
+								<a href="/TierraMedia/atracciones/editar.do?id=${attraction.id}"
+									class="btn btn-dark" role="button"><i
+									class="bi bi-gear-fill"></i></a>
+								<a href="/TierraMedia/atracciones/borrar.do?id=${attraction.id}"
+									class="btn btn-danger rounded" role="button"><i
+									class="bi bi-trash-fill"></i></a>
+
+
+
+							</c:if> <c:choose>
+								<c:when
+									test="${user.canGoAttraction(attraction) && user.notYetAttraction(attraction) 
+								&& attraction.hasAPlace()}">
+									<a
+										href="/TierraMedia/atracciones/comprar.do?id=${attraction.id}"
+										class="btn btn-primary rounded" role="button">Comprar</a>
+								</c:when>
+
+								<c:otherwise>
+									<a href="#" class="btn btn-secondary rounded disabled"
+										role="button">No se puede comprar</a>
+								</c:otherwise>
+							</c:choose></td>
+
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</section>
 </body>
 </html>

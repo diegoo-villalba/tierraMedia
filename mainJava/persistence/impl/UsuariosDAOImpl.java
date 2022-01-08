@@ -164,7 +164,7 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 	@Override
 	public int findIDByNombre(String nombre) {
 		try {
-			String sql = "SELECT Id FROM Usuarios WHERE Nombre = ? AND Deleted = 0";
+			String sql = "SELECT Id FROM Usuarios WHERE Nombre = ?";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setString(1, nombre);
@@ -213,22 +213,6 @@ public class UsuariosDAOImpl implements UsuariosDAO {
 			}
 
 			return turista;
-		} catch (Exception e) {
-			throw new MissingDataException(e);
-		}
-	}
-
-	@Override
-	public int logicalDelete(Usuario usuario) {
-		try {
-			String sql = "UPDATE Usuarios SET Deleted = 1 WHERE Nombre = ?";
-			Connection conn = ConnectionProvider.getConnection();
-
-			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, usuario.getNombre());
-			int rows = statement.executeUpdate();
-
-			return rows;
 		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}

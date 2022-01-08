@@ -6,7 +6,7 @@
 <head>
 <jsp:include page="/ini.jsp"></jsp:include>
 </head>
-<body background="/TierraMedia/img/tm2.jpg">
+<body background="/TierraMedia/img/regul.jpg">
 
 	<jsp:include page="/barra/navi.jsp"></jsp:include>
 
@@ -98,6 +98,11 @@
 		</table>
 
 	</main>
+	
+	<footer class="page-footer font-small teal pt-4 bg-dark text-white fixed-bottom"
+		style="background-color: rgba(0, 0, 0, 0.2);">
+	<jsp:include page="/foot.jsp"></jsp:include>
+	</footer>
 
 </body>
 </html>

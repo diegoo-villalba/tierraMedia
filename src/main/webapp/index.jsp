@@ -14,9 +14,11 @@
 
 </head>
 
-<body background="img/tierramedia.jpg">
+<body background="img/regul.jpg">
 
-	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+<jsp:include page="/barra/navi.jsp"></jsp:include>
+
+	<!--  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
 		<div class="container">
 			<a class="btn btn-outline-success" href="/TierraMedia/index.jsp">Turismo
 				en la Tierra Media</a>
@@ -25,6 +27,8 @@
 				<c:out value="${user.username}" />
 				!
 			</div>
+			
+			-->
 			<form class="form-inline my-2 my-lg-0">
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -41,17 +45,6 @@
 							<ul class="dropdown-menu dropdown-menu-end"
 								aria-labelledby="navbarDropdown">
 
-								<li><hr class="dropdown-divider"></li>
-								<li><a href="/TierraMedia/atracciones/index.do"
-									class="dropdown-item">Atracciones</a></li>
-								<li class="nav-item"><a href="/TierraMedia/users/indexu.do"
-									class="dropdown-item">Usuarios</a></li>
-								<li class="nav-item"><a
-									href="/TierraMedia/promociones/index.do" class="dropdown-item">Promociones</a></li>
-								<li><a href="/TierraMedia/itinerarios/index.do"
-									class="dropdown-item">Itinerario</a></li>
-								<li class="nav-item"><a href="/TierraMedia/logout"
-									class="dropdown-item">Salir</a></li>
 							</ul></li>
 					</ul>
 				</div>
@@ -60,14 +53,16 @@
 	</nav>
 
 	<main class="container"></main>
-
+	
 	<table align="center">
+	
+	
 
-		<tr>
+		<!-- <tr>
 			<td width="700">
 
 
-				<div id="carouselExampleCaptions" class="carousel slide"
+			<div id="carouselExampleCaptions" class="carousel slide"
 					data-bs-ride="carousel" align="right">
 					<div class="carousel-indicators" align="right">
 						<button type="button" data-bs-target="#carouselExampleCaptions"
@@ -176,8 +171,11 @@
 				</div>
 
 			</td>
-		</tr>
-	</table>
+		</tr> -->
+	</table> 
+	<footer class="page-footer font-small teal pt-4 bg-dark text-white"
+		style="background-color: rgba(0, 0, 0, 0.2);">
 	<jsp:include page="/foot.jsp"></jsp:include>
+	</footer>
 </body>
 </html>

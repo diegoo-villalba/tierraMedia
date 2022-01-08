@@ -9,10 +9,11 @@
 <body>
 <table>
 <tr>
-<td>
-<object data="img/Tur.png"
+<td> Turismo en la Tierra Media
+<!--  
+<object data="img/joj.png"
 				type="image/png" width="100%" height="100%">
-				</object>
+				</object> -->
 </td>
 </tr>
 </table>
