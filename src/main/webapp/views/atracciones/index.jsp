@@ -75,7 +75,7 @@ footer {
 
 		<div class="alerta">
 			<c:if test="${flash != null}">
-				<div class="alert alert-danger">
+				<div class="alert alert-success">
 					<p>
 						<c:out value="${flash}" />
 						<c:if test="${errors != null}">
@@ -90,10 +90,10 @@ footer {
 			</c:if>
 
 		</div>
-		
-		
-		
-		
+
+
+
+
 		<div class="botonCrear">
 			<c:if test="${user.isAdmin()}">
 				<div class="mb-3">
@@ -159,7 +159,7 @@ footer {
 								&& attraction.hasAPlace()}">
 										<a
 											href="/TierraMedia/atracciones/comprar.do?id=${attraction.id}"
-											class="btn btn-primary rounded" role="button">Comprar</a>
+											class="btn btn-primary btn-dark rounded" role="button">Comprar</a>
 									</c:when>
 
 									<c:otherwise>

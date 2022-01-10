@@ -226,5 +226,9 @@ public class Usuario {
 		this.presupuesto -= unaAtraccion.getCosto();
 	}
 	
+	public void payPromo(Promocion unaPromocion) {
+		this.presupuesto -= unaPromocion.getCostoTotalPromo();
+	}
+	
 	
 }

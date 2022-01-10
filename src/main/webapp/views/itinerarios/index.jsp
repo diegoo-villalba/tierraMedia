@@ -7,6 +7,9 @@
 
 <meta charset="UTF-8">
 <link
+	href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
+	rel="stylesheet">
+<link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
@@ -16,12 +19,30 @@
 
 <style>
 html {
-    box-sizing: border-box;
-    font-size: 100.0%;
+	box-sizing: border-box;
+	font-size: 100.0%;
+}
+
+h1 {
+	text-align: center;
+	font-size: 2rem;
+	font-family: 'Staatliches', cursive;
+}
+
+.itiTitle {
+	padding-top: 20px;
+}
+
+.itiSubtitle {
+	padding-top: 30px;
+}
+
+.printButton {
+	padding: 5px;
 }
 
 *, *:before, *:after {
-    box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 .grid {
@@ -30,54 +51,32 @@ html {
 	gap: 1rem; /*Column-gap y row-gap todo en 1 */
 }
 
-@media (min-width: 768px) {
-    .grid{
-        grid-template-columns: repeat(3, 1fr); /* Si quiero CENTRAR cotenido lo HAGO CON FLEXBOX, SI VOY A POSICIONAR ELEMENTOs lo HAGO CON GRID*/
-    }
+@media ( min-width : 768px) {
+	.grid {
+		grid-template-columns: repeat(3, 1fr);
+		/* Si quiero CENTRAR cotenido lo HAGO CON FLEXBOX, SI VOY A POSICIONAR ELEMENTOs lo HAGO CON GRID*/
+	}
 }
-
-
 </style>
 
 <title>Turismo en la Tierra Media</title>
 </head>
 
 
-<body background="/TierraMedia/img/libro2.jpg">
-	
-<div>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Imprimir itinerario
-</button>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel"> ¡Atencion!</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ¡Atencion, Está a punto de imprimir su itinerario!
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Regresar</button>
-        <button type="button" class="btn btn-primary">Imprimir</button>
-      </div>
-    </div>
-  </div>
-</div>
+<body background="/TierraMedia/img/ecole.jpg">
+
 
 	<main class="container print-container">
 
-		<div class="bg-light p-4 mb-3 rounded">
-			<h1>Itinerario - Turismo en la Tierra Media</h1>
+		<div class="itiTitle">
+			<h1>Mi Itinerario</h1>
 		</div>
-		<hr>
 
-		<div class="bg-light p-4 mb-3 rounded">
-			<h1>Estas son sus Atracciones</h1>
+		<div class="itiSubtitle">
+			<h1>
+				<c:out value="${user.username}"></c:out>
+				, estas son sus compras:
+			</h1>
 		</div>
 
 
@@ -103,6 +102,41 @@ html {
 					</tr>
 				</c:forEach>
 			</tbody>
+			<tfoot>
+				<tr style="border: hidden">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>
+						<div class="printButton" style="float: right;">
+							<button type="button" class="btn btn-primary btn-dark"
+								data-bs-toggle="modal" data-bs-target="#staticBackdrop">Imprimir
+								itinerario</button>
+						</div>
+						<div class="modal fade" id="staticBackdrop"
+							data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+							aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="staticBackdropLabel">¡Atencion!</h5>
+										<button type="button" class="btn-close"
+											data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<div class="modal-body">¡Atencion, está a punto de
+										imprimir su itinerario!</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-bs-dismiss="modal">Regresar</button>
+										<button type="button" class="btn btn-primary">Imprimir</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</td>
+				</tr>
+			</tfoot>
 		</table>
 
 	</main>

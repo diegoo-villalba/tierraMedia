@@ -15,6 +15,7 @@ import model.promotionsType.PromoAbsoluta;
 import model.promotionsType.PromoPorcentual;
 import persistence.PromocionesDAO;
 import persistence.commons.ConnectionProvider;
+import persistence.commons.DAOFactory;
 import persistence.commons.MissingDataException;
 
 public class PromocionesDAOImpl implements PromocionesDAO {
@@ -156,6 +157,13 @@ public class PromocionesDAOImpl implements PromocionesDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new MissingDataException(e);
+		}
+	}
+	
+	public void updateAtracciones(Promocion promocion) {
+
+		for (Atraccion atraccion : promocion.getAtracciones()) {
+			DAOFactory.getAtraccionesDAO().update(atraccion);
 		}
 	}
 

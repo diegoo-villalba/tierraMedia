@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import model.Promocion;
+import model.Recommender;
 import model.Usuario;
 import persistence.impl.PromocionesDAOImpl;
 import persistence.impl.UsuariosDAOImpl;
@@ -38,13 +39,7 @@ public class ComprarPromocionService {
 		 *  y restamos el cupo a la atraccion.
 		*/
 		if (errors.isEmpty()) {
-			turista.aceptarPromo(promocion.getCostoTotalPromo(), promocion.getTiempoDeRecorrido());
-			promocion.aceptarPromocion();;
-			
-			//TODO: AGREGAR METODO PARA NO OFRECER DE NUEVO UNA ATRACCION YA COMPRADA
-
-			promocionesDAO.updateAtraccionPromo(promocion);
-			usuariosDAO.update(turista);
+			Recommender.agregarYPagarPromo(turista, promocion);
 		}
 		//Siempre retorno la lista de errores, segun haya o no, si la lista esta vacia (VER Servlet)
 		return errors;

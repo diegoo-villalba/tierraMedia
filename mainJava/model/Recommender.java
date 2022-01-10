@@ -14,4 +14,18 @@ public synchronized static void agregarYPagar(Usuario unUsuario, Atraccion unaAt
 		DAOFactory.getUsuariosDAO().update(unUsuario);
 	}
 
+public synchronized static void agregarYPagarPromo(Usuario unUsuario, Promocion unaPromocion) {
+	
+	for (Atraccion cadaAtraccion : unaPromocion.getAtracciones()) {
+		
+		cadaAtraccion.takeASit(unUsuario);
+		DAOFactory.getElItinerarioDAO().cargarAtraccion(cadaAtraccion, unUsuario);
+		
+	}
+	unUsuario.payPromo(unaPromocion);
+	
+	DAOFactory.getPromocionesDAO().updateAtracciones(unaPromocion);
+	DAOFactory.getUsuariosDAO().update(unUsuario);
+}
+
 }

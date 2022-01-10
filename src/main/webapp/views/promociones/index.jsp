@@ -16,12 +16,12 @@
 
 <style>
 html {
-    box-sizing: border-box;
-    font-size: 100.0%;
+	box-sizing: border-box;
+	font-size: 100.0%;
 }
 
 *, *:before, *:after {
-    box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 .grid {
@@ -30,22 +30,19 @@ html {
 	gap: 1rem; /*Column-gap y row-gap todo en 1 */
 }
 
-@media (min-width: 768px) {
-    .grid{
-        grid-template-columns: repeat(3, 1fr); /* Si quiero CENTRAR cotenido lo HAGO CON FLEXBOX, SI VOY A POSICIONAR ELEMENTOs lo HAGO CON GRID*/
-    }
+@media ( min-width : 768px) {
+	.grid {
+		grid-template-columns: repeat(3, 1fr);
+		/* Si quiero CENTRAR cotenido lo HAGO CON FLEXBOX, SI VOY A POSICIONAR ELEMENTOs lo HAGO CON GRID*/
+	}
 }
 
 .ctri {
-
 	max-width: 120rem;
 	margin: 0 auto; /* Para centrar el contenido */
 	padding-top: 30px;
 }
-
 }
-
-
 </style>
 
 
@@ -55,68 +52,69 @@ html {
 
 
 <body background="/TierraMedia/img/ecole.jpg">
-	
-<main >
-<div class="ctri">
-	<table class="table">
-		<thead class="thead-dark">
-			<tr bgcolor="#ccccff">
-				<th scope="col">Promoci&oacute;n</th>
-				<th scope="col">Costo</th>
-				<th scope="col">Duraci&oacute;n</th>
-				<th scope="col">Atracciones</th>
-				<th scope="col">Acciones</th>
-			</tr>
 
-		</thead>
-		<tbody>
+	<main>
+		<div class="ctri">
+			<table class="table">
+				<thead class="thead-dark">
+					<tr bgcolor="#ccccff">
+						<th scope="col">Promoci&oacute;n</th>
+						<th scope="col">Costo</th>
+						<th scope="col">Duraci&oacute;n</th>
+						<th scope="col">Atracciones</th>
+						<th scope="col">Acciones</th>
+					</tr>
 
-
-			<c:forEach items="${promociones}" var="promo">
-				<tr>
-
-					<td> <a href="#"
-						class="btn btn-dark btn-lg" role="button"><i class="bi bi-signpost-fill"></i><c:out
-								value="${promo.nombrePromo}"></c:out></a></td>
-
-					<td><button type="button" class="btn btn-secondary btn-sm">
-							<i class="bi bi-currency-dollar"></i>
-							<c:out value="${promo.getCostoTotalPromo()}"></c:out>
-						</button></td>
+				</thead>
+				<tbody>
 
 
-					<td><button type="button" class="btn btn-secondary btn-sm">
-							<i class="bi bi-clock-history"></i>
-							<c:out value="${promo.getTiempoDeRecorrido()}"></c:out>
-						</button></td>
+					<c:forEach items="${promociones}" var="promo">
+						<tr>
+
+							<td><a href="#" class="btn btn-dark btn-lg" role="button"><i
+									class="bi bi-signpost-fill"></i> <c:out
+										value="${promo.nombrePromo}"></c:out></a></td>
+
+							<td><button type="button" class="btn btn-secondary btn-sm">
+									<i class="bi bi-currency-dollar"></i>
+									<c:out value="${promo.getCostoTotalPromo()}"></c:out>
+								</button></td>
 
 
-
-					<td><button type="button" class="btn btn-secondary btn-sm">
-							<i class="bi bi-boxes"></i>
-							<c:out value="${promo.getAtracciones()}"></c:out>
-						</button></td>
+							<td><button type="button" class="btn btn-secondary btn-sm">
+									<i class="bi bi-clock-history"></i>
+									<c:out value="${promo.getTiempoDeRecorrido()}"></c:out>
+								</button></td>
 
 
 
-					<td><c:choose>
-							<c:when test="${promo.puedoOfrecer(user)}">
-								<a
-									href="/TierraMedia/promociones/comprar.do?id=${promo.getIdPromo()}"
-									class="btn btn-primary rounded" role="button">Comprar</a>
-							</c:when>
-							<c:otherwise>
-								<a href="#" class="btn btn-secondary rounded disabled"
-									role="button">No se puede comprar</a>
-							</c:otherwise>
-						</c:choose></td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-	</div>
-</main>
-<footer class="page-footer font-small teal pt-4 bg-dark text-white fixed-bottom"
+							<td><button type="button" class="btn btn-secondary btn-sm">
+									<i class="bi bi-boxes"></i>
+									<c:out value="${promo.getAtracciones()}"></c:out>
+								</button></td>
+							
+							
+							<td><c:choose>
+									<c:when test="${promo.puedoOfrecer(user)}">
+										<a
+											href="/TierraMedia/promociones/comprar.do?id=${promo.getIdPromo()}"
+											class="btn btn-primary btn-dark rounded" role="button">Comprar</a>
+									</c:when>
+									<c:otherwise>
+										<a href="#" class="btn btn-secondary rounded disabled"
+											role="button">No se puede comprar</a>
+									</c:otherwise>
+								</c:choose></td>
+
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+	</main>
+	<footer
+		class="page-footer font-small teal pt-4 bg-dark text-white fixed-bottom"
 		style="background-color: rgba(0, 0, 0, 0.2);">
 		<jsp:include page="/foot.jsp"></jsp:include>
 	</footer>

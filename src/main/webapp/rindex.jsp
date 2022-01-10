@@ -195,18 +195,18 @@ h2 {
 
 		<div class="me-auto" role="group" style="float: right;">
 			<button id="btnGroupDrop1" type="button"
-				class="btn btn-primary btn btn-dark dropdown-toggle"
+				class="btn btn-primary btn btn-dark dropdown-toggle "
 				data-bs-toggle="dropdown" aria-expanded="false">
 				¡Bienvenido
 				<c:out value="${user.username}"></c:out>
 				!
 			</button>
-			<ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-				<li><a class="dropdown-item disabled" style="color: black;">
+			<ul class="dropdown-menu bg-dark " aria-labelledby="btnGroupDrop1">
+				<li><a class="dropdown-item disabled" style="color: white;">
 						<i title="monedas" style="color: green;" class="bi bi-cash-coin"></i>
 						<c:out value="${user.presupuesto}"></c:out>
 				</a></li>
-				<li><a class="dropdown-item disabled" style="color: black;">
+				<li><a class="dropdown-item disabled" style="color: white;">
 						<i title="tiempo" style="color: gold;"
 						class="bi bi-hourglass-split"></i> <c:out
 							value="${user.tiempoDisponible}"></c:out>
@@ -215,12 +215,12 @@ h2 {
 				<li><hr class="dropdown-divider"></li>
 
 				<li><a href="/TierraMedia/itinerarios/index.do"
-					class="dropdown-item">Mi itinerario</a></li>
+					class="dropdown-item text-white">Mi itinerario</a></li>
 
 				<li><hr class="dropdown-divider"></li>
 				<li><c:if test="${user.isAdmin()}">
 
-						<a href="/TierraMedia/atracciones/crear.do" class="dropdown-item"
+						<a href="/TierraMedia/atracciones/crear.do" class="dropdown-item text-white"
 							role="button"> <i style="color: blue;"
 							class="bi bi-file-arrow-up"></i> Nueva Atraccion
 						</a>
@@ -228,7 +228,7 @@ h2 {
 					</c:if></li>
 				<li><c:if test="${user.isAdmin()}">
 
-						<a href="/TierraMedia/users/create.do" class="dropdown-item"
+						<a href="/TierraMedia/users/create.do" class="dropdown-item text-white"
 							role="button"> <i style="color: blue;"
 							class="bi bi-person-plus-fill"></i> Nuevo Usuario
 						</a>
@@ -241,7 +241,7 @@ h2 {
 	<main>
 		<div>
 
-			<h1 class="divWelcome">
+			<h1 >
 				¡Bienvenido
 				<c:out value="${user.username}"></c:out>
 				a la Tierra Media!
@@ -257,7 +257,7 @@ h2 {
 
 			<div class="row align-items-start xp1">
 
-				<div class="divSub">
+				<div>
 
 					<h2 style="color: #292828; font-family: 'Staatliches', cursive;">
 						Estas son algunas de nuestras atracciones:</h2>
