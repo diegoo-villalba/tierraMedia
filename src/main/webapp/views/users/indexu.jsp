@@ -5,12 +5,48 @@
 <html>
 <head>
 <jsp:include page="/ini.jsp"></jsp:include>
+<jsp:include page="/barra/nav.jsp"></jsp:include>
+
+<style>
+html {
+    box-sizing: border-box;
+    font-size: 100.0%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem; /*Column-gap y row-gap todo en 1 */
+}
+
+@media (min-width: 768px) {
+    .grid{
+        grid-template-columns: repeat(3, 1fr); /* Si quiero CENTRAR cotenido lo HAGO CON FLEXBOX, SI VOY A POSICIONAR ELEMENTOs lo HAGO CON GRID*/
+    }
+}
+
+.ctri {
+
+	padding-top: 10px;
+}
+
+.botonCrear {
+	padding-top: 30px;
+}
+
+
+</style>
+
+
+
 </head>
-<body background="/TierraMedia/img/regul.jpg">
+<body background="/TierraMedia/img/ecole.jpg">
 
-	<jsp:include page="/barra/navi.jsp"></jsp:include>
-
-	<main class="container">
+	<main >
 		<c:if test="${flash != null}">
 			<div class="alert alert-danger">
 				<p>
@@ -25,13 +61,16 @@
 				</p>
 			</div>
 		</c:if>
+		<div class="botonCrear">
 		<c:if test="${user.isAdmin()}">
 			<div class="mb-3">
-				<a class="btn btn-primary" href="/TierraMedia/users/create.do"
+				<a class="btn btn-primary btn-dark" href="/TierraMedia/users/create.do"
 					role="button"> <i class="bi bi-people-fill"></i> Crear usuario
 				</a>
 			</div>
 		</c:if>
+		</div>
+		<div class="ctri">
 		<table class="table table-stripped table-hover">
 			<thead>
 				<tr bgcolor="#00dddd">
@@ -46,27 +85,27 @@
 				<c:forEach items="${users}" var="tmp_user">
 					<tr>
 						<td style="background: rgba(76, 175, 180, 0.3);">
-							<button type="button" class="btn btn-primary">
+							<button type="button" class="btn btn-primary btn-dark">
 								<i class="bi bi-person-lines-fill"></i> <a
 									style="text-transform: uppercase;"><c:out
 										value="${tmp_user.username}"></c:out> </a>
 							</button>
 						</td>
 						<td style="background: rgba(76, 175, 180, 0.3);">
-							<button type="button" class="btn btn-primary">
+							<button type="button" class="btn btn-primary btn-dark">
 							<i class="bi bi-coin"></i>
 								<c:out value="${tmp_user.presupuesto}"></c:out>
 							</button>
 
 						</td>
 						<td style="background: rgba(76, 175, 180, 0.3);">
-							<button type="button" class="btn btn-primary">
+							<button type="button" class="btn btn-primary btn-dark">
 								<i class="bi bi-clock-fill"></i>
 								<c:out value="${tmp_user.tiempoDisponible}"></c:out>
 							</button>
 						</td>
 						<td style="background: rgba(76, 175, 180, 0.3);">
-							<button type="button" class="btn btn-primary">
+							<button type="button" class="btn btn-primary btn-dark">
 							
 								<c:choose>
 									<c:when test="${tmp_user.admin}">
@@ -96,12 +135,12 @@
 				</c:forEach>
 			</tbody>
 		</table>
-
+	</div>
 	</main>
 	
-	<footer class="page-footer font-small teal pt-4 bg-dark text-white fixed-bottom"
+<footer class="page-footer font-small teal pt-4 bg-dark text-white fixed-bottom"
 		style="background-color: rgba(0, 0, 0, 0.2);">
-	<jsp:include page="/foot.jsp"></jsp:include>
+		<jsp:include page="/foot.jsp"></jsp:include>
 	</footer>
 
 </body>

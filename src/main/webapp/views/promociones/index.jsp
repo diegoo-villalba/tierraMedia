@@ -12,16 +12,52 @@
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
 <jsp:include page="/ini.jsp"></jsp:include>
+<jsp:include page="/barra/nav.jsp"></jsp:include>
+
+<style>
+html {
+    box-sizing: border-box;
+    font-size: 100.0%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem; /*Column-gap y row-gap todo en 1 */
+}
+
+@media (min-width: 768px) {
+    .grid{
+        grid-template-columns: repeat(3, 1fr); /* Si quiero CENTRAR cotenido lo HAGO CON FLEXBOX, SI VOY A POSICIONAR ELEMENTOs lo HAGO CON GRID*/
+    }
+}
+
+.ctri {
+
+	max-width: 120rem;
+	margin: 0 auto; /* Para centrar el contenido */
+	padding-top: 30px;
+}
+
+}
+
+
+</style>
+
+
 
 <title>Turismo en la Tierra Media</title>
 </head>
 
 
-<body background="/TierraMedia/img/regul.jpg">
-	<jsp:include page="/barra/navi.jsp"></jsp:include>
-
-
-
+<body background="/TierraMedia/img/ecole.jpg">
+	
+<main >
+<div class="ctri">
 	<table class="table">
 		<thead class="thead-dark">
 			<tr bgcolor="#ccccff">
@@ -78,10 +114,11 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	
-	<footer class="page-footer font-small teal pt-4 bg-dark text-white fixed-bottom"
+	</div>
+</main>
+<footer class="page-footer font-small teal pt-4 bg-dark text-white fixed-bottom"
 		style="background-color: rgba(0, 0, 0, 0.2);">
-	<jsp:include page="/foot.jsp"></jsp:include>
+		<jsp:include page="/foot.jsp"></jsp:include>
 	</footer>
 </body>
 </html>

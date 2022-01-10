@@ -9,6 +9,11 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
 <title>TurismoTierraMedia</title>
 <jsp:include page="ini.jsp"></jsp:include>
 
@@ -16,7 +21,20 @@
 
 <body background="img/regul.jpg">
 
-<jsp:include page="/barra/navi.jsp"></jsp:include>
+	<jsp:include page="/barra/nav.jsp"></jsp:include>
+
+	<main>
+	
+	<nav class="nav flex-column font-small teal pt-4 bg-dark text-white">
+  <a class="nav-link active" aria-current="page" href="#">Active</a>
+  <a class="nav-link" href="#">Link</a>
+  <a class="nav-link" href="#">Link</a>
+  <a class="nav-link disabled">Disabled</a>
+</nav>
+	
+	
+	</main>
+
 
 	<!--  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
 		<div class="container">
@@ -28,37 +46,33 @@
 				!
 			</div>
 			
-			-->
-			<form class="form-inline my-2 my-lg-0">
-				<button class="navbar-toggler" type="button"
-					data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-					aria-controls="navbarCollapse" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+<!--		
+	<form class="form-inline my-2 my-lg-0">
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+			data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-				<div class="collapse navbar-collapse" id="navbarCollapse">
-					<ul class="navbar-nav me-auto mb-2 mb-md-0">
-						<li class="nav-item"><a class="btn btn-outline-success"
-							href="#" id="navbarDropdown" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
-							<ul class="dropdown-menu dropdown-menu-end"
-								aria-labelledby="navbarDropdown">
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav me-auto mb-2 mb-md-0">
+				<li class="nav-item"><a class="btn btn-outline-success"
+					href="#" id="navbarDropdown" role="button"
+					data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+					<ul class="dropdown-menu dropdown-menu-end"
+						aria-labelledby="navbarDropdown">
 
-							</ul></li>
-					</ul>
-				</div>
-			</form>
+					</ul></li>
+			</ul>
 		</div>
-	</nav>
+	</form> -->
 
-	<main class="container"></main>
-	
-	<table align="center">
-	
-	
 
-		<!-- <tr>
+
+	<!-- <table align="center">
+
+
+		 <tr>
 			<td width="700">
 
 
@@ -171,11 +185,11 @@
 				</div>
 
 			</td>
-		</tr> -->
-	</table> 
-	<footer class="page-footer font-small teal pt-4 bg-dark text-white"
+		</tr> 
+	</table> -->
+	<footer class="page-footer font-small teal pt-4 bg-dark text-white fixed-bottom"
 		style="background-color: rgba(0, 0, 0, 0.2);">
-	<jsp:include page="/foot.jsp"></jsp:include>
+		<jsp:include page="/foot.jsp"></jsp:include>
 	</footer>
 </body>
 </html>

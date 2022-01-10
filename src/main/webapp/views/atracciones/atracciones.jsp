@@ -90,15 +90,20 @@ h1 {
 	margin: 1rem 0;
 	text-align: center;
 }
+
+.ctri {
+
+	padding-top: 30px;
+}
 </style>
 <title>Turismo en la Tierra Media</title>
 </head>
 
 
 
-<body background="/TierraMedia/img/regul.jpg">
-<jsp:include page="/barra/navi.jsp"></jsp:include> 
-	<main class="container">
+<body background="/TierraMedia/img/ecole.jpg">
+<jsp:include page="/barra/nav.jsp"></jsp:include> 
+	<main class="container ctri">
 		<h1>Estas son las atracciones de la tierra media</h1>
 		
 		<div class="grid">

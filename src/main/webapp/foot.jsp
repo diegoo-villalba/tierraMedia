@@ -7,6 +7,7 @@
 <meta charset="utf-8">
 <style>
 ul.menu {
+	padding-top: 50px;
 	display: inline-block;
 	margin-left: 10px;
 	margin-right: 10px;
@@ -86,27 +87,6 @@ ul.menu ul li:hover ul {
 			<td align="center">
 				<ul class="menu">
 					<li><a class="menu" href="">Go to top</a></li>
-				<!-- 	<li><a class="menu" href="">Atracciones</a>
-						<ul>
-				 		<li><a class="item" href="">Aventura</a></li>
-							<li><a class="item" href="#">Degustacion</a></li>
-							<li><a class="item" href="#">Paisajes</a></li>
-
-						</ul></li>
-					<li><a class="item" href="#">Itinerario</a>
-						<ul>
-							<li><a class="item" href="#">Informacion</a></li>
-							<li><a class="item" href="#">Calendario</a></li>
-							<li><a class="item" href="#">Normas y sugerencias</a></li>
-						</ul></li>
-					<li><a class="item" href="#">Promociones</a>
-						<ul>
-							<li><a class="item" href="#">Familiar</a></li>
-							<li><a class="item" href="#">Amigos</a></li>
-							<li><a class="item" href="#">Descuentos</a></li>
-						</ul></li>
-						
-						-->	
 					<li><a class="item" href="#">Contacto</a>
 					<li><a class="item" href="#">Quienes somos</a>
 					<li><a class="item" href="#">Redes sociales</a></li>

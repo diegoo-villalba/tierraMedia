@@ -12,7 +12,16 @@
     <title>TurismoTierraMedia</title>
     <jsp:include page="ini.jsp"></jsp:include>
     
-    <style type="text/css">
+    <style>
+    
+	.titulo {
+	font-size: 90px;
+    font-family: 'MedievalSharp', cursive;
+    justify-content: center;
+    text-align: center;
+    color: #b14f42;
+   	-webkit-text-stroke: 2px black;
+}
     
     .loginText {
      color: black;
@@ -20,6 +29,8 @@
     font-family: Arial, Helvetica, sans-serif;
     -webkit-text-stroke: 2px;
     }
+    
+    
     
     </style>
     
@@ -39,6 +50,8 @@
 					</p>
 				</div>
 			</c:if>
+			
+			
 
 			<form action="login" method="post">
 				<div class="mb-3">
