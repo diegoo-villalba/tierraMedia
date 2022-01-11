@@ -54,6 +54,24 @@ html {
 <body background="/TierraMedia/img/ecole.jpg">
 
 	<main>
+	<div class="alerta" style = "padding-top: 20px">
+			<c:if test="${flash != null}">
+				<div class="alert alert-dark">
+					<p>
+						<c:out value="${flash}" />
+						<c:if test="${errors != null}">
+							<ul>
+								<c:forEach items="${errors}" var="entry">
+									<li><c:out value="${entry.getValue()}"></c:out></li>
+								</c:forEach>
+							</ul>
+						</c:if>
+					</p>
+				</div>
+			</c:if>
+
+		</div>
+	
 		<div class="ctri">
 			<table class="table table-hover">
 				<thead class="thead-dark">

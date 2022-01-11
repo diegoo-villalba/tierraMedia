@@ -39,7 +39,7 @@ public class comprarPromocionServlet extends HttpServlet implements Servlet {
 		
 		if (errors.isEmpty()) {
 			//TODO: Poner mensaje de "exito" en vez de "Flash"
-			req.setAttribute("flash", "Gracias por su compra!");
+			req.setAttribute("flash", "¡Gracias por su compra! La promocion y sus atracciones fueron añadidas al itinerario.");
 		} else {
 			req.setAttribute("errors", errors);
 			req.setAttribute("flash", "Lo sentimos! No pudo realizarse la compra");

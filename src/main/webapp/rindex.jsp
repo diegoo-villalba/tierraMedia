@@ -46,14 +46,23 @@ footer {
 
 h1 {
 	text-align: center;
-	font-size: 4rem;
 	font-family: 'Staatliches', cursive;
 }
 
 h2 {
 	text-align: center;
 	font-family: 'Staatliches', cursive;
+	font-size: 4rem;
 	padding-top: 50px;
+}
+
+.cardjeta {
+
+	font-size: 2rem;
+}
+
+.subcardjeta {
+font-size: 1rem;
 }
 
 .xp1 {
@@ -191,7 +200,7 @@ h2 {
 
 	<div id="main">
 		<button type="button" class="btn btn-primary btn btn-dark"
-			onclick="openNav()">Menu</button>
+			onclick="openNav()">Menú</button>
 
 		<div class="me-auto" role="group" style="float: right;">
 			<button id="btnGroupDrop1" type="button"
@@ -241,7 +250,7 @@ h2 {
 	<main>
 		<div>
 
-			<h1 >
+			<h1 style="font-size: 5.5rem;">
 				¡Bienvenido
 				<c:out value="${user.username}"></c:out>
 				a la Tierra Media!
@@ -259,7 +268,7 @@ h2 {
 
 				<div>
 
-					<h2 style="color: #292828; font-family: 'Staatliches', cursive;">
+					<h2 style="color: #292828; font-family: 'Staatliches', cursive; font-size: 3.5rem;">
 						Estas son algunas de nuestras atracciones:</h2>
 
 				</div>
@@ -271,12 +280,12 @@ h2 {
 						<img src="/TierraMedia/img/tierramedia.jpg" class="card-img-top"
 							alt="...">
 						<div class="card-body">
-							<h5 class="card-title">Far West</h5>
-							<p class="card-text text-white">Some quick example text to
+							<h5 class="card-title cardjeta">Far West</h5>
+							<p class="card-text text-white subcardjeta">Some quick example text to
 								build on the card title and make up the bulk of the card's
 								content.</p>
 							<a href="/TierraMedia/atracciones/index.do"
-								class="btn btn-primary">Comprar</a>
+								class="btn btn-primary bg-dark">Comprar</a>
 						</div>
 					</div>
 
@@ -290,12 +299,12 @@ h2 {
 						<img src="/TierraMedia/img/lothlorien.jpg" class="card-img-top"
 							alt="...">
 						<div class="card-body">
-							<h5 class="card-title">Lothlorien</h5>
-							<p class="card-text text-white">Some quick example text to
+							<h5 class="card-title  cardjeta">Lothlorien</h5>
+							<p class="card-text text-white subcardjeta">Some quick example text to
 								build on the card title and make up the bulk of the card's
 								content.</p>
 							<a href="/TierraMedia/atracciones/index.do"
-								class="btn btn-primary">Comprar</a>
+								class="btn btn-primary bg-dark">Comprar</a>
 						</div>
 					</div>
 
@@ -308,12 +317,12 @@ h2 {
 						<img src="/TierraMedia/img/mordor.jpg" class="card-img-top"
 							alt="...">
 						<div class="card-body">
-							<h5 class="card-title">Mordor</h5>
-							<p class="card-text text-white">Some quick example text to
+							<h5 class="card-title cardjeta">Mordor</h5>
+							<p class="card-text text-white subcardjeta">Some quick example text to
 								build on the card title and make up the bulk of the card's
 								content.</p>
 							<a href="/TierraMedia/atracciones/index.do"
-								class="btn btn-primary">Comprar</a>
+								class="btn btn-primary bg-dark">Comprar</a>
 						</div>
 					</div>
 
@@ -326,7 +335,7 @@ h2 {
 
 				<div class="divSub">
 
-					<h2 style="color: #292828; font-family: 'Staatliches', cursive;">
+					<h2 style="color: #292828; font-family: 'Staatliches', cursive; font-size: 3.5rem;">
 						Estas son algunas de nuestras promociones:</h2>
 
 				</div>
@@ -337,12 +346,12 @@ h2 {
 						<img src="/TierraMedia/img/psg.jpg" class="card-img-top"
 							alt="...">
 						<div class="card-body">
-							<h5 class="card-title">Paisaje</h5>
-							<p class="card-text text-white">Some quick example text to
+							<h5 class="card-title cardjeta">Paisaje</h5>
+							<p class="card-text text-white subcardjeta">Some quick example text to
 								build on the card title and make up the bulk of the card's
 								content.</p>
 							<a href="/TierraMedia/atracciones/index.do"
-								class="btn btn-primary">Comprar</a>
+								class="btn btn-primary bg-dark">Comprar</a>
 						</div>
 					</div>
 				</div>
@@ -352,12 +361,12 @@ h2 {
 						<img src="/TierraMedia/img/degustacion.jpg" class="card-img-top"
 							alt="...">
 						<div class="card-body">
-							<h5 class="card-title">Degustacion</h5>
-							<p class="card-text text-white">Some quick example text to
+							<h5 class="card-title cardjeta">Degustacion</h5>
+							<p class="card-text text-white subcardjeta">Some quick example text to
 								build on the card title and make up the bulk of the card's
 								content.</p>
 							<a href="/TierraMedia/atracciones/index.do"
-								class="btn btn-primary">Comprar</a>
+								class="btn btn-primary bg-dark">Comprar</a>
 						</div>
 					</div>
 				</div>
@@ -367,12 +376,12 @@ h2 {
 						<img src="/TierraMedia/img/paisaje.jpg" class="card-img-top"
 							alt="...">
 						<div class="card-body">
-							<h5 class="card-title">Aventura</h5>
-							<p class="card-text text-white">Some quick example text to
+							<h5 class="card-title cardjeta">Aventura</h5>
+							<p class="card-text text-white subcardjeta">Some quick example text to
 								build on the card title and make up the bulk of the card's
 								content.</p>
 							<a href="/TierraMedia/atracciones/index.do"
-								class="btn btn-primary">Comprar</a>
+								class="btn btn-primary bg-dark">Comprar</a>
 						</div>
 					</div>
 				</div>
