@@ -80,8 +80,8 @@ h1 {
 		</div>
 
 
-		<table class="table table-stripped table-hover">
-			<thead>
+		<table class="table table-hover">
+				<thead class="thead-dark">
 				<tr>
 					<th>Atracciones</th>
 					<th>Tipo de Atraccion</th>

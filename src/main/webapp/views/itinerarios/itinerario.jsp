@@ -27,7 +27,7 @@
 		
 		<div class="contenido">
 			<table class="table table-hover">
-				<thead class="table-dark">
+				<thead class="thead-dark">
 					<tr>
 						<th class="col-2">Atracciones</th>
 						<th class="col-2">Tiempo</th>

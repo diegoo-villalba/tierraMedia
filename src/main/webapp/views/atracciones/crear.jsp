@@ -5,9 +5,17 @@
 <html>
 <head>
 <jsp:include page="/ini.jsp"></jsp:include>
+
+<style type="text/css">
+
+.form {
+padding-top: 20px;
+}
+
+</style>
 </head>
-<body>
-	<jsp:include page="/barra/navi.jsp"></jsp:include>
+<body background="/TierraMedia/img/ecole.jpg">
+	<jsp:include page="/barra/nav.jsp"></jsp:include>
 
 	<main class="container">
 
@@ -17,7 +25,7 @@
 			</div>
 		</c:if>
 
-		<form action="/TierraMedia/atracciones/crear.do" method="post">
+		<form action="/TierraMedia/atracciones/crear.do" method="post" class="form">
 			<input type="hidden" name="id" value="${attraction.id}">
 			<jsp:include page="/views/atracciones/formulario.jsp"></jsp:include>
 		</form>

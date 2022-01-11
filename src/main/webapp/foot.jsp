@@ -57,13 +57,14 @@ ul.menu li a {
 	display: block;
 	padding: 5px 10px;
 	text-decoration: none;
-	color: orange;
+	color: white;
 	text-decoration-style: solid;
 }
 
 ul.menu li a:hover {
-	border: rgb(110, 110, 11) solid 1px;
+	border: rgb(70,130,180) solid 1px;
 	background: black;
+	border-radius: 5px;
 }
 
 ul.menu li:hover ul {
@@ -81,7 +82,7 @@ ul.menu ul li:hover ul {
 </style>
 </head>
 
-<body>
+<body style = "bottom: 0px;">
 	<table align="center">
 		<tr width=100%>
 			<td align="center">

@@ -34,7 +34,7 @@
 </div>
 
 <div>
-	<button type="submit" class="btn btn-primary">Guardar</button>
+	<button type="submit" class="btn btn-primary bg-dark">Guardar</button>
 	<a onclick="window.history.back();" class="btn btn-secondary"
 		role="button">Cancelar</a>
 </div>

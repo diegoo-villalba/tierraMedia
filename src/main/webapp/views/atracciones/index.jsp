@@ -63,6 +63,10 @@ footer {
 .botonCrear {
 	padding-top: 30px;
 }
+
+.alerta {
+	padding-top: 15px;
+}
 </style>
 
 
@@ -75,7 +79,7 @@ footer {
 
 		<div class="alerta">
 			<c:if test="${flash != null}">
-				<div class="alert alert-success">
+				<div class="alert alert-dark">
 					<p>
 						<c:out value="${flash}" />
 						<c:if test="${errors != null}">
@@ -105,7 +109,7 @@ footer {
 			</c:if>
 		</div>
 		<div class="ctri">
-			<table class="table">
+			<table class="table table-hover">
 				<thead class="thead-dark">
 					<tr bgcolor="#ccccff">
 						<th scope="col">Atracci&oacute;n</th>
@@ -159,7 +163,7 @@ footer {
 								&& attraction.hasAPlace()}">
 										<a
 											href="/TierraMedia/atracciones/comprar.do?id=${attraction.id}"
-											class="btn btn-primary btn-dark rounded" role="button">Comprar</a>
+											class="btn btn-primary rounded btn-dark" role="button">Comprar</a>
 									</c:when>
 
 									<c:otherwise>

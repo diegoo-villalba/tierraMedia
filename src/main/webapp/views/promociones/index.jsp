@@ -55,7 +55,7 @@ html {
 
 	<main>
 		<div class="ctri">
-			<table class="table">
+			<table class="table table-hover">
 				<thead class="thead-dark">
 					<tr bgcolor="#ccccff">
 						<th scope="col">Promoci&oacute;n</th>

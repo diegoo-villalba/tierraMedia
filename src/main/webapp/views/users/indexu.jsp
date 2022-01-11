@@ -71,9 +71,9 @@ html {
 		</c:if>
 		</div>
 		<div class="ctri">
-		<table class="table table-stripped table-hover">
-			<thead>
-				<tr bgcolor="#00dddd">
+		<table class="table table-hover">
+				<thead class="thead-dark">
+				<tr >
 					<th>Nombre</th>
 					<th>Monedas</th>
 					<th>Tiempo</th>
@@ -84,27 +84,27 @@ html {
 			<tbody>
 				<c:forEach items="${users}" var="tmp_user">
 					<tr>
-						<td style="background: rgba(76, 175, 180, 0.3);">
+						<td >
 							<button type="button" class="btn btn-primary btn-dark">
 								<i class="bi bi-person-lines-fill"></i> <a
 									style="text-transform: uppercase;"><c:out
 										value="${tmp_user.username}"></c:out> </a>
 							</button>
 						</td>
-						<td style="background: rgba(76, 175, 180, 0.3);">
+						<td >
 							<button type="button" class="btn btn-primary btn-dark">
 							<i class="bi bi-coin"></i>
 								<c:out value="${tmp_user.presupuesto}"></c:out>
 							</button>
 
 						</td>
-						<td style="background: rgba(76, 175, 180, 0.3);">
+						<td >
 							<button type="button" class="btn btn-primary btn-dark">
 								<i class="bi bi-clock-fill"></i>
 								<c:out value="${tmp_user.tiempoDisponible}"></c:out>
 							</button>
 						</td>
-						<td style="background: rgba(76, 175, 180, 0.3);">
+						<td >
 							<button type="button" class="btn btn-primary btn-dark">
 							
 								<c:choose>
@@ -120,7 +120,7 @@ html {
 							</button>
 						</td>
 
-						<td style="background: rgba(76, 175, 180, 0.3);">
+						<td >
 						<c:if
 								test="${user.admin && (!tmp_user.admin || tmp_user.id == user.id)}">
 								<a href="/TierraMedia/users/editar.do?id=${tmp_user.id}"
