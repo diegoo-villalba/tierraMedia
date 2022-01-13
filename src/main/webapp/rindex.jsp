@@ -17,6 +17,7 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
+<link rel="stylesheet" href="css/normalize.css"> <!-- Para que los todos los navegadores nos muestren correctamente los elementos -->
 <title>TurismoTierraMedia</title>
 
 <style>
@@ -56,13 +57,16 @@ h2 {
 	padding-top: 50px;
 }
 
-.cardjeta {
+img {
+	width: 100%;
+}
 
+.cardjeta {
 	font-size: 2rem;
 }
 
 .subcardjeta {
-font-size: 1rem;
+	font-size: 1rem;
 }
 
 .xp1 {
@@ -187,9 +191,9 @@ font-size: 1rem;
 
 		<hr class="dropdown-divider">
 
-		<a class="item" href="#">Contacto</a> <a class="item" href="#">Quienes
-			somos</a> <a class="item" href="#">Redes sociales</a> <a class="item"
-			href="#">Como llegar</a>
+		<a class="item" href="#">Contacto</a> <a class="item"
+			href="/TierraMedia/nosotros.jsp">Nosotros</a> <a class="item"
+			href="#">Redes sociales</a> <a class="item" href="#">Como llegar</a>
 
 
 		<hr class="dropdown-divider">
@@ -229,17 +233,19 @@ font-size: 1rem;
 				<li><hr class="dropdown-divider"></li>
 				<li><c:if test="${user.isAdmin()}">
 
-						<a href="/TierraMedia/atracciones/crear.do" class="dropdown-item text-white"
-							role="button"> <i style="color: blue;"
-							class="bi bi-file-arrow-up"></i> Nueva Atraccion
+						<a href="/TierraMedia/atracciones/crear.do"
+							class="dropdown-item text-white" role="button"> <i
+							style="color: blue;" class="bi bi-file-arrow-up"></i> Nueva
+							Atraccion
 						</a>
 
 					</c:if></li>
 				<li><c:if test="${user.isAdmin()}">
 
-						<a href="/TierraMedia/users/create.do" class="dropdown-item text-white"
-							role="button"> <i style="color: blue;"
-							class="bi bi-person-plus-fill"></i> Nuevo Usuario
+						<a href="/TierraMedia/users/create.do"
+							class="dropdown-item text-white" role="button"> <i
+							style="color: blue;" class="bi bi-person-plus-fill"></i> Nuevo
+							Usuario
 						</a>
 
 					</c:if></li>
@@ -268,7 +274,8 @@ font-size: 1rem;
 
 				<div>
 
-					<h2 style="color: #292828; font-family: 'Staatliches', cursive; font-size: 3.5rem;">
+					<h2
+						style="color: #292828; font-family: 'Staatliches', cursive; font-size: 3.5rem;">
 						Estas son algunas de nuestras atracciones:</h2>
 
 				</div>
@@ -281,9 +288,9 @@ font-size: 1rem;
 							alt="...">
 						<div class="card-body">
 							<h5 class="card-title cardjeta">Far West</h5>
-							<p class="card-text text-white subcardjeta">Some quick example text to
-								build on the card title and make up the bulk of the card's
-								content.</p>
+							<p class="card-text text-white subcardjeta">Some quick
+								example text to build on the card title and make up the bulk of
+								the card's content.</p>
 							<a href="/TierraMedia/atracciones/index.do"
 								class="btn btn-primary bg-dark">Comprar</a>
 						</div>
@@ -300,9 +307,9 @@ font-size: 1rem;
 							alt="...">
 						<div class="card-body">
 							<h5 class="card-title  cardjeta">Lothlorien</h5>
-							<p class="card-text text-white subcardjeta">Some quick example text to
-								build on the card title and make up the bulk of the card's
-								content.</p>
+							<p class="card-text text-white subcardjeta">Some quick
+								example text to build on the card title and make up the bulk of
+								the card's content.</p>
 							<a href="/TierraMedia/atracciones/index.do"
 								class="btn btn-primary bg-dark">Comprar</a>
 						</div>
@@ -318,9 +325,9 @@ font-size: 1rem;
 							alt="...">
 						<div class="card-body">
 							<h5 class="card-title cardjeta">Mordor</h5>
-							<p class="card-text text-white subcardjeta">Some quick example text to
-								build on the card title and make up the bulk of the card's
-								content.</p>
+							<p class="card-text text-white subcardjeta">Some quick
+								example text to build on the card title and make up the bulk of
+								the card's content.</p>
 							<a href="/TierraMedia/atracciones/index.do"
 								class="btn btn-primary bg-dark">Comprar</a>
 						</div>
@@ -335,7 +342,8 @@ font-size: 1rem;
 
 				<div class="divSub">
 
-					<h2 style="color: #292828; font-family: 'Staatliches', cursive; font-size: 3.5rem;">
+					<h2
+						style="color: #292828; font-family: 'Staatliches', cursive; font-size: 3.5rem;">
 						Estas son algunas de nuestras promociones:</h2>
 
 				</div>
@@ -343,13 +351,12 @@ font-size: 1rem;
 				<div class="col">
 					<div class="card text-center text-white bg-dark mb-3"
 						style="width: 18rem;">
-						<img src="/TierraMedia/img/psg.jpg" class="card-img-top"
-							alt="...">
+						<img src="/TierraMedia/img/psg.jpg" class="card-img-top" alt="...">
 						<div class="card-body">
 							<h5 class="card-title cardjeta">Paisaje</h5>
-							<p class="card-text text-white subcardjeta">Some quick example text to
-								build on the card title and make up the bulk of the card's
-								content.</p>
+							<p class="card-text text-white subcardjeta">Some quick
+								example text to build on the card title and make up the bulk of
+								the card's content.</p>
 							<a href="/TierraMedia/atracciones/index.do"
 								class="btn btn-primary bg-dark">Comprar</a>
 						</div>
@@ -362,9 +369,9 @@ font-size: 1rem;
 							alt="...">
 						<div class="card-body">
 							<h5 class="card-title cardjeta">Degustacion</h5>
-							<p class="card-text text-white subcardjeta">Some quick example text to
-								build on the card title and make up the bulk of the card's
-								content.</p>
+							<p class="card-text text-white subcardjeta">Some quick
+								example text to build on the card title and make up the bulk of
+								the card's content.</p>
 							<a href="/TierraMedia/atracciones/index.do"
 								class="btn btn-primary bg-dark">Comprar</a>
 						</div>
@@ -377,9 +384,9 @@ font-size: 1rem;
 							alt="...">
 						<div class="card-body">
 							<h5 class="card-title cardjeta">Aventura</h5>
-							<p class="card-text text-white subcardjeta">Some quick example text to
-								build on the card title and make up the bulk of the card's
-								content.</p>
+							<p class="card-text text-white subcardjeta">Some quick
+								example text to build on the card title and make up the bulk of
+								the card's content.</p>
 							<a href="/TierraMedia/atracciones/index.do"
 								class="btn btn-primary bg-dark">Comprar</a>
 						</div>

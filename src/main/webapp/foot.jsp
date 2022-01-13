@@ -89,7 +89,7 @@ ul.menu ul li:hover ul {
 				<ul class="menu">
 					<li><a class="menu" href="">Go to top</a></li>
 					<li><a class="item" href="#">Contacto</a>
-					<li><a class="item" href="#">Quienes somos</a>
+					<li><a class="item" href="/TierraMedia/nosotros.jsp">Nosotros</a>
 					<li><a class="item" href="#">Redes sociales</a></li>
 					<li><a class="item" href="#">Como llegar</a></li>
 
