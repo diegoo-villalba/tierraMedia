@@ -87,20 +87,16 @@ ul.menu ul li:hover ul {
 		<tr width=100%>
 			<td align="center">
 				<ul class="menu">
-					<li><a class="menu" href="">Go to top</a></li>
-					<li><a class="item" href="#">Contacto</a>
+					<li><a class="menu" href="/TierraMedia/rindex.jsp">Tierra Media</a></li>
+					<li><a class="item" href="/TierraMedia/contacto.jsp">Contacto</a>
 					<li><a class="item" href="/TierraMedia/nosotros.jsp">Nosotros</a>
 					<li><a class="item" href="#">Redes sociales</a></li>
-					<li><a class="item" href="#">Como llegar</a></li>
-
-
-
 				</ul>
 
 			</td>
 		</tr>
 	</table>
-	<div class="footer-copyright text-center py-3">©2021 Copyright</div>
+	<div class="footer-copyright text-center py-3">©2022 Copyright</div>
 </body>
 
 </html>

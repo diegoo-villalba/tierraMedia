@@ -180,11 +180,11 @@ footer {
 		<a class="navegacion__enlace navegacion__enlace--active colorText"
 			href="/TierraMedia/rindex.jsp">Tierra Media</a> <a
 			class="navegacion__enlace navegacion__enlace--active colorText"
-			href="/TierraMedia/contacto.jsp">Contacto</a> <a
+			href="nosotros.html">Nosotros</a> <a
 			class="navegacion__enlace navegacion__enlace--active colorText"
-			href="/TierraMedia/nosotros.jsp">Nosotros</a> <a
+			href="nosotros.html">Redes Sociales</a> <a
 			class="navegacion__enlace navegacion__enlace--active colorText"
-			href="nosotros.html">Redes Sociales</a>
+			href="nosotros.html">Contacto</a>
 	</nav>
 
 	<main class="contenedor">

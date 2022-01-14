@@ -191,9 +191,9 @@ img {
 
 		<hr class="dropdown-divider">
 
-		<a class="item" href="#">Contacto</a> <a class="item"
+		<a class="item" href="/TierraMedia/contacto.jsp">Contacto</a> <a class="item"
 			href="/TierraMedia/nosotros.jsp">Nosotros</a> <a class="item"
-			href="#">Redes sociales</a> <a class="item" href="#">Como llegar</a>
+			href="#">Redes sociales</a>
 
 
 		<hr class="dropdown-divider">
