@@ -184,7 +184,7 @@ footer {
 			class="navegacion__enlace navegacion__enlace--active colorText"
 			href="/TierraMedia/nosotros.jsp">Nosotros</a> <a
 			class="navegacion__enlace navegacion__enlace--active colorText"
-			href="nosotros.html">Redes Sociales</a>
+			href="/TierraMedia/redes.jsp">Redes Sociales</a>
 	</nav>
 
 	<main class="contenedor">

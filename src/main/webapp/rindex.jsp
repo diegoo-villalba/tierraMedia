@@ -18,7 +18,7 @@
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="css/normalize.css"> <!-- Para que los todos los navegadores nos muestren correctamente los elementos -->
-<title>TurismoTierraMedia</title>
+<title>Turismo Tierra Media</title>
 
 <style>
 html, body {
@@ -193,7 +193,7 @@ img {
 
 		<a class="item" href="/TierraMedia/contacto.jsp">Contacto</a> <a class="item"
 			href="/TierraMedia/nosotros.jsp">Nosotros</a> <a class="item"
-			href="#">Redes sociales</a>
+			href="/TierraMedia/redes.jsp">Redes sociales</a>
 
 
 		<hr class="dropdown-divider">
